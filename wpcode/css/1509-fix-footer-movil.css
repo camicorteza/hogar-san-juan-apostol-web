@@ -1,0 +1,91 @@
+/**
+ * ID WPCode: 1509
+ * Nombre: FIX footer movil
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global footer responsive
+ *
+ */
+
+ /* ================================================
+   FOOTER — Layout móvil y barra inferior
+   ================================================ */
+
+/* ── Barra negra — centrado global (mobile-first) */
+.footer-bottom {
+    padding: 1rem 1.5rem !important;
+}
+.footer-bottom-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    text-align: center !important;
+}
+.footer-copyright {
+    text-align: center !important;
+    width: 100% !important;
+}
+.footer-legal-bar {
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+/* ── Escritorio: barra en fila */
+@media (min-width: 769px) {
+    .footer-bottom-inner {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        text-align: left !important;
+    }
+    .footer-copyright {
+        text-align: left !important;
+        width: auto !important;
+    }
+    .footer-legal-bar {
+        justify-content: flex-end !important;
+        width: auto !important;
+    }
+}
+
+/* ── Footer grid móvil (≤ 768px) */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 1.5rem !important;
+        align-items: start !important;
+    }
+    .footer-brand {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+    .footer-col:nth-child(2) { grid-column: 2 !important; grid-row: 2 !important; }
+    .footer-col:nth-child(3) { grid-column: 2 !important; grid-row: 3 !important; }
+    .footer-col:nth-child(4) { grid-column: 1 !important; grid-row: 2 !important; }
+}
+
+/* ── Footer grid móvil estrecho (≤ 480px) */
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.25rem !important;
+    }
+    .footer-brand {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    .footer-col:nth-child(2) { grid-column: 2 !important; grid-row: 2 !important; }
+    .footer-col:nth-child(3) { grid-column: 2 !important; grid-row: 3 !important; }
+    .footer-col:nth-child(4) { grid-column: 1 !important; grid-row: 2 !important; }
+    .footer-col h3 { font-size: 9px !important; letter-spacing: 0.14em !important; }
+    .footer-col ul li a { font-size: 12px !important; }
+    .footer-nombre { font-size: 11.5px !important; }
+    .footer-logo { width: 80px !important; }
+}

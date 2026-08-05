@@ -1,0 +1,182 @@
+/**
+ * ID WPCode: 1833
+ * Nombre: Adaptando textos imagen inicio y texto quienes somos
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Home + page-id-12
+ * Notas: FIX QUIENES SOMOS 
+ *
+ */
+
+/* ================================================
+   FIX QUIÉNES SOMOS 
+   ================================================ */
+
+/* ── 1. Párrafo "Somos una institución" — escritorio */
+@media (min-width: 769px) {
+    .wp-block-cover.alignfull.is-light .wp-block-cover__inner-container p,
+    .wp-block-cover.alignfull.is-light .wp-block-cover__inner-container .wp-block-paragraph {
+        max-width: 920px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+}
+
+/* ── 2. Párrafo "Somos una institución" — móvil */
+@media (max-width: 768px) {
+    .wp-block-cover.alignfull.is-light .wp-block-cover__inner-container p,
+    .wp-block-cover.alignfull.is-light .wp-block-cover__inner-container .wp-block-paragraph {
+        max-width: 100% !important;
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+/* ── 3. Imagen wp-image-1822 — escritorio más grande */
+@media (min-width: 769px) {
+    .wp-image-1822,
+    figure.wp-block-image img.wp-image-1822 {
+        width: 320px !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
+}
+
+/* ── 4. Antiguo Hogar / Actual Hogar — siempre en la misma fila */
+/* En TODOS los breakpoints, mantener en fila */
+.wp-block-columns.is-not-stacked-on-mobile.has-medium-font-size {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-end !important;
+    gap: 0 !important;
+}
+.wp-block-columns.is-not-stacked-on-mobile.has-medium-font-size .wp-block-column {
+    flex: 1 1 50% !important;
+    min-width: 0 !important;
+}
+.wp-block-columns.is-not-stacked-on-mobile.has-medium-font-size .wp-block-column:first-child p,
+.wp-block-columns.is-not-stacked-on-mobile.has-medium-font-size .wp-block-column:first-child strong {
+    text-align: left !important;
+    display: block !important;
+    margin: 0 !important;
+}
+.wp-block-columns.is-not-stacked-on-mobile.has-medium-font-size .wp-block-column:last-child p,
+.wp-block-columns.is-not-stacked-on-mobile.has-medium-font-size .wp-block-column:last-child strong {
+    text-align: right !important;
+    display: block !important;
+    margin: 0 !important;
+}
+
+/* ── 5. Móvil general — otras columnas apiladas */
+@media (max-width: 768px) {
+    .wp-block-columns.is-not-stacked-on-mobile:not(.has-medium-font-size) {
+        flex-direction: column !important;
+    }
+    .wp-block-columns.is-not-stacked-on-mobile:not(.has-medium-font-size) .wp-block-column {
+        width: 100% !important;
+        flex-basis: 100% !important;
+        min-width: 0 !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    .wp-image-1822,
+    figure.wp-block-image img.wp-image-1822 {
+        width: 261px !important;
+        height: auto !important;
+    }
+}
+
+/* ── 6. Cifras tablet — números finos */
+/* Atacar con font-size clamp override */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Columnas en fila */
+    .wp-block-columns.alignwide {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+    }
+    .wp-block-columns.alignwide > .wp-block-column {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Número: el tema usa clamp en font-size inline,
+       sobreescribir con font-size fijo y weight fino */
+    .wp-block-columns.alignwide .wp-block-cover.is-light,
+    .wp-block-columns.alignwide .wp-block-cover[style*="border-radius"] {
+        width: 100px !important;
+        height: 100px !important;
+        min-height: 100px !important;
+    }
+
+    .wp-block-columns.alignwide .wp-block-cover__inner-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* El p con el strong del número */
+    .wp-block-columns.alignwide .wp-block-cover__inner-container > p {
+        font-size: 32px !important;
+        font-weight: 200 !important;
+        letter-spacing: -1px !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+    }
+
+    .wp-block-columns.alignwide .wp-block-cover__inner-container > p > strong,
+    .wp-block-columns.alignwide .wp-block-cover__inner-container strong {
+        font-weight: 200 !important;
+        font-size: inherit !important;
+        letter-spacing: inherit !important;
+    }
+
+    /* h3 título cifra */
+    .wp-block-columns.alignwide > .wp-block-column > h3 {
+        font-size: clamp(0.75rem, 1.2vw, 0.90rem) !important;
+        line-height: 1.2 !important;
+        margin-top: 8px !important;
+        margin-bottom: 3px !important;
+        width: 100% !important;
+    }
+
+    /* p descriptivo cifra */
+    .wp-block-columns.alignwide > .wp-block-column > p {
+        font-size: clamp(0.60rem, 0.95vw, 0.75rem) !important;
+        line-height: 1.3 !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+        padding: 0 3px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+}
+/* ── Tablet: texto p bajo HOGAR SAN JUAN APÓSTOL más grande */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* p pequeño bajo el h2 del título */
+    .wp-block-column.is-vertically-aligned-center p,
+    .wp-block-column.has-global-padding p {
+        font-size: clamp(0.9rem, 1.5vw, 1.1rem) !important;
+        line-height: 1.5 !important;
+    }
+    .wp-block-columns.alignwide .wp-block-cover__inner-container p strong {
+        font-weight: 200 !important;
+        font-size: inherit !important;
+    }
+}
+/* ── Texto p bajo HOGAR SAN JUAN APÓSTOL — tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .wp-block-column.is-vertically-aligned-center.has-global-padding p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+    }
+}

@@ -1,0 +1,129 @@
+/**
+ * ID WPCode: 1991
+ * Nombre: Fix critico submenus
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global nav desktop+movil
+ */
+
+/* ================================================
+   MÓDULO 3 — FIX CRÍTICO SUBMENÚS (prioridad alta).
+   ================================================ */
+
+/* ── ESCRITORIO: los 2 últimos ítems (Colaboradores y
+   Transparencia Corporativa) abren su submenú hacia
+   la izquierda para no salirse del borde derecho ── */
+@media (min-width: 1025px) {
+    html body nav.wp-block-navigation
+    ul.wp-block-navigation__container
+    > li.wp-block-navigation-item.has-child:nth-last-child(-n+2)
+    > .wp-block-navigation__submenu-container {
+        left: auto !important;
+        right: 0 !important;
+    }
+
+    html body nav.wp-block-navigation
+    .wp-block-navigation__submenu-container {
+        max-width: calc(100vw - 24px) !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* ── MÓVIL/TABLET: eliminar la "caja negra" ──
+   El bug viene de las clases utilitarias del core
+   (has-background / has-accent-5-background-color /
+   has-contrast-color) que pisan el fondo transparente.
+   Las neutralizamos con más especificidad. */
+@media (max-width: 1024px) {
+    html body nav.wp-block-navigation .wp-block-navigation__submenu-container,
+    html body nav.wp-block-navigation .wp-block-navigation__submenu-container.has-background,
+    html body nav.wp-block-navigation .wp-block-navigation__submenu-container.has-contrast-color,
+    html body nav.wp-block-navigation .wp-block-navigation__submenu-container.has-accent-5-background-color,
+    html body nav.wp-block-navigation .wp-block-navigation__submenu-container.has-accent-6-background-color,
+    html body nav.wp-block-navigation .wp-block-navigation-item.has-child .wp-block-navigation__submenu-container {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        outline: none !important;
+    }
+
+    html body nav.wp-block-navigation button.wp-block-navigation__submenu-icon,
+    html body nav.wp-block-navigation button.wp-block-navigation-submenu__toggle,
+    html body nav.wp-block-navigation .wp-block-navigation-submenu__toggle {
+        background: transparent !important;
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+
+    html body nav.wp-block-navigation .wp-block-navigation-item__content:focus,
+    html body nav.wp-block-navigation a.wp-block-navigation-item__content:focus,
+    html body nav.wp-block-navigation button:focus,
+    html body nav.wp-block-navigation button:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* ── Que el texto del submenú nunca se corte
+       (antes usaba white-space:nowrap heredado) ── */
+    html body nav.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content,
+    html body nav.wp-block-navigation .wp-block-navigation__submenu-container a.wp-block-navigation-item__content {
+        white-space: normal !important;
+        word-break: break-word !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    html body nav.wp-block-navigation .wp-block-navigation__submenu-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        right: auto !important;
+    }
+
+    /* ── Espaciado prudente entre ítems del acordeón ── */
+    html body nav.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item {
+        margin-bottom: 4px !important;
+    }
+    html body nav.wp-block-navigation
+    .wp-block-navigation-item.has-child.is-open
+    > .wp-block-navigation__submenu-container {
+        margin-top: 6px !important;
+        margin-bottom: 10px !important;
+        padding: 6px 0 !important;
+    }
+}
+
+/* ── MÓVIL CON SCROLL: flecha (chevron) más pequeña
+   y más espacio entre ítems del submenú ── */
+@media (max-width: 1080px) {
+    body.scrolled nav.wp-block-navigation .wp-block-navigation-submenu__toggle,
+    body.scrolled nav.wp-block-navigation button.wp-block-navigation__submenu-icon {
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        min-height: 30px !important;
+    }
+    body.scrolled nav.wp-block-navigation .wp-block-navigation__submenu-icon svg,
+    body.scrolled nav.wp-block-navigation .wp-block-navigation-submenu__toggle svg {
+        width: 14px !important;
+        height: 14px !important;
+        max-width: 14px !important;
+        max-height: 14px !important;
+    }
+    body.scrolled nav.wp-block-navigation
+    .wp-block-navigation-item.has-child.is-open
+    > .wp-block-navigation__submenu-container {
+        margin: 6px 0 12px 14px !important;
+        padding: 6px 0 !important;
+    }
+    body.scrolled nav.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item {
+        margin-bottom: 6px !important;
+    }
+}

@@ -1,0 +1,106 @@
+/**
+ * ID WPCode: 1906
+ * Nombre: Fragmento 10 - Header compacto en scroll
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global responsive
+ */
+
+/* ================================================
+   FRAGMENTO 10 — HEADER COMPACTO EN SCROLL 
+   ================================================ */
+
+/* ── 1. Ocultar franja superior del header en scroll ── */
+html body header.wp-block-template-part.scrolled > div:first-child {
+    display: none !important;
+}
+html body header.wp-block-template-part.scrolled > div:nth-child(2) {
+    margin-top: 0 !important;
+    border-top: none !important;
+}
+
+/* ── 2. Altura barra nav en scroll — ESCRITORIO (>1024px) ── */
+@media (min-width: 1025px) {
+    html body header.wp-block-template-part.scrolled nav.wp-block-navigation {
+        min-height: 42px !important;
+        max-height: 48px !important;
+    }
+}
+
+/* ── 3. Altura barra nav en scroll — TABLET / MÓVIL (≤1080px) ── */
+@media (max-width: 1080px) {
+    html body.scrolled nav.wp-container-core-navigation-is-layout-c4d0b4f1,
+    html body.scrolled nav.has-text-color.has-background.is-responsive.wp-block-navigation {
+        min-height: 30px !important;
+        max-height: 36px !important;
+        height: 36px !important;
+    }
+}
+
+/* ── 4. Botón de accesibilidad — reposicionamiento SOLO en scroll ── */
+
+/* ESCRITORIO */
+@media (min-width: 1025px) {
+    body.scrolled div#wp_access_helper_container {
+        position: fixed !important;
+        top: 10px !important;
+        right: 20px !important;
+        left: auto !important;
+        bottom: auto !important;
+        z-index: 100000 !important;
+    }
+}
+
+/* TABLET (601px–1024px) — subido y más cerca del hamburguesa */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body.scrolled div#wp_access_helper_container {
+        position: fixed !important;
+        top: 0px !important;
+        right: 38px !important;
+        left: auto !important;
+        bottom: auto !important;
+        z-index: 100000 !important;
+    }
+}
+
+/* MÓVIL (≤600px) — subido y más cerca del hamburguesa */
+@media (max-width: 600px) {
+    body.scrolled div#wp_access_helper_container {
+        position: fixed !important;
+        top: 0px !important;
+        right: 42px !important;
+        left: auto !important;
+        bottom: auto !important;
+        z-index: 100000 !important;
+    }
+}
+
+/* ── 5. Panel de accesibilidad: abrirse desde arriba-derecha
+   (bajo el botón, pegado a la esquina) en tablet y móvil ── */
+@media (max-width: 1024px) {
+    body.scrolled #wp_access_helper_container #access_container,
+    body.scrolled div#wp_access_helper_container div#access_container {
+        position: fixed !important;
+        top: 36px !important;   /* justo debajo de la barra nav */
+        right: 0 !important;
+        left: auto !important;
+        bottom: auto !important;
+        max-width: 220px !important;
+        z-index: 99999 !important;
+    }
+}
+
+/* ── 6. Botón hamburguesa más grande en scroll (tablet y móvil) ── */
+@media (max-width: 1024px) {
+    body.scrolled nav.wp-block-navigation
+    .wp-block-navigation__responsive-container-open {
+        min-width: 36px !important;
+        min-height: 36px !important;
+        padding: 6px !important;
+    }
+    body.scrolled nav.wp-block-navigation
+    .wp-block-navigation__responsive-container-open svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+}

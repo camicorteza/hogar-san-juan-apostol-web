@@ -1,0 +1,66 @@
+/**
+ * ID WPCode: 2041
+ * Nombre: Pagina Dona ahora color de fondo
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: page-id-280
+ */
+
+/* ================================================
+   FONDO DEGRADADO RADIAL — Página "Dona ahora"
+   ================================================ */
+
+html body.page-id-280 {
+    position: relative !important;
+}
+
+html body.page-id-280::before {
+    content: "" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+    background-color: #fef7ed !important;
+    background-image: radial-gradient(
+        ellipse at center,
+        #ffffff 0%,
+        #fef7ed 55%,
+        #ecdcc0 100%
+    ) !important;
+}
+
+/* Hacemos transparentes los contenedores que antes
+   pintaban un color sólido encima, para que se vea
+   la capa de fondo fija de más atrás */
+html body.page-id-280 .wp-site-blocks,
+html body.page-id-280 main.wp-block-group,
+html body.page-id-280 .entry-content,
+html body.page-id-280 .wp-block-post-content {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+@media (max-width: 1024px) {
+    html body.page-id-280::before {
+        background-image: radial-gradient(
+            ellipse at center,
+            #ffffff 0%,
+            #fef7ed 65%,
+            #ecdcc0 100%
+        ) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    html body.page-id-280::before {
+        background-image: radial-gradient(
+            ellipse at center,
+            #ffffff 0%,
+            #fef7ed 75%,
+            #ecdcc0 100%
+        ) !important;
+    }
+}

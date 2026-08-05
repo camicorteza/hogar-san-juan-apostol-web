@@ -1,0 +1,278 @@
+/**
+ * ID WPCode: 1338
+ * Nombre: 01 base header
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global
+ * Notas: Header fijo + estructura base + botones header
+ */
+/* ================================================
+   MÓDULO 1 — BASE, HEADER, BOTONES HEADER
+   ================================================ */
+ 
+/* ── Reset base */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: clip;
+}
+ 
+/* ── Imágenes responsivas globales (buena práctica base) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+ 
+/* ── Ocultar elementos WooCommerce no deseados + títulos por defecto
+      [OPTIMIZADO] Consolidados en un único bloque display:none */
+.wc-block-mini-cart,
+.wc-block-mini-cart__button,
+.wc-block-mini-cart__badge,
+.wc-block-cart-items,
+.added_to_cart,
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-notices-wrapper,
+.wc-block-store-notices,
+.entry-title,
+.page-title,
+h1.wp-block-post-title,
+.joinchat__powered {
+    display: none !important;
+}
+ 
+/* ── Títulos: colapso total de espacio */
+.entry-title,
+.page-title,
+h1.wp-block-post-title {
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+} 
+/* ── Espaciado general del sitio */
+.wp-site-blocks {
+    padding-top: 130px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+.page:not(.home) .wp-block-post-content > *:first-child {
+    margin-top: 0 !important;
+}
+body.home .wp-site-blocks {
+    padding-top: 130px !important;
+}
+/* ── Cover hero home — empuja debajo del header fijo */
+body.home .wp-block-cover.wp-elements-18357312f62ce35fafc1ee1be389e34b,
+body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-of-type {
+    margin-top: 0 !important;
+    min-height: calc(100vh - 130px) !important;
+}
+/* ── Header fixed glassmorphism */
+header.wp-block-template-part {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+    background: rgba(253, 249, 233, 0.75) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    box-shadow: 0 2px 24px rgba(162, 33, 33, 0.10) !important;
+    border-bottom: 1px solid rgba(162, 33, 33, 0.08) !important;
+    transition: background 0.4s ease, box-shadow 0.4s ease !important;
+    overflow: visible !important;
+}
+ 
+/* Nav se comprime al scroll */
+header.wp-block-template-part.scrolled nav.wp-block-navigation {
+    min-height: 28px !important;
+    max-height: 34px !important;
+    transition: all 0.3s ease !important;
+}
+header.wp-block-template-part.scrolled nav.wp-block-navigation .wp-block-navigation-item__content {
+    font-size: 13px !important;
+    padding: 3px 8px !important;
+}
+
+/* Botón accesibilidad se achica al scroll */
+body.scrolled div#wp_access_helper_container button.wahout.aicon_link {
+    width: 26px !important;
+    height: 26px !important;
+    padding: 4px !important;
+    transition: all 0.3s ease !important;
+}
+body.scrolled div#wp_access_helper_container button.wahout.aicon_link img.aicon_image {
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+}
+ 
+header.wp-block-template-part > div:first-child {
+    position: relative !important;
+    width: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    display: block !important;
+}
+ 
+header.wp-block-template-part > div:nth-child(2) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10000 !important;
+    margin-top: 0 !important;
+    overflow: visible !important;
+    max-height: none !important;
+    pointer-events: auto !important;
+    width: 100% !important;
+    border-top: 1px solid rgba(162, 33, 33, 0.08) !important;
+}
+ 
+html body.admin-bar header.wp-block-template-part {
+    top: 32px !important;
+}
+ 
+/* ── Botones del header */
+header.wp-block-template-part > div:first-child .wp-block-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-wrap: nowrap !important;
+    width: auto !important;
+}
+ 
+header.wp-block-template-part > div:first-child .wp-block-button {
+    display: flex !important;
+    align-items: center !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+ 
+header.wp-block-template-part > div:first-child .wp-block-button__link {
+    background-color: transparent !important;
+    color: #a22121 !important;
+    border: 1.5px solid #a22121 !important;
+    border-radius: 50px !important;
+    height: 38px !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+    padding: 0 16px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    min-width: unset !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    overflow: hidden !important;
+    vertical-align: middle !important;
+    transition: background 0.2s ease, color 0.2s ease !important;
+    text-shadow: none !important;
+}
+ 
+header.wp-block-template-part > div:first-child .wp-block-button__link:hover {
+    background-color: #a22121 !important;
+    color: white !important;
+}
+ 
+/* ── Iconos dentro de botones del header
+      [OPTIMIZADO] Consolidados img y svg en un bloque */
+header.wp-block-template-part > div:first-child .wp-block-button__link img,
+header.wp-block-template-part > div:first-child .wp-block-button__link svg {
+    width: 16px !important;
+    height: 16px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    object-fit: contain !important;
+}
+ 
+/* ── Editor de bloques */
+.editor-styles-wrapper .is-root-container { padding-top: 0 !important; }
+.editor-styles-wrapper .wp-block-post-content { margin-top: 0 !important; }
+ 
+/* ── Responsive: Tablet (600px–1024px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    header.wp-block-template-part nav.wp-block-navigation,
+    header.wp-block-template-part > div:nth-child(2) nav.wp-block-navigation {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        padding-right: 18px !important;
+        padding-left: 18px !important;
+        box-sizing: border-box !important;
+    }
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+    header.wp-block-template-part > div:first-child .wp-block-buttons {
+        gap: 6px !important;
+    }
+    header.wp-block-template-part > div:first-child .wp-block-button__link {
+        height: 34px !important;
+        padding: 0 13px !important;
+        font-size: 11px !important;
+    }
+}
+ 
+/* ── Responsive: Móvil (< 600px) */
+@media (max-width: 599px) {
+    header.wp-block-template-part > div:first-child {
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+        padding: 0 12px !important;
+    }
+    header.wp-block-template-part > div:first-child .wp-block-button__link {
+        height: 32px !important;
+        padding: 0 11px !important;
+        font-size: 10.5px !important;
+    }
+    header.wp-block-template-part nav.wp-block-navigation {
+        padding-right: 14px !important;
+        padding-left: 14px !important;
+    }
+}
+ 
+/* ── Responsive: Admin bar móvil + padding general (< 782px) */
+@media (max-width: 782px) {
+    html body.admin-bar header.wp-block-template-part {
+        top: 46px !important;
+    }
+    .wp-site-blocks {
+        padding-top: 100px !important;
+    }
+body.home .wp-site-blocks {
+    padding-top: 100px !important;
+}
+/* Cover home: en móvil el header mide ~100px */
+body.home .wp-block-cover.wp-elements-18357312f62ce35fafc1ee1be389e34b,
+body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-of-type {
+    margin-top: 0 !important;
+    min-height: calc(100vh - 100px) !important;
+}
+    header.wp-block-template-part > div:nth-child(2) {
+        border-top: 1px solid rgba(162, 33, 33, 0.08) !important;
+        min-height: 0 !important;
+        height: auto !important;
+    }
+    .wp-block-post-content {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    header.wp-block-template-part {
+        overflow: visible !important;
+    }
+}
+

@@ -1,0 +1,96 @@
+/**
+ * ID WPCode: 1535
+ * Nombre: FIX menu hamburguesa
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global, <=1024px, has-modal-open
+ *
+ */
+
+/* ================================================
+   FIX DEFINITIVO — Menu hamburguesa
+ ================================================ */
+
+@media (max-width: 1024px) {
+
+    /* Html y body cuando el menu esta abierto */
+    html.has-modal-open,
+    html.has-modal-open body,
+    body.has-modal-open {
+        background-color: transparent !important;
+        background-image: none !important;
+    }
+
+    html.has-modal-open.has-accent-5-background-color,
+    html.has-modal-open.has-accent-6-background-color,
+    html.has-modal-open.has-background,
+    body.has-modal-open.has-accent-5-background-color,
+    body.has-modal-open.has-background {
+        background-color: transparent !important;
+        background: transparent !important;
+    }
+
+    /* Panel lateral — fondo crema */
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open {
+        background: rgba(253, 249, 233, 0.98) !important;
+        background-color: rgba(253, 249, 233, 0.98) !important;
+    }
+
+    /* TODOS los items en reposo — sin fondo */
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item__content,
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    a.wp-block-navigation-item__content,
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    .current-menu-item > .wp-block-navigation-item__content,
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    .current-menu-ancestor > .wp-block-navigation-item__content,
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    .has-child > .wp-block-navigation-item__content,
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    [aria-current="page"] {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        color: #a22121 !important;
+        box-shadow: none !important;
+    }
+
+    /* Neutralizar variables CSS del tema */
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item {
+        --wp--preset--color--contrast: transparent !important;
+        --wp--preset--color--contrast-2: transparent !important;
+        --wp--preset--color--base: transparent !important;
+        --wp--preset--color--primary: transparent !important;
+        --wp--preset--color--accent: transparent !important;
+        --wp--preset--color--accent-5: transparent !important;
+        --wp--preset--color--accent-6: transparent !important;
+    }
+
+    /* Hover — solo al pasar el mouse */
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item__content:hover,
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    a.wp-block-navigation-item__content:hover,
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item__content:active,
+    html.has-modal-open
+    .wp-block-navigation__responsive-container.is-menu-open
+    a.wp-block-navigation-item__content:active {
+        background: #a22121 !important;
+        background-color: #a22121 !important;
+        color: #ffffff !important;
+    }
+}

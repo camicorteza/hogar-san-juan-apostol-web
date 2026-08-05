@@ -1,0 +1,355 @@
+<!--
+  Página: Dona ahora
+  URL: https://hogarsanjuanapostol.cl/dona-ahora/
+  Bloque: Widget de donación — botones de monto rápido ($5.000/$15.000/$30.000/
+  $50.000), campo "Otro monto", mensaje de impacto dinámico según el monto, y
+  botón "Donar ahora" que redirige a la URL con parámetro wpc_nyp (producto
+  392) para agregar la donación al carrito.
+
+  IMPORTANTE: este bloque trabaja en conjunto con el snippet PHP
+  wpcode/php/1958-precio-dinamico-donacion-regla-de-oro.php — ese snippet es
+  el que toma el valor de wpc_nyp desde la URL y lo fija como precio real del
+  producto 392 en el carrito. Si se edita uno, revisar el otro.
+-->
+
+<style>
+.rct-donacion-widget {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 32px) clamp(16px, 3vw, 24px);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+.rct-donacion-widget * {
+    box-sizing: border-box;
+}
+
+.rct-donacion-montos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.rct-monto-btn {
+    background: #ffffff;
+    border: 2px solid #c9a96e;
+    color: #c9a96e;
+    border-radius: 12px;
+    padding: 20px 12px;
+    min-height: 48px;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.rct-monto-btn:hover,
+.rct-monto-btn.is-selected {
+    background: #c9a96e !important;
+    border-color: #c9a96e !important;
+    color: #ffffff !important;
+}
+
+.rct-otro-monto {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid #d8c9b0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 8px;
+    gap: 6px;
+    position: relative;
+    z-index: 2;
+}
+
+.rct-otro-monto .rct-signo {
+    color: #a22121;
+    font-size: clamp(20px, 3vw, 24px);
+    font-weight: 700;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+.rct-otro-monto input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #a22121;
+    font-size: clamp(16px, 2.2vw, 19px);
+    font-weight: 600;
+    width: 100%;
+    font-family: inherit;
+    pointer-events: auto;
+    touch-action: manipulation;
+    position: relative;
+    z-index: 3;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.rct-otro-monto input::placeholder {
+    color: #a22121;
+    opacity: 0.55;
+    font-weight: 500;
+}
+
+.rct-otro-monto.is-active {
+    border-color: #a22121;
+}
+
+.rct-impacto-mensaje {
+    text-align: center;
+    color: #a22121;
+    font-size: clamp(14px, 1.8vw, 16px);
+    font-weight: 500;
+    font-style: italic;
+    margin: 0 0 20px;
+    min-height: 20px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.rct-impacto-mensaje.is-visible {
+    opacity: 1;
+}
+
+.rct-donar-btn-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.rct-donar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: auto;
+    min-height: 48px;
+    background: #ffffff;
+    border: 2px solid #a22121;
+    color: #a22121;
+    border-radius: 50px;
+    padding: 15px 32px;
+    font-size: clamp(16px, 2.3vw, 19px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+}
+
+.rct-donar-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: fill 0.2s ease;
+    flex-shrink: 0;
+}
+
+.rct-donar-btn:hover {
+    background: #a22121 !important;
+    color: #ffffff !important;
+}
+
+.rct-donar-btn:hover svg {
+    fill: #ffffff !important;
+}
+
+@media (max-width: 420px) {
+    .rct-donacion-montos { gap: 10px; }
+    .rct-monto-btn { padding: 16px 8px; }
+    .rct-donar-btn { padding: 14px 24px; width: 100%; }
+    .rct-donar-btn-wrap { width: 100%; }
+}
+</style>
+
+<div class="rct-donacion-widget">
+
+    <div class="rct-donacion-montos">
+        <button type="button" class="rct-monto-btn" data-monto="5000">$5.000</button>
+        <button type="button" class="rct-monto-btn" data-monto="15000">$15.000</button>
+        <button type="button" class="rct-monto-btn" data-monto="30000">$30.000</button>
+        <button type="button" class="rct-monto-btn" data-monto="50000">$50.000</button>
+    </div>
+
+    <div class="rct-otro-monto">
+        <span class="rct-signo">$</span>
+        <input type="text" inputmode="numeric" class="rct-otro-monto-input" placeholder="Otro monto" autocomplete="off">
+    </div>
+
+    <p class="rct-impacto-mensaje"></p>
+
+    <div class="rct-donar-btn-wrap">
+        <button type="button" class="rct-donar-btn">
+            <svg viewBox="0 0 24 24" fill="#a22121" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21s-6.716-4.35-9.428-8.06C.94 10.42 1.1 7.02 3.6 5.1 5.7 3.48 8.6 3.9 10.2 5.7L12 7.7l1.8-2c1.6-1.8 4.5-2.22 6.6-.6 2.5 1.92 2.66 5.32 1.03 7.84C18.716 16.65 12 21 12 21z"></path>
+            </svg>
+            Donar ahora
+        </button>
+    </div>
+
+</div>
+
+<script>
+(function() {
+    var donationMessages = {
+        5000: "Cubre útiles de aseo personal básicos",
+        15000: "Financia suplementos e insumos médicos",
+        30000: "Aporta a terapias y kinesiología",
+        50000: "Sostiene su alimentación completa mensual",
+        2000: "Suma un granito de arena hoy",
+        3000: "Financia una colación saludable",
+        4000: "Aporta un set de higiene personal",
+        10000: "Cubre medicamentos de la semana",
+        20000: "Financia materiales para talleres cognitivos",
+        25000: "Aporta a la mantención de áreas seguras",
+        80000: "Sostiene el cuidado de dos residentes",
+        100000: "Financia equipamiento clínico especializado",
+        200000: "Patrocina mejoras en infraestructura térmica"
+    };
+
+    var MENSAJE_DEFECTO = "Cada peso cuenta, tú decides cuánto aportar hoy";
+
+    function getDonationMessage(amount) {
+        var parsedAmount = parseInt(amount, 10);
+        if (donationMessages[parsedAmount]) {
+            return donationMessages[parsedAmount];
+        }
+        return MENSAJE_DEFECTO;
+    }
+
+    function initTodosLosWidgets() {
+        var widgets = document.querySelectorAll('.rct-donacion-widget');
+
+        widgets.forEach(function(root) {
+            if (root.dataset.rctInit === 'true') return;
+            root.dataset.rctInit = 'true';
+
+            var montoBtns = root.querySelectorAll('.rct-monto-btn');
+            var otroWrap = root.querySelector('.rct-otro-monto');
+            var otroInput = root.querySelector('.rct-otro-monto-input');
+            var donarBtn = root.querySelector('.rct-donar-btn');
+            var impactoMensaje = root.querySelector('.rct-impacto-mensaje');
+
+            if (!otroInput || !donarBtn) return;
+
+            var montoSeleccionado = null;
+
+            function limpiarEstilosBotones() {
+                montoBtns.forEach(function(b) {
+                    b.classList.remove('is-selected');
+                    b.style.background = '';
+                    b.style.borderColor = '';
+                    b.style.color = '';
+                });
+            }
+
+            function mostrarImpacto(monto) {
+                if (!impactoMensaje) return;
+                if (monto && parseInt(monto, 10) > 0) {
+                    impactoMensaje.textContent = getDonationMessage(monto);
+                    impactoMensaje.classList.add('is-visible');
+                } else {
+                    impactoMensaje.textContent = '';
+                    impactoMensaje.classList.remove('is-visible');
+                }
+            }
+
+            function clearSelection() {
+                montoSeleccionado = null;
+                limpiarEstilosBotones();
+                otroInput.value = '';
+                otroWrap.classList.remove('is-active');
+                if (impactoMensaje) {
+                    impactoMensaje.textContent = MENSAJE_DEFECTO;
+                    impactoMensaje.classList.add('is-visible');
+                }
+            }
+
+            montoBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    limpiarEstilosBotones();
+                    btn.classList.add('is-selected');
+                    btn.style.background = '#c9a96e';
+                    btn.style.borderColor = '#c9a96e';
+                    btn.style.color = '#ffffff';
+                    montoSeleccionado = btn.getAttribute('data-monto');
+                    otroInput.value = montoSeleccionado;
+                    otroWrap.classList.add('is-active');
+                    mostrarImpacto(montoSeleccionado);
+                });
+            });
+
+            otroInput.addEventListener('input', function() {
+                this.value = this.value.replace(/[^0-9]/g, '');
+                limpiarEstilosBotones();
+                if (this.value.length > 0) {
+                    montoSeleccionado = this.value;
+                    otroWrap.classList.add('is-active');
+                } else {
+                    otroWrap.classList.remove('is-active');
+                    montoSeleccionado = null;
+                }
+                mostrarImpacto(montoSeleccionado);
+            });
+
+            donarBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var monto = otroInput.value.length > 0 ? otroInput.value : montoSeleccionado;
+
+                if (!monto || parseInt(monto, 10) <= 0) {
+                    alert('Por favor selecciona o ingresa un monto para donar.');
+                    return;
+                }
+
+                var amp = String.fromCharCode(38);
+                var url = 'https://hogarsanjuanapostol.cl/?add-to-cart=392' + amp + 'wpc_nyp=' + encodeURIComponent(monto);
+                window.location.href = url;
+            });
+
+            ['click', 'touchstart'].forEach(function(eventType) {
+                document.addEventListener(eventType, function(event) {
+                    var clickedAButton = event.target.closest('.rct-monto-btn');
+                    var clickedTheInput = event.target.closest('.rct-otro-monto');
+                    var clickedDonarBtn = event.target.closest('.rct-donar-btn');
+                    var clickedInsideThisWidget = event.target.closest('.rct-donacion-widget') === root;
+
+                    if (!clickedInsideThisWidget) return;
+
+                    var clickedSomethingRelevant = clickedAButton || clickedTheInput || clickedDonarBtn;
+                    if (!clickedSomethingRelevant) {
+                        clearSelection();
+                    }
+                }, { passive: true });
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTodosLosWidgets);
+    } else {
+        initTodosLosWidgets();
+    }
+
+    setTimeout(initTodosLosWidgets, 1000);
+})();
+</script>

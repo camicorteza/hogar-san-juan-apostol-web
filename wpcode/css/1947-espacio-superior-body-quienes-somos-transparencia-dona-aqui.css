@@ -1,0 +1,40 @@
+/**
+ * ID WPCode: 1947
+ * Nombre: Espacio superior body Quienes somos/Transparencia/Dona aqui
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: page-id-12, 625, 280 + checkout
+ */
+
+
+/* ══════════════════════════════════════════════════════
+   Ajuste de espacio superior del body para que el contenido
+   no choque con el menú de navegación fijo.
+
+   IDs confirmados directamente del <body> de cada página:
+   - Quiénes Somos          -> page-id-12
+   - Transparencia Corporativa -> page-id-625
+   - Dona Aquí (Dona ahora) -> page-id-280
+   ══════════════════════════════════════════════════════ */
+
+/* Quiénes Somos: ajuste en TODOS los tamaños (escritorio y móvil) */
+body.page-id-12 {
+  margin-top: 42px !important;
+}
+
+/* Transparencia Corporativa y Dona Aquí: ajuste SOLO en móvil */
+@media (max-width: 768px) {
+  body.page-id-625,
+  body.page-id-280 {
+    margin-top: 25px !important;
+  }
+}
+	/* ================================================
+   AJUSTE: Espacio extra bajo el nav en checkout
+   Solo aplica en modo escritorio (min-width: 769px)
+   ================================================ */
+@media (min-width: 769px) {
+    body.woocommerce-checkout .wp-site-blocks {
+        margin-top: 50px !important;
+    }
+}

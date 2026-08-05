@@ -1,0 +1,106 @@
+/**
+ * ID WPCode: 1749
+ * Nombre: Boton de accesibilidad - WP Accessibility Helper
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Widget accesibilidad
+ */
+
+/* ================================================
+   BOTÓN DE ACCESIBILIDAD — WP Accessibility Helper
+   ================================================ */
+
+/* ── Contenedor ── */
+div#wp_access_helper_container {
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    left: auto !important;
+    bottom: auto !important;
+    z-index: 999999 !important;
+}
+
+/* ── Botón principal ── */
+div#wp_access_helper_container button.wahout.aicon_link {
+    width: 30px !important;
+    height: 30px !important;
+    padding: 8px !important;
+    border-radius: 8px !important;
+    border: 1.5px solid #a22121 !important;
+    background-color: #ffffff !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+    box-shadow: 0 1px 4px rgba(162, 33, 33, 0.12) !important;
+}
+
+/* ── Ícono dentro del botón ── */
+div#wp_access_helper_container button.wahout.aicon_link img.aicon_image {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    display: block !important;
+    filter: none !important;
+    transition: filter 0.15s ease !important;
+}
+
+/* ── Hover / foco: fondo rojo, ícono blanco ── */
+div#wp_access_helper_container button.wahout.aicon_link:hover,
+div#wp_access_helper_container button.wahout.aicon_link:focus {
+    background-color: #a22121 !important;
+    border-color: #a22121 !important;
+    outline: none !important;
+}
+
+div#wp_access_helper_container button.wahout.aicon_link:hover img.aicon_image,
+div#wp_access_helper_container button.wahout.aicon_link:focus img.aicon_image {
+    filter: brightness(0) invert(1) !important;
+    transition: filter 0.15s ease 0.05s !important;
+}
+
+/* ── Tablet (600px – 1024px) ── */
+@media (min-width: 600px) and (max-width: 1024px) {
+    div#wp_access_helper_container {
+        top: 20px !important;
+        right: 15px !important;
+    }
+
+    button.wahout.aicon_link {
+        width: 35px !important;
+        height: 35px !important;
+        padding: 5px !important;
+   margin-top: 8px !important;
+    }
+
+    button.wahout.aicon_link img.aicon_image {
+        width: 24px !important;
+        height: 24px !important;
+        max-width: 24px !important;
+    }
+}
+
+/* ── Móvil (< 600px) ── */
+@media (max-width: 599px) {
+    div#wp_access_helper_container {
+        top: 11px !important;
+        right: 10px !important;
+    }
+
+    button.wahout.aicon_link {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 5px !important;
+        border-radius: 7px !important;
+		margin-top: 8px !important;
+    }
+
+    button.wahout.aicon_link img.aicon_image {
+        width: 20px !important;
+        height: 20px !important;
+        max-width: 20px !important;
+    }
+}

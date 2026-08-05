@@ -1,0 +1,69 @@
+/**
+ * ID WPCode: 1396
+ * Nombre: 07 paginas fondo
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: page-id-14, page-id-8
+ * Notas: Fondo Mision y Transparencia
+ *
+ */
+
+ /* ================================================
+   MÓDULO 7 — FONDOS DE PÁGINAS
+   ================================================ */
+
+/* ── Páginas Misión (14) y Transparencia (8) — fondo compartido */
+html:has(body.page-id-14),
+html:has(body.page-id-8),
+body.page-id-14,
+body.page-id-8 {
+    background-color: #FAF9F8 !important;
+}
+
+body.page-id-14 .wp-site-blocks,
+body.page-id-14 main,
+body.page-id-14 main.wp-block-group,
+body.page-id-14 main.wp-block-group.has-global-padding,
+body.page-id-14 .entry-content,
+body.page-id-14 .wp-block-post-content,
+body.page-id-14 main > .wp-block-group,
+body.page-id-14 main > .wp-block-group.alignfull,
+body.page-id-8 .wp-site-blocks,
+body.page-id-8 main,
+body.page-id-8 main.wp-block-group,
+body.page-id-8 main.wp-block-group.has-global-padding,
+body.page-id-8 .entry-content,
+body.page-id-8 .wp-block-post-content,
+body.page-id-8 main > .wp-block-group,
+body.page-id-8 main > .wp-block-group.alignfull {
+    background-color: #FAF9F8 !important;
+}
+
+/* ── Bloques alignfull a ancho completo en página 8 */
+body.page-id-8 .wp-block-group.alignfull.is-style-section-3,
+body.page-id-8 aside.wp-block-group.alignfull.is-style-section-3,
+body.page-id-8 .wp-block-cover.alignfull.is-light,
+body.page-id-8 aside.alignfull,
+body.page-id-8 .entry-content > .wp-block-group.alignfull,
+body.page-id-8 .entry-content > aside.alignfull {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    box-sizing: border-box !important;
+}
+
+/* ── Responsive: Tablet y Móvil (≤ 1024px) — mismas reglas, un solo bloque */
+@media (max-width: 1024px) {
+    body.page-id-8 .wp-block-group.alignfull.is-style-section-3,
+    body.page-id-8 aside.wp-block-group.alignfull.is-style-section-3,
+    body.page-id-8 .wp-block-cover.alignfull.is-light,
+    body.page-id-8 aside.alignfull,
+    body.page-id-8 .entry-content > .wp-block-group.alignfull,
+    body.page-id-8 .entry-content > aside.alignfull {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+    }
+}

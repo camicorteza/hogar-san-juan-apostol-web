@@ -1,0 +1,119 @@
+/**
+ * ID WPCode: 1992
+ * Nombre: Fix caja negra de foco + clics movil/tablet
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global, <=1024px
+ */
+
+/* ================================================
+   MÓDULO 4 — FIX: caja negra de foco + clics
+   que no responden en móvil/tablet
+   ================================================ */
+
+/* ── 1. Eliminar el outline por defecto del navegador
+   en TODOS los elementos enfocables del nav (li, a,
+   button) — esto es lo que se ve como "caja negra" ── */
+html body nav.wp-block-navigation li.wp-block-navigation-item,
+html body nav.wp-block-navigation li.wp-block-navigation-item:focus,
+html body nav.wp-block-navigation li.wp-block-navigation-item:focus-visible,
+html body nav.wp-block-navigation a.wp-block-navigation-item__content,
+html body nav.wp-block-navigation a.wp-block-navigation-item__content:focus,
+html body nav.wp-block-navigation a.wp-block-navigation-item__content:focus-visible,
+html body nav.wp-block-navigation button,
+html body nav.wp-block-navigation button:focus,
+html body nav.wp-block-navigation button:focus-visible,
+html body nav.wp-block-navigation .wp-block-navigation__submenu-icon,
+html body nav.wp-block-navigation .wp-block-navigation-submenu__toggle {
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* ── 2. El puente invisible de hover (::after) del
+   Módulo 2 SOLO debe existir en escritorio. En
+   móvil/tablet lo anulamos por completo para que no
+   tape los botones ni intercepte los clics. ── */
+@media (max-width: 1024px) {
+    html body nav.wp-block-navigation .wp-block-navigation-item.has-child::after {
+        content: none !important;
+        display: none !important;
+        pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+}
+
+/* ── 3. Reforzar que TODO lo interactivo del panel
+   móvil quede siempre por encima y reciba el clic ── */
+@media (max-width: 1024px) {
+    /* Solo el LINK de texto usa relative (no afecta layout) */
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item__content,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    a.wp-block-navigation-item__content {
+        position: relative !important;
+        z-index: 10 !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+    /* El chevron SIEMPRE absolute, pegado a la derecha,
+       nunca relative — así no empuja el layout ni cae
+       a una línea nueva */
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-submenu__toggle,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation__submenu-icon {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: auto !important;
+        width: 44px !important;
+        height: 100% !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 10 !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+    /* El <li> padre necesita relative para que el
+       chevron absolute se posicione respecto a él */
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child {
+        position: relative !important;
+    }
+
+    /* Espacio a la derecha del texto para que no quede
+       debajo del chevron */
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child
+    > .wp-block-navigation-item__content,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child
+    > a.wp-block-navigation-item__content {
+        padding-right: 48px !important;
+    }
+
+    /* Evitar que el <ul> contenedor bloquee el scroll
+       táctil y "trague" el primer tap en iOS */
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open {
+        -webkit-overflow-scrolling: touch !important;
+    }
+}

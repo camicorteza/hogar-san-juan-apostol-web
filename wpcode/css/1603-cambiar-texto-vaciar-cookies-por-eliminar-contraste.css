@@ -1,0 +1,16 @@
+/**
+ * ID WPCode: 1603
+ * Nombre: Cambiar texto Vaciar cookies por Eliminar contraste
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Widget accesibilidad
+ */
+
+/* Cambiar texto "Vaciar cookies" por "Eliminar contraste" */
+.wah_reset_contrast_btn {
+    font-size: 0 !important;
+}
+.wah_reset_contrast_btn::after {
+    content: "Eliminar contraste" !important;
+    font-size: 16px !important;
+}

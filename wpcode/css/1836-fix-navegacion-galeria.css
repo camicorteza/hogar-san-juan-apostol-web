@@ -1,0 +1,198 @@
+/**
+ * ID WPCode: 1836
+ * Nombre: FIX navegacion + galeria
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global + galeria
+ *
+ */
+
+/* ================================================
+   FIX NAV + GALERÍA 
+   ================================================ */
+
+/* ── 1. Submenú escritorio — delay más largo para poder bajar */
+nav.wp-block-navigation .wp-block-navigation-item.has-child {
+    position: relative !important;
+}
+
+/* Área invisible que mantiene hover activo mientras bajas */
+nav.wp-block-navigation .wp-block-navigation-item.has-child::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 20px !important;
+    background: transparent !important;
+    z-index: 99998 !important;
+}
+
+nav.wp-block-navigation .wp-block-navigation__submenu-container {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+}
+
+/* ── 2. Botón hamburguesa tablet — fix pointer-events */
+@media (max-width: 1024px) {
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+        z-index: 99999 !important;
+        position: relative !important;
+        -webkit-tap-highlight-color: transparent !important;
+        touch-action: manipulation !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
+        width: 28px !important;
+        height: 28px !important;
+        pointer-events: none !important;
+        fill: #a22121 !important;
+    }
+
+    /* Asegurar que nada tape el botón */
+    nav.wp-block-navigation > .wp-block-navigation__container {
+        display: none !important;
+        pointer-events: none !important;
+    }
+}
+
+/* ── 3. Hamburguesa móvil — más grande */
+@media (max-width: 768px) {
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
+        min-width: 52px !important;
+        min-height: 52px !important;
+    }
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
+        width: 34px !important;
+        height: 34px !important;
+    }
+}
+
+/* ── 4. Carrusel galería — ancho completo simétrico en móvil */
+@media (max-width: 768px) {
+    .galeria-wrap {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        overflow-x: hidden !important;
+    }
+    .carrusel-wrap {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(-50vw + 50%) !important;
+        margin-right: 0 !important;
+        border-radius: 0 !important;
+        box-sizing: border-box !important;
+    }
+    .galeria-titulo,
+    .galeria-subtitulo {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+/* ── 5. Modal galería — imágenes centradas y visibles */
+.modal-album {
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    overflow-y: auto !important;
+}
+
+.modal-album.abierto {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-top: 0 !important;
+    overflow-y: auto !important;
+}
+
+.modal-cerrar {
+    position: sticky !important;
+    top: 0 !important;
+    align-self: flex-end !important;
+    z-index: 100001 !important;
+    margin: 12px 16px 0 0 !important;
+}
+
+.modal-titulo {
+    position: relative !important;
+    top: auto !important;
+    text-align: center !important;
+    padding: 16px 20px 8px !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+    background: transparent !important;
+}
+
+.modal-grid {
+    max-height: none !important;
+    overflow-y: visible !important;
+    padding: 0 20px 60px !important;
+    width: 100% !important;
+    max-width: 900px !important;
+}
+/* ── Carrusel — ancho completo simétrico todos los breakpoints */
+.carrusel-wrap {
+    width: calc(100% + 48px) !important;
+    margin-left: -24px !important;
+    margin-right: -24px !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+    .carrusel-wrap {
+        width: calc(100% + 32px) !important;
+        margin-left: -16px !important;
+        margin-right: -16px !important;
+    }
+}
+
+/* ── Modal — scroll al top al abrir, imágenes visibles de inmediato */
+.modal-album.abierto {
+    justify-content: flex-start !important;
+    align-items: center !important;
+    overflow-y: scroll !important;
+    padding: 0 !important;
+}
+
+.modal-album.abierto .modal-titulo {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2 !important;
+    background: rgba(0,0,0,0.92) !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 16px 60px 16px 20px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+.modal-album.abierto .modal-grid {
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 16px 20px 60px !important;
+    width: 100% !important;
+    max-width: 900px !important;
+}
+
+.modal-cerrar {
+    position: fixed !important;
+    top: 16px !important;
+    right: 20px !important;
+    z-index: 100002 !important;
+}

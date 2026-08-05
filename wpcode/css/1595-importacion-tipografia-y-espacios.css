@@ -1,0 +1,286 @@
+/**
+ * ID WPCode: 1595
+ * Nombre: Importacion tipografia y espacios
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global
+ * Notas: Fuente Inter + espaciados generales
+ *
+ */
+
+/* ================================================
+   CSS 
+   Incluye tipografía Inter + espaciado + fixes
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+}
+p, body {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 300 !important;
+}
+
+/* ════════════════════════════════════════════════
+   0. RESET SELECTIVO
+   ════════════════════════════════════════════════ */
+body.home .wp-site-blocks > .wp-block-group.alignfull,
+body.home .wp-site-blocks > .wp-block-cover.alignfull {
+    margin-top:     unset !important;
+    margin-bottom:  unset !important;
+    padding-top:    unset !important;
+    padding-bottom: unset !important;
+}
+body:not(.home):not(.woocommerce-checkout) .wp-site-blocks
+> *:not(:first-child):not(:last-child),
+body:not(.home):not(.woocommerce-checkout) .wp-site-blocks
+> *:nth-last-child(2) {
+    margin-top:     unset !important;
+    margin-bottom:  unset !important;
+    padding-top:    unset !important;
+    padding-bottom: unset !important;
+}
+
+/* ════════════════════════════════════════════════
+   1. HOME — COVER HERO
+   ════════════════════════════════════════════════ */
+body.home .wp-site-blocks
+> .wp-block-cover.aligncenter.has-parallax {
+    margin-top:    0 !important;
+    margin-bottom: 0 !important;
+}
+
+body.home .wp-block-cover.aligncenter.has-parallax
+> .wp-block-cover__inner-container {
+    padding-top:     8px           !important;
+    padding-bottom:  32px          !important;
+    display:         flex          !important;
+    flex-direction:  column        !important;
+    justify-content: space-between !important;
+    align-items:     center        !important;
+    min-height:      100%          !important;
+    box-sizing:      border-box    !important;
+}
+body.home .wp-block-cover.aligncenter.has-parallax
+> .wp-block-cover__inner-container
+> h3.is-style-text-annotation--4 {
+    order: 1 !important; flex-shrink: 0 !important;
+    margin-top: 0 !important; margin-bottom: 0 !important;
+    align-self: center !important;
+}
+body.home .wp-block-cover.aligncenter.has-parallax
+> .wp-block-cover__inner-container
+> h3:not(.is-style-text-annotation--4) {
+    order: 2 !important; flex: 1 0 auto !important;
+    align-self: center !important;
+}
+body.home .wp-block-cover.aligncenter.has-parallax
+> .wp-block-cover__inner-container > .wp-block-buttons {
+    order: 3 !important; flex-shrink: 0 !important;
+}
+body.home .wp-block-cover.aligncenter.has-parallax
+> .wp-block-cover__inner-container > p {
+    order: 4 !important; flex-shrink: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* ════════════════════════════════════════════════
+   2. HOME — NUESTRA HISTORIA
+   ════════════════════════════════════════════════ */
+body.home .wp-site-blocks > .wp-block-group.is-style-section-1-5 {
+    margin-top:    0 !important;
+    margin-bottom: 0 !important;
+}
+body.home .wp-site-blocks > .wp-block-group.is-style-section-1-5 h2 {
+    text-align: center !important;
+    width:      100%   !important;
+}
+
+/* ════════════════════════════════════════════════
+   3. HOME — SECCIONES INTERMEDIAS
+   ════════════════════════════════════════════════ */
+body.home .wp-site-blocks > .wp-block-cover.alignfull.is-light {
+    margin-top:    60px !important;
+    margin-bottom: 0    !important;
+}
+body.home .wp-site-blocks
+> .wp-block-group.is-style-section-1:not(.is-style-section-1-5) {
+    margin-top:    60px !important;
+    margin-bottom: 0    !important;
+}
+
+/* CIFRAS — dar margin-top al bloque SIGUIENTE (contacto).
+   El bloque de contacto NO tiene inline style que lo bloquee. */
+body.home .wp-site-blocks > .wp-block-group.has-accent-5-background-color {
+    margin-top: 120px !important;
+}
+
+/* CONTACTO — margen superior para separarse de cifras
+   El contacto es el penúltimo hijo (nth-last-child(2))
+   después del footer. Le damos margin-top. */
+body.home .wp-site-blocks > *:nth-last-child(2) {
+    margin-top:     100px !important;
+    margin-bottom:  0px    !important;
+    padding-bottom: 0    !important;
+}
+
+/* Footer sin margen residual */
+body.home footer.wp-block-template-part,
+body.home .wp-site-blocks > footer {
+    margin-top:  0 !important;
+    padding-top: 0 !important;
+}
+body.home .wp-site-blocks > .wp-block-group.is-style-default:last-of-type {
+    margin-bottom:  0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* ════════════════════════════════════════════════
+   5. PÁGINAS INTERIORES
+   ════════════════════════════════════════════════ */
+body:not(.home):not(.woocommerce-checkout) .wp-site-blocks > *:nth-child(2) {
+    margin-top:  0 !important;
+    padding-top: 0 !important;
+}
+body:not(.home):not(.woocommerce-checkout) .wp-site-blocks
+> *:not(:first-child):not(:last-child):not(:nth-child(2)):not(:nth-last-child(2)) {
+    margin-top:    70px !important;
+    margin-bottom: 0    !important;
+}
+body:not(.home):not(.woocommerce-checkout) .wp-site-blocks > *:nth-last-child(2) {
+    margin-top:     70px !important;
+    margin-bottom:  0    !important;
+    padding-bottom: 0    !important;
+}
+
+/* ════════════════════════════════════════════════
+   6. WOOCOMMERCE
+   ════════════════════════════════════════════════ */
+body.woocommerce-checkout main[data-page="checkout"] {
+    padding-top: 0 !important;
+    margin-top:  0 !important;
+}
+
+/* ════════════════════════════════════════════════
+   7. ESPACIADO INTERNO
+   ════════════════════════════════════════════════ */
+.wp-block-group.alignfull .wp-block-columns { gap: 48px !important; }
+.wp-block-group.alignfull h2,
+.wp-block-group.alignfull h3 { margin-bottom: 20px !important; }
+.wp-block-group.alignfull p  { line-height: 1.8 !important; }
+
+/* ════════════════════════════════════════════════
+   8. IMÁGENES DIRECTORIO — quienes somos
+   ════════════════════════════════════════════════ */
+body.page-id-12
+.wp-block-columns.alignwide
+.wp-block-column
+figure.wp-block-image.size-full {
+    width:        100%   !important;
+    height:       240px  !important;
+    overflow:     hidden !important;
+    aspect-ratio: unset  !important;
+    display:      block  !important;
+    margin-bottom: 16px  !important;
+}
+body.page-id-12
+.wp-block-columns.alignwide
+.wp-block-column
+figure.wp-block-image.size-full img {
+    width:           100%       !important;
+    height:          100%       !important;
+    object-fit:      cover      !important;
+    object-position: center top !important;
+    aspect-ratio:    unset      !important;
+}
+
+/* ════════════════════════════════════════════════
+   9. RESPONSIVE
+   ════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+    body.home .wp-site-blocks > .wp-block-cover.alignfull.is-light,
+    body.home .wp-site-blocks
+    > .wp-block-group.is-style-section-1:not(.is-style-section-1-5),
+    body.home .wp-site-blocks > .wp-block-group.has-accent-5-background-color {
+        margin-top: 48px !important;
+    }
+    body.home .wp-site-blocks > *:nth-last-child(2) {
+        margin-top: 60px !important;
+    }
+    body:not(.home):not(.woocommerce-checkout) .wp-site-blocks
+    > *:not(:first-child):not(:last-child):not(:nth-child(2)):not(:nth-last-child(2)),
+    body:not(.home):not(.woocommerce-checkout) .wp-site-blocks
+    > *:nth-last-child(2) { margin-top: 56px !important; }
+    .wp-block-group.alignfull .wp-block-columns { gap: 32px !important; }
+    body.home .wp-block-cover.aligncenter.has-parallax
+    > .wp-block-cover__inner-container { padding-top: 6px !important; }
+    body.page-id-12
+    .wp-block-columns.alignwide
+    .wp-block-column
+    figure.wp-block-image.size-full { height: 200px !important; }
+}
+
+@media (max-width: 768px) {
+    body.home .wp-block-cover.aligncenter.has-parallax
+    > .wp-block-cover__inner-container { padding-top: 4px !important; }
+    body.home .wp-site-blocks > .wp-block-group.is-style-section-1-5 {
+        padding-top:    32px !important;
+        padding-bottom: 32px !important;
+    }
+    body.home .wp-site-blocks > .wp-block-group.is-style-section-1-5 h2 {
+        text-align:   center !important;
+        margin-left:  auto   !important;
+        margin-right: auto   !important;
+    }
+    body.home .wp-site-blocks > .wp-block-cover.alignfull.is-light,
+    body.home .wp-site-blocks
+    > .wp-block-group.is-style-section-1:not(.is-style-section-1-5),
+    body.home .wp-site-blocks > .wp-block-group.has-accent-5-background-color {
+        margin-top: 36px !important;
+    }
+    body.home .wp-site-blocks > *:nth-last-child(2) {
+        margin-top: 48px !important;
+    }
+    body:not(.home):not(.woocommerce-checkout) .wp-site-blocks
+    > *:not(:first-child):not(:last-child):not(:nth-child(2)):not(:nth-last-child(2)),
+    body:not(.home):not(.woocommerce-checkout) .wp-site-blocks
+    > *:nth-last-child(2) { margin-top: 40px !important; }
+    .wp-block-group.alignfull .wp-block-columns { gap: 24px !important; }
+    body.woocommerce-checkout .entry-content,
+    body.woocommerce-checkout .wp-block-post-content,
+    body.woocommerce-checkout main[data-page="checkout"] {
+        padding-top: 50px !important;
+    }
+    body.page-id-12
+    .wp-block-columns.alignwide
+    .wp-block-column
+    figure.wp-block-image.size-full { height: 180px !important; }
+}
+@media (max-width: 599px) {
+    body.woocommerce-checkout .entry-content,
+    body.woocommerce-checkout .wp-block-post-content,
+    body.woocommerce-checkout main[data-page="checkout"] {
+        padding-top: 60px !important;
+    }
+}
+/* ================================================
+   FIX — Espacio interno dentro del bloque cifras
+
+   ================================================ */
+
+/* Espacio debajo de las columnas de círculos */
+.has-accent-5-background-color
+.wp-block-columns.alignwide:first-of-type {
+    margin-bottom: 80px !important;
+    padding-bottom: 0 !important;
+}
+
+/* Alternativa: padding-top al segundo wp-block-columns */
+.has-accent-5-background-color
+.wp-block-columns.alignfull {
+    padding-top: 0 !important;
+    margin-top: 80px !important;
+}

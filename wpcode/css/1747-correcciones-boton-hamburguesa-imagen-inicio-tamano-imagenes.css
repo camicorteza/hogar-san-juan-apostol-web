@@ -1,0 +1,305 @@
+/**
+ * ID WPCode: 1747
+ * Nombre: Correcciones boton hamburguesa imagen inicio tamano imagenes directorio
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global + page-id-12
+ *
+ */
+
+/* ════════════════════════════════════════════════════════════
+   CORRECCIONES PUNTUALES 
+   1. Hamburguesa móvil alineada a la derecha con margen limpio
+   2. Hero image: persona no se recorta por arriba
+   3. Cifras + Nuestro Compromiso en tablet: texto legible
+   4. Directorio Quiénes Somos: rostros completos y centrados
+   5. Menú desplegable móvil: texto de las opciones más grande
+   ════════════════════════════════════════════════════════════ */
+ 
+ /* 1. HAMBURGUESA MÓVIL */
+@media (max-width: 599px) {
+    html body header.wp-block-template-part nav.wp-block-navigation,
+    html body header.wp-block-template-part nav.wp-block-navigation.is-content-justification-center {
+        min-height: unset !important;
+        height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        padding: 2px 14px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+
+    html body nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        padding: 3px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    html body nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
+        width: 25px !important;
+        height: 25px !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+/* ────────────────────────────────────────────────────────────
+   5. MENÚ DESPLEGABLE MÓVIL 
+   ──────────────────────────────────────────────────────────── */
+@media (max-width: 599px) {
+    html body .wp-block-navigation__responsive-container-content
+    ul.wp-block-navigation__container,
+    html body .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item,
+    html body header.is-sticky .wp-block-navigation__responsive-container-content
+    ul.wp-block-navigation__container,
+    html body header.is-sticky .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item,
+    html body header.is-scrolled .wp-block-navigation__responsive-container-content
+    ul.wp-block-navigation__container,
+    html body header.is-scrolled .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item,
+    html body .wp-block-template-part.is-sticky .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item,
+    html body .wp-block-template-part.is-stuck .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item {
+        font-size: 19px !important;
+    }
+
+    html body .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item > a,
+    html body .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item > .wp-block-navigation-item__content,
+    html body header.is-sticky .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item > a,
+    html body header.is-scrolled .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item > a,
+    html body .wp-block-template-part.is-sticky .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item > a,
+    html body .wp-block-template-part.is-stuck .wp-block-navigation__responsive-container-content
+    li.wp-block-navigation-item > a {
+        font-size: 19px !important;
+        line-height: 1.5 !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* Cualquier <li> de navegación dentro del modal del menú, sin importar
+       qué ancestro lleve la clase de "pegado al hacer scroll" — refuerzo
+       final por especificidad de atributo, que gana sobre el style inline
+       de Gutenberg en cualquier estado del header. */
+    html body [class*="wp-block-navigation__responsive-container"]
+    li[class*="wp-block-navigation-item"] > a {
+        font-size: 19px !important;
+    }
+
+    /* Refuerzo máximo: cualquier elemento (incluyendo spans internos del
+       link, como el texto del label) dentro de un <li> de navegación del
+       menú móvil */
+    html body li.wp-block-navigation-item a,
+    html body li.wp-block-navigation-item a * {
+        font-size: 19px !important;
+    }
+
+    /* Submenús (si los hay) un poco más chicos que el nivel principal,
+       pero igualmente más grandes que el clamp original */
+    html body .wp-block-navigation__responsive-container-content
+    .wp-block-navigation__submenu-container
+    li.wp-block-navigation-item > a {
+        font-size: 17px !important;
+    }
+}
+
+ /* ────────────────────────────────────────────────────────────
+   2. HERO IMAGE — persona no se recorta por arriba
+   ──────────────────────────────────────────────────────────── */
+html body.home .wp-block-cover.wp-elements-18357312f62ce35fafc1ee1be389e34b
+.wp-block-cover__image-background,
+html body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-of-type
+.wp-block-cover__image-background {
+    object-position: center 35% !important;
+    top: 0 !important;
+    transform: none !important;
+	margin-top: 50px !important; 
+	
+}
+ 
+@media (max-width: 782px) {
+    html body.home .wp-block-cover.wp-elements-18357312f62ce35fafc1ee1be389e34b
+    .wp-block-cover__image-background,
+    html body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-of-type
+    .wp-block-cover__image-background {
+        object-position: center 40% !important;
+        top: 0 !important;
+        transform: none !important;
+		
+    }
+}
+ 
+/* 
+ 
+/* ────────────────────────────────────────────────────────────
+   3. CIFRAS INSTITUCIONALES + NUESTRO COMPROMISO — tablet.
+   ──────────────────────────────────────────────────────────── */
+@media (min-width: 600px) and (max-width: 1024px) {
+ 
+    /* ── Cifras: de 4 columnas a 2x2 en tablet */
+    body.home #cifras-institucionales .wp-block-columns,
+    body.home .wp-block-columns:has(> .wp-block-column .wp-block-cover[style*="border-radius"]) {
+        flex-wrap: wrap !important;
+        gap: 32px 16px !important;
+    }
+ 
+    body.home #cifras-institucionales .wp-block-column,
+    body.home .wp-block-columns:has(> .wp-block-column .wp-block-cover[style*="border-radius"])
+    > .wp-block-column {
+        flex-basis: calc(50% - 16px) !important;
+        min-width: calc(50% - 16px) !important;
+        max-width: calc(50% - 16px) !important;
+        text-align: center !important;
+    }
+ 
+    /* Fallback sin :has() — aplica a cualquier columna dentro
+       del bloque de cifras por posición */
+    .wp-block-column .wp-block-cover.is-light ~ h3,
+    .wp-block-column .wp-block-cover[style*="border-radius: 100px"] ~ h3 {
+        font-size: clamp(0.85rem, 2vw, 1rem) !important;
+        line-height: 1.3 !important;
+        margin-top: 8px !important;
+    }
+ 
+    .wp-block-column .wp-block-cover.is-light ~ p,
+    .wp-block-column .wp-block-cover[style*="border-radius: 100px"] ~ p {
+        font-size: clamp(0.75rem, 1.8vw, 0.9rem) !important;
+        line-height: 1.5 !important;
+        padding: 0 8px !important;
+    }
+ 
+    /* Círculos de cifras: un poco más pequeños en tablet */
+    .wp-block-column .wp-block-cover.is-light,
+    .wp-block-column .wp-block-cover[style*="border-radius: 100px"],
+    .wp-block-column .wp-block-cover[style*="border-radius:100px"] {
+        width: 100px !important;
+        height: 100px !important;
+        min-height: 100px !important;
+        max-height: 100px !important;
+    }
+ 
+    /* ── Nuestro Compromiso: columnas con ancho mínimo útil */
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-column,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-column {
+        min-width: 0 !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+ 
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] p,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] p {
+        font-size: clamp(0.85rem, 2vw, 1rem) !important;
+        line-height: 1.6 !important;
+    }
+ 
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] h3,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] h3 {
+        font-size: clamp(1rem, 2.5vw, 1.3rem) !important;
+        line-height: 1.3 !important;
+    }
+}
+ /* ────────────────────────────────────────────────────────────
+   4. DIRECTORIO QUIÉNES SOMOS — rostros completos
+   ────────────────────────────────────────────────────────────
+   el figure tiene posición relativa + padding-bottom
+   (truco de ratio padding), el img es absolute y llena todo.
+   Así el aspect-ratio del img inline queda irrelevante.
+   ──────────────────────────────────────────────────────────── */
+ 
+/* Figure: contenedor con altura controlada por padding-bottom */
+html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image,
+html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.size-full,
+html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.is-style-default {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 0 !important;                /* técnica padding-bottom ratio */
+    padding-bottom: 125% !important;    /* 4:5 — retrato: muestra cara completa */
+    overflow: hidden !important;
+    margin-bottom: 12px !important;
+    border-radius: 8px !important;
+}
+ 
+/* Img: ocupa todo el figure. En móvil/tablet el figure usa la técnica
+   padding-bottom (height:0 + position:relative), así que el img necesita
+   position:absolute para llenarlo. */
+html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image img,
+html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.size-full img,
+html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.is-style-default img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    display: block !important;
+    border-radius: 0 !important;
+}
+
+@media (min-width: 1025px) {
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image img,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.size-full img,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.is-style-default img {
+        position: static !important;   /* en escritorio el figure ya mide su alto real vía aspect-ratio */
+        inset: auto !important;
+    }
+}
+ 
+/* Escritorio ≥ 1025px */
+@media (min-width: 1025px) {
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.size-full,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.is-style-default {
+        padding-bottom: 0 !important;       /* anulado: se usa max-width + aspect-ratio en su lugar */
+        height: auto !important;
+        max-width: 260px !important;        /* evita que las filas con menos columnas (ej. 2 en vez de 3) salgan gigantes */
+        aspect-ratio: 4 / 5 !important;      /* mismo retrato 4:5 que el resto, pero con tamaño tope */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+ 
+/* Tablet 600–1024px */
+@media (min-width: 600px) and (max-width: 1024px) {
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.size-full,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.is-style-default {
+        padding-bottom: 125% !important;
+    }
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image img,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.size-full img,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.is-style-default img {
+        object-position: center 20% !important;
+    }
+}
+ 
+/* Móvil < 600px */
+@media (max-width: 599px) {
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.size-full,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.is-style-default {
+        padding-bottom: 125% !important;
+        max-width: 280px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image img,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.size-full img,
+    html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.is-style-default img {
+        object-position: center 20% !important;
+    }
+}

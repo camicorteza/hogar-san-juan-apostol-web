@@ -1,0 +1,28 @@
+/**
+ * ID WPCode: 1488
+ * Nombre: FIX texto fantasma footer
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global footer
+ *
+ */
+
+/* ================================================
+   FIX — Texto fantasma cerca del footer
+   ================================================ */
+footer.wp-block-template-part div.wp-block-group.alignfull.has-custom-color-titular-background-color,
+footer.wp-block-template-part div[class*="has-custom-color-titular"],
+footer.wp-block-template-part div.wp-block-group.alignfull[class*="is-layout-constrained"],
+footer.wp-block-template-part .wp-block-group.alignwide.is-content-justification-left,
+footer.wp-block-template-part .wp-block-group.alignwide.is-content-justification-center,
+footer.wp-block-template-part h1.wp-block-post-title,
+footer.wp-block-template-part .wp-block-post-title,
+footer.wp-block-template-part p.has-base-color.has-link-color,
+footer.wp-block-template-part p[class*="has-text-align-center"][class*="has-base-color"] {
+    display: none !important;
+}
+
+.wp-site-blocks > .wp-block-group.alignfull.has-custom-color-titular-background-color:not(header):not(footer),
+.wp-site-blocks > div[class*="has-custom-color-titular"]:not(header):not(footer) {
+    display: none !important;
+}

@@ -1,0 +1,25 @@
+/**
+ * ID WPCode: 2082
+ * Nombre: Boton Visitar pagina Quienes somos
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: page-id-12
+ *
+ */
+
+/* ================================================
+   BOTÓN "VISITAR" — Página Quiénes somos
+   ================================================ */
+
+a.wp-block-button__link[href="https://maps.app.goo.gl/GRY5ngfvP53Mpopf8"] {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
+
+a.wp-block-button__link[href="https://maps.app.goo.gl/GRY5ngfvP53Mpopf8"]:hover,
+a.wp-block-button__link[href="https://maps.app.goo.gl/GRY5ngfvP53Mpopf8"]:active,
+a.wp-block-button__link[href="https://maps.app.goo.gl/GRY5ngfvP53Mpopf8"]:focus {
+    background-color: #a22121 !important;
+    color: #ffffff !important;
+}

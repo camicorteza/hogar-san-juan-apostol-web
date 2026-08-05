@@ -1,0 +1,618 @@
+<!--
+  Página: Inicio (Home)
+  URL: https://hogarsanjuanapostol.cl/
+  Bloque: Sección "Ponte en contacto" — tarjetas de información (dirección,
+  teléfono, correo, horario) + formulario de contacto. Va después de la
+  sección "Cifras Institucionales", al final del home.
+-->
+
+<style>
+/* ── Variables ── */
+:root {
+    --rojo: #a22121;
+    --rojo-dark: #7d1919;
+    --rojo-light: #fdf0f0;
+    --crema: #fdf9e9;
+    --texto: #1a1a1a;
+    --texto-suave: #555;
+    --borde: rgba(162,33,33,0.12);
+    --radio: 14px;
+    --sombra: 0 4px 24px rgba(162,33,33,0.10);
+}
+ 
+/* ── Reset local ── */
+.contacto-wrap * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+/* ── Wrapper externo ancho completo ── */
+.contacto-outer {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('https://hogarsanjuanapostol.cl/wp-content/uploads/2026/04/cielofondo-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(112, 66, 20, 0.5);
+    background-blend-mode: soft-light;
+    overflow: visible;
+}
+
+.contacto-outer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, #C29068, transparent);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.contacto-wrap {
+    position: relative;
+    z-index: 1;
+}
+ 
+/* ── Contenedor general — contenido centrado ── */
+.contacto-wrap {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--texto);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+    background-image: none;
+    background-color: transparent;
+}
+ 
+/* ── Encabezado sección ── */
+.contacto-encabezado {
+    text-align: center;
+    margin-bottom: 48px;
+}
+.contacto-encabezado h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--rojo);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+}
+.contacto-encabezado p {
+    font-size: 1rem;
+    color: var(--texto-suave);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.contacto-linea {
+    width: 56px;
+    height: 3px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    margin: 16px auto 0;
+ 
+}
+ 
+/* ── Franja superior roja con tarjetas ── */
+.contacto-franja {
+    background: var(--rojo);
+    border-radius: var(--radio) var(--radio) 0 0;
+    padding: 36px 32px 36px;
+    position: relative;
+}
+.contacto-franja-titulo {
+    color: white;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    opacity: 0.85;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+}
+ 
+/* ── Grid de tarjetas ── */
+.contacto-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+ 
+/* ── Tarjeta individual ── */
+.contacto-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 16px 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+.contacto-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--rojo);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+    transform-origin: left;
+}
+.contacto-card:hover::before { transform: scaleX(1); }
+.contacto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(162,33,33,0.18);
+}
+.contacto-card-icono {
+    width: 52px;
+    height: 52px;
+    background: var(--rojo-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+}
+.contacto-card-icono svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--rojo);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.contacto-card h3 {
+    font-size: 0.72rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    color: var(--rojo);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+}
+.contacto-card p {
+    font-size: 0.88rem;
+    color: var(--texto-suave);
+    line-height: 1.5;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.contacto-card a {
+    color: var(--rojo);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.contacto-card a:hover { text-decoration: underline; }
+ 
+/* ── Cuerpo inferior — formulario + info ── */
+.contacto-cuerpo {
+    background-image: linear-gradient(rgba(20, 10, 0, 0.2), rgba(60, 30, 0, 0.7));
+    border-radius: 0 0 var(--radio) var(--radio);
+    border: 1px solid var(--borde);
+    border-top: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    margin-top: 0px;
+    position: relative;
+    z-index: 1;
+}
+ 
+/* ── Lado izquierdo — formulario ── */
+.contacto-form-col {
+    padding: 44px 40px;
+    border-right: 1px solid var(--borde);
+}
+.contacto-form-col h3 {
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.contacto-form-col > p {
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin-bottom: 28px;
+    line-height: 1.5;
+}
+ 
+/* ── Formulario ── */
+.form-fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+.form-grupo label {
+    font-size: 0.78rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.form-grupo input,
+.form-grupo textarea,
+.form-grupo select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid rgba(162,33,33,0.2);
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--texto);
+    background: #fafafa;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    outline: none;
+    resize: none;
+}
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    border-color: var(--rojo);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(162,33,33,0.08);
+}
+.form-grupo textarea { height: 110px; }
+ 
+.btn-enviar {
+    width: 70%;
+    padding: 13px 10px;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  background-color: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
+.btn-enviar:hover {   background-color:#a22121 !important;
+    color: #ffffff !important;); }
+.btn-enviar:active { transform: scale(0.98); }
+.btn-enviar svg {
+    width: 16px; height: 16px;
+    stroke: white; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+ 
+/* ── Lado derecho — información ── */
+.contacto-info-col {
+    padding: 44px 40px;
+    background: var(--crema);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contacto-info-col h3 {
+    font-size: 1.3rem;
+    color: var(--texto);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.contacto-info-col > p {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin-bottom: 28px;
+    line-height: 1.5;
+}
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+.info-item-icono {
+    width: 38px;
+    height: 38px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--borde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.info-item-icono svg {
+    width: 18px; height: 18px;
+    stroke: var(--rojo); fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round; stroke-linejoin: round;
+}
+.info-item-texto strong {
+    display: block;
+    font-size: 0.78rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    color: var(--rojo);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+.info-item-texto span,
+.info-item-texto a {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+    text-decoration: none;
+}
+.info-item-texto a:hover { color: var(--rojo); }
+ 
+.horario-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--rojo);
+    color: white;
+    font-size: 0.82rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-top: 24px;
+}
+.horario-badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: #7dff7d;
+    border-radius: 50%;
+    display: inline-block;
+}
+ 
+/* ── RESPONSIVE TABLET ── */
+@media (max-width: 900px) {
+    .contacto-cards { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .contacto-cuerpo { grid-template-columns: 1fr; }
+    .contacto-form-col { border-right: none; border-bottom: 1px solid var(--borde); padding: 32px 28px; }
+    .contacto-info-col { padding: 32px 28px; }
+}
+ 
+/* ── RESPONSIVE MÓVIL ── */
+@media (max-width: 560px) {
+    .contacto-outer {
+        width: 100% !important;
+        left: 0 !important;
+        transform: none !important;
+    }
+    .contacto-wrap { padding: 40px 16px 60px; }
+    .contacto-franja { padding: 28px 20px 48px; }
+    .contacto-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .contacto-card { padding: 18px 12px 16px; }
+    .contacto-card-icono { width: 42px; height: 42px; }
+    .contacto-card-icono svg { width: 20px; height: 20px; }
+    .contacto-card h3 { font-size: 0.66rem; }
+    .contacto-card p, .contacto-card a { font-size: 0.82rem; }
+    .form-fila { grid-template-columns: 1fr; gap: 0; }
+    .contacto-form-col, .contacto-info-col { padding: 24px 20px; }
+}
+ 
+/* ── Aviso éxito formulario ── */
+.form-aviso {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: #edf7ed;
+    border: 1px solid #a3d9a5;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #2d6a2f;
+    margin-top: 12px;
+}
+.form-aviso.visible { display: flex; }
+.form-aviso svg {
+    width: 18px; height: 18px;
+    stroke: #2d6a2f; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    flex-shrink: 0;
+}
+#contacto {
+    scroll-margin-top: 100px; 
+}
+</style>
+ 
+<!-- WRAPPER EXTERNO: fondo ancho completo -->
+<div class="contacto-outer" id="contacto">
+<div class="contacto-wrap">
+    <!-- Encabezado -->
+    <div class="contacto-encabezado">
+        <h2 style="color:#a22121; text-shadow: 
+ -1px -1px 0 rgba(255, 255, 255, 0.4), 
+ 1px -1px 0 rgba(255, 255, 255, 0.4), 
+-1px  1px 0 rgba(255, 255, 255, 0.4), 
+ 1px  1px 0 rgba(255, 255, 255, 0.4);
+letter-spacing: 2px;">Ponte en contacto</h2>
+        <p style="color:#FFFFFF;text-shadow: 
+  -1px -1px 0 rgba(162, 33, 33, 0.4),  
+   1px -1px 0 rgba(162, 33, 33, 0.4),
+  -1px  1px 0 rgba(162, 33, 33, 0.4),
+   1px  1px 0 rgba(162, 33, 33, 0.4);
+letter-spacing: 2px;
+} ">Estamos aquí para responder tus preguntas y recibir tu apoyo con mucho cariño.</p>
+        
+    </div>
+ 
+    <!-- Franja roja con tarjetas -->
+    <div class="contacto-franja">
+        <p class="contacto-franja-titulo">Información de contacto</p>
+        <div class="contacto-cards">
+ 
+            <div class="contacto-card">
+                <div class="contacto-card-icono">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+                </div>
+                <h3>Dirección</h3>
+                <p>Emilio Castro N°979<br>San Clemente, Maule</p>
+            </div>
+ 
+            <div class="contacto-card">
+                <div class="contacto-card-icono">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 012 2.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+                </div>
+                <h3>Teléfono</h3>
+                <p><a href="tel:+56442853869">442853869</a></p>
+            </div>
+ 
+            <div class="contacto-card">
+                <div class="contacto-card-icono">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <h3>Correo</h3>
+                <p><a href="mailto:hogarsanjuanapostol@gmail.com ">hogarsanjuanapostol<br>@gmail.com</a></p>
+            </div>
+ 
+            <div class="contacto-card">
+                <div class="contacto-card-icono">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
+                </div>
+                <h3>Horario</h3>
+                <p>Lunes a viernes<br>9:00 a 17:30 hrs</p>
+            </div>
+ 
+        </div>
+    </div>
+ 
+    <!-- Cuerpo: formulario + info -->
+    <div class="contacto-cuerpo">
+ 
+        <div class="contacto-form-col">
+            <h3>Envíanos un mensaje</h3>
+            <p>Completa el formulario y te responderemos a la brevedad.</p>
+ 
+            <div class="form-fila">
+                <div class="form-grupo">
+                    <label>Nombre</label>
+                    <input type="text" id="c-nombre" placeholder="Tu nombre">
+                </div>
+                <div class="form-grupo">
+                    <label>Apellido</label>
+                    <input type="text" id="c-apellido" placeholder="Tu apellido">
+                </div>
+            </div>
+ 
+            <div class="form-grupo">
+                <label>Correo electrónico</label>
+                <input type="email" id="c-email" placeholder="tu@correo.com">
+            </div>
+ 
+            <div class="form-grupo">
+                <label>Asunto</label>
+                <input type="text" id="c-asunto" placeholder="¿En qué podemos ayudarte?">
+            </div>
+ 
+            <div class="form-grupo">
+                <label>Mensaje</label>
+                <textarea id="c-mensaje" placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+ 
+            <button class="btn-enviar" onclick="enviarFormulario()">
+                Enviar mensaje
+                <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22,2 15,22 11,13 2,9"></polygon></svg>
+            </button>
+ 
+            <div class="form-aviso" id="form-aviso">
+                <svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"></polyline></svg>
+                ¡Mensaje enviado! Te responderemos pronto.
+            </div>
+        </div>
+ 
+        <div class="contacto-info-col">
+            <div>
+                <h3 style="color:#a22121">Hogar<br>San Juan Apóstol</h3>
+                <p>Brindamos cuidado digno y acompañamiento integral a personas mayores de San Clemente y la Región del Maule.</p>
+                <br>
+ 
+                <div class="info-item">
+                    <div class="info-item-icono">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+                    </div>
+                    <div class="info-item-texto">
+                        <strong>Dirección</strong>
+                        <span>Emilio Castro N°979, San Clemente</span>
+                    </div>
+                </div>
+ 
+                <div class="info-item">
+                    <div class="info-item-icono">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 012 2.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+                    </div>
+                    <div class="info-item-texto">
+                        <strong>Teléfono</strong>
+                        <a href="tel:+56442853869">442853869</a>
+                    </div>
+                </div>
+ 
+                <div class="info-item">
+                    <div class="info-item-icono">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div class="info-item-texto">
+                        <strong>Correo</strong>
+                        <a href="mailto:hogarsanjuanapostol@gmail.com ">hogarsanjuanapostol@gmail.com</a>
+                    </div>
+                </div>
+ 
+                <div class="info-item">
+                    <div class="info-item-icono">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
+                    </div>
+                    <div class="info-item-texto">
+                        <strong>Horario de atención</strong>
+                        <span>Lunes a viernes · 9:00 a 17:30 hrs</span>
+                    </div>
+                </div>
+            </div>
+ 
+         
+        </div>
+ 
+    </div>
+</div>
+</div>
+ 
+<script>
+function enviarFormulario() {
+    var nombre  = document.getElementById('c-nombre').value.trim();
+    var email   = document.getElementById('c-email').value.trim();
+    var mensaje = document.getElementById('c-mensaje').value.trim();
+ 
+    if (!nombre || !email || !mensaje) {
+        alert('Por favor completa al menos tu nombre, correo y mensaje.');
+        return;
+    }
+ 
+    var aviso = document.getElementById('form-aviso');
+    aviso.classList.add('visible');
+ 
+    ['c-nombre','c-apellido','c-email','c-asunto','c-mensaje'].forEach(function(id) {
+        document.getElementById(id).value = '';
+    });
+ 
+    setTimeout(function() { aviso.classList.remove('visible'); }, 6000);
+}
+</script>

@@ -1,0 +1,19 @@
+/**
+ * ID WPCode: 1919
+ * Nombre: Cambio color titulo hero
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global cover
+ */
+
+/* Cambio de color en titulo hero */
+
+.wp-block-cover__inner-container h3 {
+  text-transform: none !important;
+  transform: none !important;
+;
+ font-weight: bold;
+ -webkit-text-stroke: 1px #8c2532 !important;
+ paint-order: stroke fill; 
+
+}

@@ -1,0 +1,570 @@
+/**
+ * ID WPCode: 1539
+ * Nombre: 03 covers cifras
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Home
+ *
+ */
+
+/* ================================================
+   MÓDULO 3 — COVER, CIFRAS, NUESTRO COMPROMISO
+   ================================================ */
+ 
+/* ── Optimización de rendimiento del parallax en home
+      z-index:1 para que el header (99999) quede siempre encima.
+      La imagen ocupa toda la pantalla (efecto hero full-bleed). */
+body.home .wp-block-cover.alignfull.has-parallax {
+    will-change: auto !important;
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    contain: none !important;
+    overflow: hidden !important;
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 0 !important;
+}
+ html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-background {
+    background-attachment: scroll !important;
+    will-change: auto !important;
+    transform: none !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 35% !important;
+    z-index: 0 !important;
+}
+
+/* ── Cover portada — filtro sepia + máscara inferior */
+.wp-block-cover.has-parallax .wp-block-cover__image-background.has-parallax {
+     filter: sepia(0.05) saturate(1.15) brightness(1.04) contrast(1.05) !important;
+    -webkit-mask-image: linear-gradient(to bottom,
+        black 0%, black 60%,
+        rgba(0, 0, 0, 0.5) 80%,
+        transparent 100%) !important;
+    mask-image: linear-gradient(to bottom,
+        black 0%, black 60%,
+        rgba(0, 0, 0, 0.5) 80%,
+        transparent 100%) !important;
+}
+ 
+.wp-block-cover.has-parallax .wp-block-cover__background.has-background-dim {
+    opacity: 0.18 !important;
+    z-index: 1 !important;
+}
+ 
+body.home .wp-block-cover.has-parallax .wp-block-cover__inner-container {
+    position: relative !important;
+    z-index: 3 !important;
+}
+ 
+.wp-block-cover.alignfull.has-parallax {
+    margin-bottom: 0 !important;
+    padding-bottom: 80px !important;
+    overflow: hidden !important;
+}
+ 
+body.home .wp-block-cover.alignfull.has-parallax + * {
+    position: relative !important;
+    z-index: 4 !important;
+    background: transparent !important;
+}
+ 
+/* ── Cover home — layout flex del inner container
+      El cover ya arranca debajo del header por margin-top.
+      padding-top pequeño para margen visual interno. */
+body.home .wp-block-cover.alignfull.has-parallax > .wp-block-cover__inner-container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    height: 100% !important;
+    padding-top: 20px !important;
+    padding-bottom: 40px !important;
+    gap: 20px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+/* ── Orden de elementos dentro del cover home */
+body.home .wp-block-cover.alignfull.has-parallax
+> .wp-block-cover__inner-container > h3:nth-of-type(2) {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    align-self: center !important;
+    flex: 0 0 auto !important;
+    order: 2 !important;
+}
+ 
+body.home .wp-block-cover.alignfull.has-parallax
+> .wp-block-cover__inner-container > .wp-block-buttons {
+    order: 3 !important;
+    margin-top: 24px !important;
+    margin-bottom: 0 !important;
+    flex: 0 0 auto !important;
+}
+ 
+body.home .wp-block-cover.alignfull.has-parallax
+> .wp-block-cover__inner-container > p:last-of-type {
+    margin: 0 !important;
+    margin-top: 16px !important;
+    align-self: center !important;
+    flex: 0 0 auto !important;
+    order: 4 !important;
+}
+ 
+/* ── Textos del cover — colores y sombras */
+.wp-block-cover.has-parallax .wp-block-cover__inner-container p.has-text-align-center:first-of-type {
+    color: #a22121 !important;
+    text-shadow: -1px 1px 0px #ffffff !important;
+}
+
+.wp-block-cover.has-parallax .wp-block-cover__inner-container h1,
+.wp-block-cover.has-parallax .wp-block-cover__inner-container h2,
+.wp-block-cover.has-parallax .wp-block-cover__inner-container h3:not(:first-of-type) {
+    color: #ffffff !important;
+    paint-order: stroke fill !important;
+    text-shadow:
+        0px 1px 4px #595857,
+        0px 2px 12px rgba(89, 88, 87, 0.6) !important;
+}
+ 
+body.home .wp-block-cover.alignfull.has-parallax
+> .wp-block-cover__inner-container > p:last-of-type,
+.wp-block-cover.has-parallax .wp-block-cover__inner-container .wp-block-paragraph:last-of-type {
+    color: #ffffff !important;
+    -webkit-text-stroke: 0 !important;
+    paint-order: normal !important;
+    text-shadow:
+        1px -1px 0px rgb(240,225,195),
+        2px -2px 0px rgb(240,225,195),!important;
+}
+ 
+/* ── Botón "Dona Aquí" en el cover */
+.wp-block-cover.has-parallax .wp-block-button .wp-block-button__link,
+.wp-block-cover.has-parallax .wp-block-buttons .wp-block-button__link,
+body.home .wp-block-cover.alignfull.has-parallax .wp-block-button__link {
+    border-radius: 50px !important;
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.50) !important;
+    filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.30)) !important;
+}
+ 
+.wp-block-cover:not(.has-parallax) .wp-block-cover__inner-container * {
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.60), 0px 2px 8px rgba(0, 0, 0, 0.40) !important;
+    color: #ffffff !important;
+}
+ 
+/* ── Sombras específicas por block ID */
+#block-ed9e0477-c0b7-4989-8ca6-91f0ebf89ce6 {
+    text-shadow: 0px 2px 8px #555D50, 0px 0px 20px rgba(85, 93, 80, 0.8) !important;
+}
+#block-9fbad919-bc61-4d34-ad82-e22601611f7e {
+    text-shadow: 0px 2px 6px #000000, 0px 0px 15px rgba(0, 0, 0, 0.7) !important;
+}
+ 
+/* ── Fix overflow del inner container del cover */
+.wp-block-cover__inner-container.has-global-padding,
+.wp-container-core-cover-is-layout-002d10ab {
+    overflow: visible !important;
+}
+ 
+/* ── Imagen de fondo del cover: siempre visible y responsiva */
+html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-background.size-large {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    max-width: 100% !important;
+}
+ 
+/* ── Primer h3 anotación del cover home */
+#wp-elements-29b83d27cbb8e8996c07af61089643a5,
+.wp-elements-29b83d27cbb8e8996c07af61089643a5,
+body.home .wp-block-cover__inner-container h3.is-style-text-annotation--4:first-of-type,
+body.home .wp-block-cover__inner-container h3.wp-elements-29b83d27cbb8e8996c07af61089643a5 {
+    margin-top: 3rem !important;
+}
+ 
+/* ── Sección "Nuestro Compromiso" */
+.wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"],
+.wp-block-group[style*="fondonuestrocompromiso.jpg"] {
+    position: relative !important;
+    overflow: hidden !important;
+    background-image: none !important;
+    padding: 100px 4% !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,8 C10,0 20,14 30,8 C40,2 50,14 60,8 C70,2 80,14 90,8 C95,5 98,7 100,8 L100,92 C98,93 95,95 90,92 C80,86 70,98 60,92 C50,86 40,98 30,92 C20,86 10,98 0,92 Z'/%3E%3C/svg%3E") !important;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,8 C10,0 20,14 30,8 C40,2 50,14 60,8 C70,2 80,14 90,8 C95,5 98,7 100,8 L100,92 C98,93 95,95 90,92 C80,86 70,98 60,92 C50,86 40,98 30,92 C20,86 10,98 0,92 Z'/%3E%3C/svg%3E") !important;
+    -webkit-mask-size: 100% 100% !important;
+    mask-size: 100% 100% !important;
+    -webkit-mask-repeat: no-repeat !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-position: center !important;
+    mask-position: center !important;
+}
+
+.wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"]::before,
+.wp-block-group[style*="fondonuestrocompromiso.jpg"]::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-image: url("https://hogarsanjuanapostol.cl/wp-content/uploads/2026/04/fondonuestrocompromiso.jpg") !important;
+    background-position: 53% 34% !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-color: #f5deb3 !important;
+    background-blend-mode: soft-light !important;
+    filter: sepia(0.) brightness(1.1) contrast(0.) !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+.wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"]::after,
+.wp-block-group[style*="fondonuestrocompromiso.jpg"]::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.78  0 0 0 0 0.65  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>") !important;
+    background-size: 200px 200px !important;
+    mix-blend-mode: multiply !important;
+    opacity: 0.35 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+.wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] > *,
+.wp-block-group[style*="fondonuestrocompromiso.jpg"] > * {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] figure.wp-block-image img,
+.wp-block-group[style*="fondonuestrocompromiso.jpg"] figure.wp-block-image img,
+.wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-image img,
+.wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-image img {
+    filter: none !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] h3,
+.wp-block-group[style*="fondonuestrocompromiso.jpg"] h3,
+.wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] p,
+.wp-block-group[style*="fondonuestrocompromiso.jpg"] p {
+    text-shadow:
+        0px 1px 3px #FFFFFF,
+        0px 0px 8px rgba(153, 151, 199, 0.9) !important;
+	 color: #a12221 !important;
+}
+
+/* ── Fix cover home escritorio */
+.wp-block-cover__inner-container.has-global-padding,
+.wp-container-core-cover-is-layout-002d10ab {
+    overflow: visible !important;
+}
+
+html body.home .wp-block-cover.alignfull.has-parallax {
+    contain: none !important;
+    overflow: hidden !important;
+}
+
+html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-background.size-large {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+#wp-elements-29b83d27cbb8e8996c07af61089643a5,
+.wp-elements-29b83d27cbb8e8996c07af61089643a5,
+body.home .wp-block-cover__inner-container h3.is-style-text-annotation--4:first-of-type,
+body.home .wp-block-cover__inner-container h3.wp-elements-29b83d27cbb8e8996c07af61089643a5 {
+    margin-top: 3rem !important;
+}
+
+/* ── Responsive: Nuestro Compromiso (≤ 1024px) */
+@media (max-width: 1024px) {
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"],
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] {
+        padding: 80px 6% !important;
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,8 C25,0 50,14 75,8 C90,4 95,6 100,8 L100,92 C95,94 90,96 75,92 C50,86 25,98 0,92 Z'/%3E%3C/svg%3E") !important;
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,8 C25,0 50,14 75,8 C90,4 95,6 100,8 L100,92 C95,94 90,96 75,92 C50,86 25,98 0,92 Z'/%3E%3C/svg%3E") !important;
+    }
+
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-columns.alignwide,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-columns.alignwide {
+        flex-wrap: nowrap !important;
+        align-items: flex-start !important;
+    }
+
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-column.is-vertically-aligned-center,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-column.is-vertically-aligned-center,
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-column.is-layout-flow,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-column.is-layout-flow {
+        flex-basis: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-column.is-layout-flow,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-column.is-layout-flow {
+        overflow: visible !important;
+        position: relative !important;
+    }
+
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-columns > .wp-block-column .wp-block-group,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-columns > .wp-block-column .wp-block-group {
+        margin-top: -8vw !important;
+    }
+}
+/* ── Responsive: Móvil — cover y Nuestro Compromiso (≤ 768px) */
+@media (max-width: 768px) {
+    .wp-block-cover.has-parallax {
+        height: auto !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 40px !important;
+    }
+    body.home .wp-block-cover.has-parallax + * {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    /* En móvil el cover ya baja por margin-top, solo margen visual interno */
+ body.home .wp-block-cover.alignfull.has-parallax > .wp-block-cover__inner-container {
+    padding-top: 20px !important;
+    padding-bottom: 30px !important;
+    gap: 16px !important;
+}
+    body.home .wp-block-cover.alignfull.has-parallax
+    > .wp-block-cover__inner-container > h3:first-of-type {
+        margin-top: 0 !important;
+        padding: 8px 18px !important;
+        font-size: 0.85em !important;
+    }
+    #block-5a0b52be-35cd-435a-9d4c-9b1bbf313bce {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
+    }
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"],
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] {
+        padding-top: 120px !important;
+        padding-bottom: 110px !important;
+    }
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-columns.alignwide,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-columns.alignwide {
+        flex-direction: column !important;
+    }
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-column.is-vertically-aligned-center,
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-column.is-layout-flow,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-column.is-vertically-aligned-center,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-column.is-layout-flow {
+        flex-basis: 100% !important;
+        width: 100% !important;
+    }
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-columns > .wp-block-column .wp-block-group,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-columns > .wp-block-column .wp-block-group {
+        margin-top: -4vw !important;
+    }
+    .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-image img,
+    .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-image img {
+        max-width: 80% !important;
+        height: auto !important;
+    }
+}
+@media (min-width: 769px) {
+    body.home .wp-block-cover__inner-container h3:not(:first-of-type) {
+        font-size: clamp(2rem, 4vw, 3.5rem) !important;
+        line-height: 1.2 !important;
+    }
+ 
+    .footer-nombre { font-size: 15px !important; }
+    .footer-col h3 {
+        font-size: 11px !important;
+        letter-spacing: 0.16em !important;
+        margin-bottom: 14px !important;
+    }
+    .footer-col ul li a {
+        font-size: 14px !important;
+        line-height: 1.8 !important;
+    }
+    .footer-badge-accesibilidad { font-size: 11px !important; }
+    .footer-copyright { font-size: 13px !important; }
+}
+
+ 
+.wp-block-cover.has-parallax .wp-block-cover__image-background.has-parallax,
+html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-background {
+    filter: sepia(0.20) saturate(0.88) brightness(1.02) contrast(1.04) !important;
+    
+}
+
+/* Tamaño del p de imagen inicio abajo de dona aqui */
+ .wp-block-cover__inner-container p strong {
+    font-weight: 600 !important;
+}
+@media (max-width: 1024px) {
+    .wp-block-cover__inner-container p strong {
+        font-size: 18px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .wp-block-cover__inner-container p strong {
+        font-size: 15px !important;
+    }
+}
+/* 1. Línea de texto del párrafo — line-height más compacto en tablet y móvil */
+@media (max-width: 1024px) {
+    .wp-block-cover__inner-container p {
+        line-height: 1.3 !important;
+    }
+    .wp-block-cover__inner-container p strong {
+        font-size: 16px !important;
+        line-height: 1.3 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .wp-block-cover__inner-container p {
+        line-height: 1.1 !important;
+    }
+    .wp-block-cover__inner-container p strong {
+        font-size: 14px !important;
+        line-height: 1.1 !important;
+    }
+}
+
+
+/* 3. Degradado superior de la caja contacto — aplicado sobre el fondo */
+.contacto-outer {
+    background-image:
+        linear-gradient(
+            to bottom,
+            #c79160 0%,
+            rgba(199, 145, 96, 0) 100px
+        ),
+        url('https://hogarsanjuanapostol.cl/wp-content/uploads/2026/04/cielofondo-1.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: normal !important;
+}
+/* 1. Números de cifras institucionales — restaurar tamaño */
+.wp-block-column .wp-block-cover.is-light .wp-block-cover__inner-container *,
+.wp-block-column .wp-block-cover[style*="border-radius: 100px"] .wp-block-cover__inner-container *,
+.wp-block-column .wp-block-cover[style*="border-radius:100px"] .wp-block-cover__inner-container * {
+    font-size: 40px !important;
+    line-height: 1 !important;
+}
+ 
+/* 2. Párrafo "Cada donación" — más estrecho en tablet y móvil */
+@media (max-width: 1024px) {
+    .wp-block-cover__inner-container p {
+        max-width: 65% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        line-height: 1.3 !important;
+    }
+    .wp-block-cover__inner-container p strong {
+        font-size: 16px !important;
+    }
+}
+ 
+@media (max-width: 768px) {
+    .wp-block-cover__inner-container p {
+        max-width: 75% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        line-height: 1.0 !important;
+    }
+    .wp-block-cover__inner-container p strong {
+        font-size: 14px !important;
+    }
+ 
+}
+@media (max-width: 768px) {
+    .wp-block-cover.has-parallax .wp-block-cover__inner-container p.has-text-align-center:first-of-type {
+        text-shadow: 
+            -1px 0px 0px #ffffff,
+            0px 1px 0px #ffffff !important;
+    }
+}
+ 
+/* 3. Espacio entre Cifras Institucionales y Ponte en Contacto */
+.contacto-outer {
+    margin-top: 90px !important;
+}
+ 
+/* 4. Degradado ENCIMA de la caja contacto — simulado con sombra exterior */
+.contacto-outer::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: -60px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 60px !important;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #c79160 100%
+    ) !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+ /* Sombra sólida direccional — luz desde abajo-izquierda */
+.wp-elements-ae41df2df13259f59ab55d300dd20f84,
+p.wp-elements-ae41df2df13259f59ab55d300dd20f84 {
+    text-shadow:
+    1px -1px 0px rgb(240,225,195),
+    2px -2px 0px rgb(240,225,195) !important;
+}
+ 
+@media (max-width: 1024px) {
+    .wp-elements-ae41df2df13259f59ab55d300dd20f84,
+    p.wp-elements-ae41df2df13259f59ab55d300dd20f84 {
+        text-shadow:
+    1px -1px 0px rgb(240,225,195),
+    2px -2px 0px rgb(240,225,195) !important;
+    }
+}
+@media (max-width: 768px) {
+    .wp-block-cover.has-parallax .wp-block-cover__inner-container p.has-text-align-center:first-of-type {
+        text-shadow: 
+            -1px 0px 0px #ffffff,
+            0px 1px 0px #ffffff !important;
+    }
+}
+/* ── Textos p en tablet — agrandar levemente ── */
+@media (min-width: 600px) and (max-width: 1024px) {
+
+    /* P debajo de HOGAR SAN JUAN APÓSTOL SAN CLEMENTE */
+    .wp-block-group.alignfull.is-style-section-1 .wp-block-column.is-layout-constrained p,
+    .wp-container-core-column-is-layout-1d6425e4 p {
+        font-size: clamp(16px, 1.8vw, 20px) !important;
+        line-height: 1.6 !important;
+    }
+
+    /* P debajo de Nuestro Compromiso */
+    p.is-style-text-subtitle,
+    p.is-style-text-subtitle--8,
+    p.is-style-text-subtitle--9 {
+        font-size: clamp(16px, 1.8vw, 20px) !important;
+        line-height: 1.6 !important;
+    }
+}

@@ -1,0 +1,263 @@
+/**
+ * ID WPCode: 1630
+ * Nombre: WP Accessibility Helper - Personalizacion
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Widget accesibilidad
+ * Notas: Revisar contra 1749 (posible duplicado parcial)
+ 
+ */
+
+/* ========================================
+   PANEL CERRADO - forzar por aria-hidden
+   ======================================== */
+#access_container {
+  display: none !important;
+}
+#access_container[aria-hidden="false"] {
+  display: block !important;
+}
+
+/* ========================================
+   ÍCONO FLOTANTE - escritorio y tablet
+   ======================================== */
+div#wp_access_helper_container {
+  position: fixed !important;
+  top: 10px !important;
+  right: 10px !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 999999 !important;
+  width: auto !important;
+  max-width: fit-content !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* ========================================
+   ÍCONO FLOTANTE - solo móvil (≤ 768px)
+   Va abajo a la derecha, encima del WhatsApp
+   ======================================== */
+@media (max-width: 768px) {
+  div#wp_access_helper_container {
+    top: 0px !important;
+    bottom: auto !important;
+    right: 4px !important;
+    left: auto !important;
+  }
+  button.wahout.aicon_link {
+    width: 28px !important;
+    height: 28px !important;
+    padding: 2px !important;
+  }
+  button.wahout.aicon_link img.aicon_image {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+  }
+}
+
+/* ========================================
+   BOTONES del panel: blanco / #a22121
+   ======================================== */
+#access_container button:not(.convar),
+#access_container .wah_btn {
+  background-color: #FFFFFF !important;
+  color: #a22121 !important;
+  border: 1px solid #a22121 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+#access_container button:not(.convar):hover,
+#access_container .wah_btn:hover {
+  background-color: #a22121 !important;
+  color: #FFFFFF !important;
+}
+
+/* ========================================
+   BOTÓN "Contraste" - renombrado
+   ======================================== */
+button#contrast_trigger {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+button#contrast_trigger::after {
+  content: "Contraste" !important;
+  font-size: 14px !important;
+  color: #a22121 !important;
+  display: block !important;
+}
+button#contrast_trigger:hover::after {
+  color: #FFFFFF !important;
+}
+
+/* ========================================
+   BOTÓN CERRAR
+   ======================================== */
+button.close_container.wahout,
+.wah-skip.close-wah-sidebar {
+  background-color: #FFFFFF !important;
+  color: #a22121 !important;
+  border: 1px solid #a22121 !important;
+  text-shadow: none !important;
+}
+button.close_container.wahout:hover,
+.wah-skip.close-wah-sidebar:hover {
+  background-color: #a22121 !important;
+  color: #FFFFFF !important;
+}
+
+/* ========================================
+   CÍRCULOS DE CONTRASTE - colores reales
+   ======================================== */
+#access_container button.convar {
+  border: 2px solid #ccc !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+  text-indent: -9999px !important;
+  box-shadow: none !important;
+}
+#access_container button.convar:hover {
+  border-color: #a22121 !important;
+  transform: scale(1.1) !important;
+}
+#access_container button.convar.black  { background-color: #000000 !important; }
+#access_container button.convar.white  { background-color: #FFFFFF !important; border: 2px solid #aaa !important; }
+#access_container button.convar.green  { background-color: #00FF21 !important; }
+#access_container button.convar.blue   { background-color: #00FFFF !important; }
+#access_container button.convar.red    { background-color: #FF0000 !important; }
+#access_container button.convar.orange { background-color: #FF6A00 !important; }
+#access_container button.convar.yellow { background-color: #FFD800 !important; }
+#access_container button.convar.navi   { background-color: #B200FF !important; }
+
+/* ========================================
+   TEXTO "Vaciar cookies" → "Eliminar cambios"
+   ======================================== */
+.wah_clear_cookies button {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+.wah_clear_cookies button::after {
+  content: "Eliminar cambios" !important;
+  font-size: 14px !important;
+  color: #a22121 !important;
+  display: block !important;
+}
+.wah_clear_cookies button:hover::after {
+  color: #FFFFFF !important;
+}
+
+/* ========================================
+   TEXT-SHADOW en párrafo hero "Cada donación"
+   ======================================== */
+.wp-block-cover__inner-container
+p.has-text-align-center.has-base-color.has-text-color.has-link-color.wp-elements-01c75c8e812945e64701ef1d98794388 {
+  text-shadow: 2px 2px 4px #333333 !important;
+}
+.wp-block-cover .wp-block-cover__inner-container > p {
+  text-shadow: 2px 2px 4px #333333 !important;
+}
+
+/* ========================================
+   QUITAR text-shadow en header/nav
+   ======================================== */
+header a,
+header button,
+header strong,
+nav a,
+nav strong,
+.wp-block-navigation a,
+.wp-block-button__link {
+  text-shadow: none !important;
+}
+
+/* ========================================
+   HOGAR SAN JUAN APÓSTOL en negrita
+   ======================================== */
+.wp-block-site-title,
+.wp-block-site-title a {
+  font-weight: bold !important;
+}
+
+/* ========================================
+   PANEL WAH - ancho cuando está abierto
+   ======================================== */
+#access_container[aria-hidden="false"],
+#access_container[aria-hidden="false"] .access_container_inner,
+#access_container[aria-hidden="false"] div.access_container_inner {
+  max-width: 180px !important;
+  width: 180px !important;
+}
+
+/* ========================================
+   CÍRCULOS DE CONTRASTE - 2 por fila
+   ======================================== */
+div.color_selector {
+  display: none !important;
+}
+div.color_selector[aria-hidden="false"] {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 6px !important;
+  padding: 6px !important;
+}
+div.color_selector button.convar {
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0 auto !important;
+  border-radius: 50% !important;
+}
+
+/* ========================================
+   CRÉDITOS WAH - discretos pero visibles
+   ======================================== */
+div.wah-free-credits {
+  font-size: 6px !important;
+  opacity: 0.3 !important;
+  text-align: right !important;
+  line-height: 1 !important;
+  max-width: 42px !important;
+}
+
+div#wp_access_helper_container div[style*="text-align:center"] {
+  font-size: 6px !important;
+  opacity: 0.25 !important;
+  color: #999 !important;
+  max-width: 42px !important;
+  line-height: 1 !important;
+}
+/* Créditos WAH en móvil: bajar a la parte inferior */
+@media (max-width: 768px) {
+    div#wp_access_helper_container div.wah-free-credits {
+        position: fixed !important;
+        top: auto !important;
+        bottom: 4px !important;
+        right: 4px !important;
+        left: auto !important;
+        width: auto !important;
+        max-width: 80px !important;
+        z-index: 999999 !important;
+    }
+}
+/* Ocultar títulos de módulo ("Redimensionar imagen", "Contraste", etc.) */
+div.a_module_title {
+    display: none !important;
+}
+
+/* Panel móvil: altura ajustada al contenido */
+@media (max-width: 768px) {
+    #access_container[aria-hidden="false"] {
+        height: auto !important;
+        max-height: fit-content !important;
+        min-height: unset !important;
+        overflow: visible !important;
+    }
+    
+    #access_container[aria-hidden="false"] .access_container_inner {
+        height: auto !important;
+        max-height: fit-content !important;
+        overflow: visible !important;
+    }
+}

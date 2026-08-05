@@ -1,0 +1,92 @@
+/**
+ * ID WPCode: 1341
+ * Nombre: 04 TRANSPARENCIA GLASSMORPHISM
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global
+ * Notas: Glassmorphism cajas + visibilidad botones checkout
+ *
+ */
+/* ================================================
+   MÓDULO 4 — TRANSPARENCIA, GLASSMORPHISM
+   ================================================ */
+
+/* ── Animaciones globales */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.animar { opacity: 0; }
+.animar.visible { animation: fadeInUp 0.7s ease forwards; }
+
+/* ── Glassmorphism — cajas Transparencia */
+.wp-block-column.has-border-color.has-base-background-color,
+[style*="border-width:1px"] {
+    background: linear-gradient(135deg,
+        rgba(162, 33, 33, 0.85) 0%,
+        rgba(162, 33, 33, 0.65) 50%,
+        rgba(162, 33, 33, 0.50) 100%) !important;
+    backdrop-filter: blur(18px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(160%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.65) !important;
+    border-radius: 10px !important;
+    box-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.10),
+        0 6px 20px rgba(0, 0, 0, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85) !important;
+    color: #FFFFFF !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.wp-block-column.has-border-color.has-base-background-color *,
+.wp-block-column.has-accent-6-border-color * {
+    color: #FFFFFF !important;
+}
+
+/* ── Botones Checkout WooCommerce — visibilidad */
+.wc-block-checkout .wc-block-components-checkout-place-order-button,
+.wc-block-checkout button.wc-block-components-button,
+.wc-block-checkout .wp-element-button,
+.woocommerce-checkout #place_order,
+button.wc-block-components-button {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 10 !important;
+    cursor: pointer !important;
+}
+
+.wc-block-components-checkout-return-to-cart-button,
+a.wc-block-components-checkout-return-to-cart-button {
+    pointer-events: auto !important;
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #a22121 !important;
+    font-size: 0.85rem !important;
+}
+
+.wc-block-checkout a,
+.wc-block-checkout button {
+    opacity: 1 !important;
+}
+
+.wc-block-checkout .wc-block-components-checkout-place-order-button {
+    z-index: 99999 !important;
+}
+
+.wc-block-components-sidebar-layout.wc-block-checkout.is-mobile
+> div[aria-hidden="true"],
+.wc-block-checkout [aria-hidden="true"][style*="position: absolute"] {
+    display: none !important;
+    pointer-events: none !important;
+    z-index: -999 !important;
+}
+
+@media (max-width: 768px) {
+    .joinchat { z-index: 999 !important; }
+    .row { flex-direction: column; gap: 0; }
+}

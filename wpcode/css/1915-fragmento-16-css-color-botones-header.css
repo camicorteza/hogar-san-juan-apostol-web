@@ -1,0 +1,91 @@
+/**
+ * ID WPCode: 1915
+ * Nombre: Fragmento 16 CSS - Color botones header
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global header
+ */
+
+/* ================================================
+   FRAGMENTO 16 CSS — COLOR BOTONES HEADER 
+   ================================================ */
+
+/* ── ESTADO NORMAL: fondo rojo, texto/ícono blancos ── */
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link {
+    background-color: #a22121 !important;
+    background: #a22121 !important;
+    color: #ffffff !important;
+    border: 1.5px solid #a22121 !important;
+}
+
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link strong,
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link span {
+    color: #ffffff !important;
+}
+
+/* Ícono ::before — blanco */
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link::before {
+    color: #ffffff !important;
+    filter: brightness(0) invert(1) !important;
+}
+
+/* ── ESTADO HOVER CSS nativo ── */
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link:hover {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #a22121 !important;
+    border-color: #a22121 !important;
+}
+
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link:hover strong,
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link:hover span {
+    color: #a22121 !important;
+}
+
+/* Ícono ::before en hover — rojo */
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link:hover::before {
+    color: #a22121 !important;
+    filter: none !important;
+}
+
+/* ── CLASE .btn-hover que el JS agrega en mouseenter ──
+   Refuerzo para el caso en que :hover CSS no sea suficiente */
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link.btn-hover {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #a22121 !important;
+}
+
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link.btn-hover strong,
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link.btn-hover span {
+    color: #a22121 !important;
+}
+
+html body header.wp-block-template-part
+div.wp-block-buttons div.wp-block-button
+a.wp-block-button__link.btn-hover::before {
+    color: #a22121 !important;
+    filter: none !important;
+}

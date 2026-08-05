@@ -1,0 +1,633 @@
+/**
+ * ID WPCode: 1339
+ * Nombre: 02 navigation
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global
+ * Notas: Nav menu completo, colores originales, hamburguesa, submenus. Revisar contra 1904
+ 
+ */
+ /* ================================================
+   MÓDULO 2 — MENÚ DE NAVEGACIÓN
+   ================================================ */
+
+/* ── Barra principal — degradado continuo */
+html body nav.wp-block-navigation,
+html body nav.wp-block-navigation[style] {
+    background-color: transparent !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+}
+
+/* ── Fondo transparente en contenedores internos */
+nav.wp-block-navigation .wp-block-navigation__container,
+nav.wp-block-navigation .wp-block-navigation__container > *,
+nav.wp-block-navigation ul.wp-block-navigation__container,
+nav.wp-block-navigation > ul,
+nav.wp-block-navigation .wp-block-navigation-item,
+nav.wp-block-navigation .wp-block-page-list,
+nav.wp-block-navigation .wp-block-navigation__responsive-container {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+nav.wp-block-navigation a,
+nav.wp-block-navigation button,
+nav.wp-block-navigation .wp-block-navigation-item__content {
+    pointer-events: auto !important;
+}
+
+/* ── Ítems escritorio */
+nav.wp-block-navigation .wp-block-navigation-item__content {
+    color: #a22121 !important;
+    padding: 10px 14px !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    background: transparent !important;
+    transition: background 0.2s ease, color 0.2s ease !important;
+    cursor: pointer !important;
+}
+
+nav.wp-block-navigation .wp-block-navigation-item__content:hover,
+nav.wp-block-navigation .wp-block-navigation-item__content:focus {
+    background: #a22121 !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+/* ── Submenús escritorio — fondo blanco */
+.wp-block-navigation__submenu-container,
+nav.wp-block-navigation .wp-block-navigation__submenu-container {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 24px rgba(162, 33, 33, 0.15) !important;
+    min-width: 220px !important;
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+    overflow: visible !important;
+    position: absolute !important;
+    z-index: 99999 !important;
+}
+
+/* Área invisible para mantener hover al bajar al submenú */
+nav.wp-block-navigation .wp-block-navigation-item.has-child {
+    position: relative !important;
+}
+nav.wp-block-navigation .wp-block-navigation-item.has-child::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 20px !important;
+    background: transparent !important;
+    z-index: 99998 !important;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+    background: transparent !important;
+    color: #555 !important;
+    border-radius: 0 !important;
+    border-bottom: 0.5px solid rgba(162, 33, 33, 0.08) !important;
+    padding: 10px 16px !important;
+    font-weight: 400 !important;
+    font-size: 19px !important;
+    white-space: nowrap !important;
+}
+
+/* ── Prefijo "›" solo en escritorio */
+@media (min-width: 1025px) {
+    .wp-block-navigation__submenu-container .wp-block-navigation-item__content::before {
+        content: "›";
+        color: #a22121;
+        margin-right: 8px;
+        font-size: 18px;
+    }
+    .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover::before {
+        color: #FFFFFF;
+    }
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover {
+    background: #a22121 !important;
+    color: #FFFFFF !important;
+}
+
+/* ── Botón hamburguesa — base */
+nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
+    background: transparent !important;
+    border: none !important;
+    margin-right: 15px !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    z-index: 99999 !important;
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+}
+
+nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
+    fill: #a22121 !important;
+    width: 28px !important;
+    height: 28px !important;
+    pointer-events: none !important;
+}
+
+/* ── Tablet y Móvil (≤ 1024px) */
+@media (max-width: 1024px) {
+
+    nav.wp-block-navigation { position: relative !important; }
+
+    /* Ocultar menú horizontal */
+    nav.wp-block-navigation > .wp-block-navigation__container,
+    nav.wp-block-navigation > ul.wp-block-navigation__container {
+        display: none !important;
+        pointer-events: none !important;
+    }
+
+    nav.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) {
+        display: none !important;
+    }
+
+    /* Limpiar fondos cuando menú está abierto */
+    nav.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open *:not(button) {
+        background-color: transparent !important;
+        background-image: none !important;
+    }
+
+    /* ── Panel lateral deslizante */
+    @keyframes slideInFromRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to   { transform: translateX(0); opacity: 1; }
+    }
+
+    html body nav.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        right: 0 !important;
+        left: auto !important;
+        bottom: auto !important;
+        width: 320px !important;
+        max-width: 85vw !important;
+        height: auto !important;
+        max-height: 80vh !important;
+        overflow-y: auto !important;
+        z-index: 99998 !important;
+        padding: 16px 18px 24px !important;
+        margin: 0 !important;
+        background: rgba(253, 249, 233, 0.98) !important;
+        background-color: rgba(253, 249, 233, 0.98) !important;
+        background-image: none !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        box-shadow: -8px 0 32px rgba(162, 33, 33, 0.18) !important;
+        border-left: 1px solid rgba(162, 33, 33, 0.12) !important;
+        border-bottom-left-radius: 14px !important;
+        animation: slideInFromRight 0.3s ease-out !important;
+        pointer-events: auto !important;
+    }
+
+    .wp-block-navigation__responsive-dialog { position: static !important; }
+    body.has-modal-open { overflow: auto !important; }
+
+    /* ── Botón cerrar panel */
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation__responsive-container-close {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        top: 12px !important;
+        right: 14px !important;
+        z-index: 999999 !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 8px !important;
+        margin: 0 !important;
+        cursor: pointer !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #a22121 !important;
+        pointer-events: auto !important;
+    }
+
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation__responsive-container-close svg {
+        display: block !important;
+        fill: #a22121 !important;
+        stroke: #a22121 !important;
+        stroke-width: 2px !important;
+        width: 22px !important;
+        height: 22px !important;
+        pointer-events: none !important;
+    }
+
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation__responsive-container-close:hover {
+        background: rgba(162, 33, 33, 0.08) !important;
+        border-radius: 50% !important;
+    }
+
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container:not(.is-menu-open)
+    button.wp-block-navigation__responsive-container-close {
+        display: none !important;
+    }
+
+    /* ── Lista de ítems del panel */
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 2px !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        align-items: stretch !important;
+        --wp--preset--color--contrast: transparent !important;
+        --wp--preset--color--contrast-2: transparent !important;
+        --wp--preset--color--base: transparent !important;
+        --wp--preset--color--primary: transparent !important;
+        --wp--preset--color--accent-5: transparent !important;
+        --wp--preset--color--accent-6: transparent !important;
+    }
+
+    /* ── Estilos de enlace en panel móvil */
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item__content,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    a.wp-block-navigation-item__content {
+        color: #a22121 !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        font-size: 17px !important;
+        font-weight: 500 !important;
+        padding: 12px 14px !important;
+        width: fit-content !important;
+        text-align: left !important;
+        cursor: pointer !important;
+        display: block !important;
+        text-decoration: none !important;
+        border-radius: 8px !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        transition: background 0.2s ease, color 0.2s ease !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item__content:hover,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    a.wp-block-navigation-item__content:hover,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    a.wp-block-navigation-item__content:active {
+        background: #a22121 !important;
+        background-color: #a22121 !important;
+        color: #FFFFFF !important;
+        text-decoration: none !important;
+    }
+
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child {
+        position: relative !important;
+    }
+
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child > .wp-block-navigation-item__content,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child > a.wp-block-navigation-item__content {
+        padding-right: 48px !important;
+    }
+
+    /* ── Botón chevron */
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-submenu__toggle,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation-submenu__toggle,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation__submenu-icon {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        width: 44px !important;
+        height: 100% !important;
+        min-height: 44px !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        color: #a22121 !important;
+        border-radius: 6px !important;
+        transition: background 0.2s ease !important;
+        z-index: 5 !important;
+        -webkit-tap-highlight-color: transparent !important;
+        touch-action: manipulation !important;
+    }
+
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-submenu__toggle:hover,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation__submenu-icon:hover {
+        background: rgba(162, 33, 33, 0.12) !important;
+    }
+
+    /* ── SVG chevron */
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-icon svg,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-submenu__toggle svg,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation__submenu-icon svg,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-icon svg *,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-submenu__toggle svg * {
+        width: 18px !important;
+        height: 18px !important;
+        max-width: 18px !important;
+        max-height: 18px !important;
+        pointer-events: none !important;
+        fill: #a22121 !important;
+        display: block !important;
+    }
+
+    /* ── Rotación chevron abierto */
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child.is-open > .wp-block-navigation__submenu-icon,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-submenu.is-open > .wp-block-navigation__submenu-icon {
+        transform: rotate(180deg) !important;
+    }
+
+    /* ── Submenús acordeón cerrado */
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        min-width: unset !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: rgba(162, 33, 33, 0.04) !important;
+        background-image: none !important;
+        border: none !important;
+        border-left: 2px solid rgba(162, 33, 33, 0.2) !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+        max-height: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        margin-left: 14px !important;
+        transition:
+            max-height 0.3s ease,
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            padding 0.25s ease,
+            margin 0.25s ease !important;
+    }
+
+    /* ── Submenú abierto */
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child.is-open > .wp-block-navigation__submenu-container,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-submenu.is-open > .wp-block-navigation__submenu-container {
+        max-height: 600px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        padding: 4px 0 !important;
+        margin: 4px 0 6px 14px !important;
+    }
+
+    /* ── Ítems submenú acordeón */
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container .wp-block-navigation-item__content,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container a.wp-block-navigation-item__content {
+        color: #666 !important;
+        font-size: 15px !important;
+        padding: 10px 14px !important;
+        width: fit-content !important;
+        background: transparent !important;
+        border: none !important;
+        border-radius: 6px !important;
+        transition: background 0.2s ease, color 0.2s ease !important;
+    }
+
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container a.wp-block-navigation-item__content:hover {
+        background: #a22121 !important;
+        color: #FFFFFF !important;
+    }
+
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container .wp-block-navigation-item__content::before {
+        display: none !important;
+        content: none !important;
+    }
+}
+
+/* ── Hamburguesa más grande en móvil */
+@media (max-width: 768px) {
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
+        min-width: 58px !important;
+        min-height: 58px !important;
+        padding: 12px !important;
+    }
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
+        width: 44px !important;
+        height: 44px !important;
+    }
+}
+
+/* ── Ocultar hamburguesa en escritorio */
+@media (min-width: 1025px) {
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container {
+        background: transparent !important;
+        background-color: transparent !important;
+        border-left: none !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    html body nav.wp-block-navigation 
+    .wp-block-navigation__responsive-container.is-menu-open {
+        background: #faf7f2 !important;
+        background-color: #faf7f2 !important;
+    }
+}
+
+/* ── Tablet (600px–1080px) ── */
+@media (min-width: 600px) and (max-width: 1080px) {
+    html body nav.wp-block-navigation {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        min-height: 36px !important;
+        max-height: 44px !important;
+        line-height: 1 !important;
+    }
+    .wp-block-template-part header,
+    header.wp-block-template-part {
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: unset !important;
+    }
+    nav.wp-block-navigation .wp-block-navigation-item__content {
+        font-size: 15px !important;
+        padding: 6px 10px !important;
+    }
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
+        min-width: 36px !important;
+        min-height: 36px !important;
+        padding: 6px !important;
+    }
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+}
+
+/* ── Móvil (< 599px) ── */
+@media (max-width: 599px) {
+    html body nav.wp-block-navigation {
+        min-height: 30px !important;
+        max-height: 38px !important;
+    }
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
+        min-width: 40px !important;
+        min-height: 40px !important;
+        padding: 8px !important;
+    }
+    nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
+        width: 26px !important;
+        height: 26px !important;
+    }
+}
+
+/* ── Nav específico scroll tablet y móvil ── */
+@media (max-width: 1080px) {
+    body.scrolled nav.wp-container-core-navigation-is-layout-c4d0b4f1,
+    body.scrolled nav.has-text-color.has-background.is-responsive.wp-block-navigation {
+        min-height: 20px !important;
+        max-height: 26px !important;
+        height: 26px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+    }
+    body.scrolled header.wp-block-template-part {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    body.scrolled header.wp-block-template-part > div:nth-child(2) {
+        min-height: unset !important;
+        height: auto !important;
+        max-height: 26px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+    }
+}
+
+/* ── Hamburguesa scroll tablet y móvil ── */
+@media (max-width: 1080px) {
+    body.scrolled nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
+        min-width: 28px !important;
+        min-height: 28px !important;
+        padding: 4px !important;
+    }
+    body.scrolled nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+}
+/* ── Permitir que el panel del menú se abra al hacer scroll ── */
+@media (max-width: 1080px) {
+    body.scrolled header.wp-block-template-part > div:nth-child(2) {
+        overflow: visible !important;
+    }
+    body.scrolled nav.wp-container-core-navigation-is-layout-c4d0b4f1,
+    body.scrolled nav.has-text-color.has-background.is-responsive.wp-block-navigation {
+        overflow: visible !important;
+    }
+    /* Solo ocultar cuando el menú NO está abierto */
+    body.scrolled nav.wp-block-navigation:not(:has(.is-menu-open)) {
+        overflow: hidden !important;
+    }
+}
+

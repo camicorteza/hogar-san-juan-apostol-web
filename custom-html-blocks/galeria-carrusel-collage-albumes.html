@@ -1,0 +1,629 @@
+<!--
+  Página: Galería
+  URL: https://hogarsanjuanapostol.cl/galeria/
+  Bloque: Página completa de galería — carrusel de fotos, collage "Momentos
+  del Hogar", y sección "Recopilación de Momentos" con álbumes por categoría
+  (modal + lightbox). Consume datos vía AJAX del endpoint
+  hja_gal_datos_publicos (plugin/backend que alimenta las fotos).
+-->
+
+<style>
+/* ===== GALERÍA GENERAL ===== */
+.galeria-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+.galeria-titulo {
+    font-family: 'Open Sans', sans-serif !important;
+  font-size: clamp(1.4rem, 3vw, 2.2rem) !important;
+  font-weight: 700 !important;
+  color: #a22221 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  margin: 0 0 28px 0 !important;
+  text-align: center;
+}
+.galeria-subtitulo {
+    text-align: center;
+    color: #888;
+    font-size: 0.97em;
+    margin: 0 0 28px;
+}
+
+/* ===== CARRUSEL ===== */
+.carrusel-wrap {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+    margin-bottom: 56px;
+    background: #111;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border-radius: 0;
+}
+.carrusel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+}
+.carrusel-slide {
+    min-width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.85);
+    border: none;
+    border-radius: 50%;
+    width: 46px; height: 46px;
+    font-size: 1.3em;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carrusel-btn:hover { background: white; }
+.carrusel-btn.prev { left: 16px; }
+.carrusel-btn.next { right: 16px; }
+.carrusel-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+.carrusel-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.2s;
+    border: none;
+}
+.carrusel-dot.activo { background: white; }
+.carrusel-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 32px 24px 48px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.55));
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/* ===== COLLAGE ===== */
+.collage-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 200px;
+    gap: 12px;
+    margin-bottom: 56px;
+}
+.collage-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.collage-item:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+.collage-item:nth-child(2) { grid-column: 2; grid-row: 1; }
+.collage-item:nth-child(3) { grid-column: 3; grid-row: 1; }
+.collage-item:nth-child(4) { grid-column: 2; grid-row: 2; }
+.collage-item:nth-child(5) { grid-column: 3; grid-row: 2; }
+.collage-item:nth-child(6) { grid-column: 1 / 4; grid-row: 3; height: 180px; }
+.collage-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+.collage-item:hover img { transform: scale(1.07); }
+.collage-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 40%, rgba(162,33,33,0.75));
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    border-radius: 12px;
+}
+.collage-item:hover .collage-overlay { opacity: 1; }
+.collage-overlay span {
+    color: white;
+    font-weight: 600;
+    font-size: 0.95em;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* ===== ÁLBUMES ===== */
+.momentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 48px;
+}
+.momento-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: white;
+    border: 1px solid rgba(162,33,33,0.08);
+}
+.momento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(162,33,33,0.15);
+}
+.momento-thumb {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+.momento-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.momento-card:hover .momento-thumb img { transform: scale(1.05); }
+.momento-thumb-icono {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #faf5f0;
+    padding: 24px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+.momento-card:hover .momento-thumb-icono { transform: scale(1.05); }
+.momento-badge {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: rgba(162,33,33,0.85);
+    color: white;
+    font-size: 0.78em;
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+.momento-info { padding: 14px 16px; }
+.momento-info h3 { color: #a22121; font-size: 0.98em; margin: 0 0 4px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.momento-titulo-icono { width: 1.15em; height: 1.15em; object-fit: contain; flex-shrink: 0; }
+.momento-info p { color: #888; font-size: 0.84em; margin: 0; }
+
+/* ===== MODAL ÁLBUM ===== */
+.modal-album {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.94);
+    z-index: 99999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px 20px 40px;
+    overflow-y: auto;
+}
+.modal-album.abierto {
+    display: flex;
+}
+.lightbox-overlay.abierto {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 999999 !important;
+}
+.modal-titulo {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+}
+.modal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 900px;
+    width: 100%;
+}
+.modal-foto {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.modal-foto img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.modal-foto:hover img { transform: scale(1.05); }
+.modal-cerrar {
+    position: fixed;
+    top: 20px; right: 24px;
+    background: none; border: none;
+    color: white; font-size: 2em;
+    cursor: pointer; z-index: 100000; line-height: 1;
+}
+.modal-album.abierto {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+body.modal-abierto {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.96);
+    z-index: 100001;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.lightbox-overlay.abierto { display: flex; }
+.lightbox-header { color: white; font-size: 1.1em; font-weight: 600; margin-bottom: 16px; text-align: center; }
+.lightbox-img-wrap {
+    position: relative;
+    max-width: 90vw;
+    max-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+.lightbox-img-wrap img {
+    max-width: 85vw; max-height: 68vh;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+.lightbox-btn {
+    background: rgba(255,255,255,0.15);
+    border: none; color: white;
+    font-size: 1.8em;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+}
+.lightbox-btn:hover { background: rgba(255,255,255,0.3); }
+.lightbox-btn.prev { left: -60px; }
+.lightbox-btn.next { right: -60px; }
+.lightbox-cerrar {
+    position: fixed; top: 20px; right: 24px;
+    background: none; border: none;
+    color: white; font-size: 2em;
+    cursor: pointer; z-index: 100002; line-height: 1;
+}
+.lightbox-contador { color: rgba(255,255,255,0.6); font-size: 0.9em; margin-top: 12px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+    .collage-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+    .collage-item:nth-child(1) { grid-column: 1 / 3; grid-row: auto; height: 220px; }
+    .collage-item:nth-child(2),
+    .collage-item:nth-child(3),
+    .collage-item:nth-child(4),
+    .collage-item:nth-child(5) { grid-column: auto; grid-row: auto; height: 160px; }
+    .collage-item:nth-child(6) { grid-column: 1 / 3; grid-row: auto; height: 160px; }
+    .carrusel-slide { height: 260px; }
+    .momentos-grid { grid-template-columns: 1fr 1fr; }
+    .modal-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+    .momentos-grid { grid-template-columns: 1fr; }
+    .collage-grid { grid-template-columns: 1fr; }
+}
+#momentos-del-hogar {
+    scroll-margin-top: 100px;
+}
+#recopilacion-de-momentos {
+    scroll-margin-top: 100px; /* ajusta según la altura real de tu menú fijo */
+}
+</style>
+
+<div class="galeria-wrap">
+
+    <!-- CARRUSEL -->
+    <h2 class="galeria-titulo"> Nuestra Galería</h2>
+    <p class="galeria-subtitulo">Momentos especiales en el Hogar San Juan Apóstol</p>
+    <div class="carrusel-wrap">
+        <div class="carrusel-track" id="carrusel-track"></div>
+        <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">←</button>
+        <button class="carrusel-btn next" onclick="moverCarrusel(1)">→</button>
+        <div class="carrusel-dots" id="carrusel-dots"></div>
+        <div class="carrusel-caption" id="carrusel-caption"></div>
+    </div>
+
+    <!-- COLLAGE -->
+    <h2 class="galeria-titulo" id="momentos-del-hogar"> Momentos del Hogar</h2>
+    <p class="galeria-subtitulo">Una mirada a nuestra vida cotidiana</p>
+    <div class="collage-grid">
+        <div class="collage-item"><img src="" alt=""><div class="collage-overlay"><span></span></div></div>
+        <div class="collage-item"><img src="" alt=""><div class="collage-overlay"><span></span></div></div>
+        <div class="collage-item"><img src="" alt=""><div class="collage-overlay"><span></span></div></div>
+        <div class="collage-item"><img src="" alt=""><div class="collage-overlay"><span></span></div></div>
+        <div class="collage-item"><img src="" alt=""><div class="collage-overlay"><span></span></div></div>
+        <div class="collage-item"><img src="" alt=""><div class="collage-overlay"><span></span></div></div>
+    </div>
+
+    <!-- ÁLBUMES -->
+    <h2 class="galeria-titulo" id="recopilacion-de-momentos">Recopilación de Momentos</h2>
+    <p class="galeria-subtitulo">Haz clic en cada álbum para ver todas las fotos</p>
+    <div class="momentos-grid" id="momentos-grid"></div>
+
+</div>
+
+<!-- MODAL ÁLBUM -->
+<div class="modal-album" id="modal-album">
+    <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+    <div class="modal-titulo" id="modal-titulo"></div>
+    <div class="modal-grid" id="modal-grid"></div>
+</div>
+
+<!-- LIGHTBOX — debe estar FUERA del modal -->
+<div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-cerrar" onclick="cerrarLightbox()">✕</button>
+    <div class="lightbox-header" id="lightbox-titulo"></div>
+    <div class="lightbox-img-wrap">
+        <button class="lightbox-btn prev" onclick="moverLightbox(-1)">←</button>
+        <img id="lightbox-img" src="" alt="">
+        <button class="lightbox-btn next" onclick="moverLightbox(1)">→</button>
+    </div>
+    <div class="lightbox-contador" id="lightbox-contador"></div>
+</div>
+<script>
+var carruselActual = 0;
+var totalSlides    = 0;
+var _albumes       = [];
+var _albumActual   = 0;
+var _fotoActual    = 0;
+var _carruselInterval = null;
+function hjaAnd(a, b) { return a ? b : a; } // evita que WordPress corrompa "&&" (wpautop/wptexturize)
+
+/* ===== ICONOS POR CATEGORÍA (Recopilación de Momentos) ===== */
+var ICONOS_ALBUM = [
+    { match: 'actividades y talleres',       url: 'https://hogarsanjuanapostol.cl/wp-content/uploads/2026/07/pintura.webp' },
+    { match: 'celebraciones y cumpleanos',    url: 'https://hogarsanjuanapostol.cl/wp-content/uploads/2026/07/cumpleanos.webp' },
+    { match: 'visitas y voluntarios',         url: 'https://hogarsanjuanapostol.cl/wp-content/uploads/2026/07/visitas.webp' },
+    { match: 'vida cotidiana',                url: 'https://hogarsanjuanapostol.cl/wp-content/uploads/2026/07/hogar.webp' },
+    { match: 'tardes en el jardin',           url: 'https://hogarsanjuanapostol.cl/wp-content/uploads/2026/07/paseos.webp' },
+    { match: 'fiestas y fechas especiales',   url: 'https://hogarsanjuanapostol.cl/wp-content/uploads/2026/07/navidad.webp' }
+];
+
+function _normalizarTexto(txt) {
+    return (txt || '')
+        .toString()
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, ''); // quita tildes
+}
+
+function obtenerIconoAlbum(titulo) {
+    var t = _normalizarTexto(titulo);
+    for (var i = 0; i < ICONOS_ALBUM.length; i++) {
+        if (t.indexOf(ICONOS_ALBUM[i].match) !== -1) {
+            return ICONOS_ALBUM[i].url;
+        }
+    }
+    return null;
+}
+
+function _limpiarEmojiTitulo(titulo) {
+    return (titulo || '')
+        .replace(/[\u{1F000}-\u{1FFFF}\u{2190}-\u{21FF}\u{2300}-\u{27BF}\u{2B00}-\u{2BFF}\uFE0F\u200D]/gu, '')
+        .replace(/\s{2,}/g, ' ')
+        .trim();
+}
+
+async function cargarDatosGaleria() {
+    try {
+        var res = await fetch('/wp-admin/admin-ajax.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'action=hja_gal_datos_publicos'
+        });
+        var data = await res.json();
+        if (hjaAnd(data, data.success)) return data.data;
+    } catch(e) {
+        console.warn('HJA Galería: no se pudo conectar con el plugin.', e);
+    }
+    return null;
+}
+
+function iniciarCarrusel(fotosCarrusel) {
+    var track    = document.getElementById('carrusel-track');
+    var dotsWrap = document.getElementById('carrusel-dots');
+    var captionEl = document.getElementById('carrusel-caption');
+    if (!track || !fotosCarrusel || fotosCarrusel.length === 0) return;
+    track.innerHTML = fotosCarrusel.map(function(f) {
+        return '<img class="carrusel-slide" src="' + f.url + '" alt="' + (f.caption || '') + '">';
+    }).join('');
+    dotsWrap.innerHTML = '';
+    fotosCarrusel.forEach(function(f, i) {
+        var dot = document.createElement('button');
+        dot.className = 'carrusel-dot' + (i === 0 ? ' activo' : '');
+        dot.onclick = function() { irASlide(i); };
+        dotsWrap.appendChild(dot);
+    });
+    window._carruselCaptions = fotosCarrusel.map(function(f) { return f.caption || ''; });
+    if (captionEl) captionEl.textContent = window._carruselCaptions[0] || '';
+    totalSlides = fotosCarrusel.length;
+    carruselActual = 0;
+    if (_carruselInterval) clearInterval(_carruselInterval);
+    _carruselInterval = setInterval(function() { moverCarrusel(1); }, 5000);
+}
+
+function iniciarCollage(fotosCollage) {
+    var items = document.querySelectorAll('.collage-item');
+    if (!fotosCollage || fotosCollage.length === 0) return;
+    fotosCollage.forEach(function(f, i) {
+        if (!items[i]) return;
+        var img  = items[i].querySelector('img');
+        var span = items[i].querySelector('.collage-overlay span');
+        if (img)  img.src = f.url;
+        if (span) span.textContent = f.caption || '';
+    });
+}
+
+function iniciarAlbumes(albumes) {
+    _albumes = albumes;
+    var grid = document.getElementById('momentos-grid');
+    if (!grid || !albumes || albumes.length === 0) return;
+    grid.innerHTML = albumes.map(function(a, i) {
+        var portada = hjaAnd(a.fotos, a.fotos.length) ? a.fotos[0] : '';
+        var nFotos  = a.fotos ? a.fotos.length : 0;
+        var badge   = nFotos + ' foto' + (nFotos !== 1 ? 's' : '');
+        var iconoCategoria = obtenerIconoAlbum(a.titulo);
+        var thumbHtml;
+        if (portada) {
+            thumbHtml = '<img src="' + portada + '" alt="' + a.titulo + '">';
+        } else if (iconoCategoria) {
+            thumbHtml = '<img class="momento-thumb-icono" src="' + iconoCategoria + '" alt="' + a.titulo + '">';
+        } else {
+            thumbHtml = '<div style="width:100%;height:100%;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:2em;">📷</div>';
+        }
+        return '<div class="momento-card" onclick="abrirModal(' + i + ')">' +
+            '<div class="momento-thumb">' +
+                thumbHtml +
+                '<span class="momento-badge">' + badge + '</span>' +
+            '</div>' +
+            '<div class="momento-info">' +
+                '<h3>' + (iconoCategoria ? '<img class="momento-titulo-icono" src="' + iconoCategoria + '" alt="">' : '') + _limpiarEmojiTitulo(a.titulo) + '</h3>' +
+                '<p>Haz clic para ver todas las fotos</p>' +
+            '</div>' +
+        '</div>';
+    }).join('');
+}
+
+cargarDatosGaleria().then(function(datos) {
+    if (!datos) {
+        console.warn('HJA Galería: sin datos del plugin. Verifica que esté activo.');
+        return;
+    }
+    iniciarCarrusel(datos.carrusel);
+    iniciarCollage(datos.collage);
+    iniciarAlbumes(datos.resultado);
+});
+
+function moverCarrusel(dir) {
+    if (totalSlides === 0) return;
+    carruselActual = (carruselActual + dir + totalSlides) % totalSlides;
+    actualizarCarrusel();
+}
+
+function irASlide(i) {
+    carruselActual = i;
+    actualizarCarrusel();
+}
+
+function actualizarCarrusel() {
+    var track     = document.getElementById('carrusel-track');
+    var captionEl = document.getElementById('carrusel-caption');
+    var captions  = window._carruselCaptions || [];
+    if (track) track.style.transform = 'translateX(-' + (carruselActual * 100) + '%)';
+    if (captionEl) captionEl.textContent = captions[carruselActual] || '';
+    document.querySelectorAll('.carrusel-dot').forEach(function(d, i) {
+        d.classList.toggle('activo', i === carruselActual);
+    });
+}
+
+function abrirModal(idx) {
+    _albumActual = idx;
+    var album = _albumes[idx];
+    if (!album) return;
+    document.getElementById('modal-titulo').textContent = _limpiarEmojiTitulo(album.titulo);
+    var grid = document.getElementById('modal-grid');
+    grid.innerHTML = (album.fotos || []).map(function(url, i) {
+        return '<div class="modal-foto" onclick="abrirLightbox(' + i + ')">' +
+            '<img src="' + url + '" alt="foto ' + (i + 1) + '">' +
+        '</div>';
+    }).join('');
+    var modal = document.getElementById('modal-album');
+    modal.classList.add('abierto');
+   document.body.classList.add('modal-abierto');
+    requestAnimationFrame(function() {
+        modal.scrollTop = 0;
+    });
+}
+
+function cerrarModal() {
+    document.getElementById('modal-album').classList.remove('abierto');
+    document.body.classList.remove('modal-abierto');
+}
+
+function abrirLightbox(idx) {
+    _fotoActual = idx;
+    actualizarLightbox();
+    document.getElementById('lightbox').classList.add('abierto');
+}
+
+function cerrarLightbox() {
+    document.getElementById('lightbox').classList.remove('abierto');
+}
+
+function moverLightbox(dir) {
+    var fotos = (hjaAnd(_albumes[_albumActual], _albumes[_albumActual].fotos)) || [];
+    _fotoActual = (_fotoActual + dir + fotos.length) % fotos.length;
+    actualizarLightbox();
+}
+
+function actualizarLightbox() {
+    var album = _albumes[_albumActual];
+    if (!album) return;
+    var fotos = album.fotos || [];
+    document.getElementById('lightbox-img').src = fotos[_fotoActual] || '';
+    document.getElementById('lightbox-titulo').textContent = _limpiarEmojiTitulo(album.titulo);
+    document.getElementById('lightbox-contador').textContent = (_fotoActual + 1) + ' de ' + fotos.length;
+}
+
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) cerrarLightbox();
+});
+document.getElementById('modal-album').addEventListener('click', function(e) {
+    if (e.target === this) cerrarModal();
+});
+document.addEventListener('keydown', function(e) {
+    var lbAbierto    = document.getElementById('lightbox').classList.contains('abierto');
+    var modalAbierto = document.getElementById('modal-album').classList.contains('abierto');
+    if (lbAbierto) {
+        if (e.key === 'ArrowRight') moverLightbox(1);
+        if (e.key === 'ArrowLeft')  moverLightbox(-1);
+        if (e.key === 'Escape')     cerrarLightbox();
+    } else if (modalAbierto) {
+        if (e.key === 'Escape') cerrarModal();
+    }
+});
+</script>

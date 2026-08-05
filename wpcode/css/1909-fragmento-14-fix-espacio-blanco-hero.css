@@ -1,0 +1,92 @@
+/**
+ * ID WPCode: 1909
+ * Nombre: Fragmento 14 - Fix espacio blanco hero
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global responsive
+ * Notas: Revisar contra 1338/1906
+ *
+ */
+
+/* ================================================
+   FRAGMENTO 14 — HEADER ALTURA + NAV + HERO 
+   ================================================ */
+
+/* ── ESCRITORIO (>1024px) ── */
+@media (min-width: 1025px) {
+
+    /* Franja crema: más altura con aire proporcional */
+    html body:not(.scrolled) header.wp-block-template-part > div:first-child {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+        min-height: 80px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Barra nav guinda: un poco más alta sin cambiar el tamaño de texto */
+    html body:not(.scrolled) header.wp-block-template-part
+    nav.wp-block-navigation {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+
+    html body:not(.scrolled) header.wp-block-template-part
+    nav.wp-block-navigation .wp-block-navigation-item__content {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* wp-site-blocks: ajustado al nuevo alto total del header
+       franja ~80px + barra nav ~64px = ~144px */
+    html body.home:not(.scrolled) .wp-site-blocks {
+        padding-top: 144px !important;
+    }
+
+    /* Botones a la derecha, sin chocar con el botón de accesibilidad */
+    html body header.wp-block-template-part > div:first-child .wp-block-buttons {
+        margin-left: auto !important;
+        margin-right: 70px !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Nav SIN scroll: ítems a la derecha con padding del borde */
+    html body:not(.scrolled) header.wp-block-template-part
+    nav.wp-block-navigation .wp-block-navigation__container {
+        justify-content: flex-end !important;
+        padding-right: 16px !important;
+        margin-left: auto !important;
+    }
+
+    html body:not(.scrolled) header.wp-block-template-part
+    nav.wp-block-navigation {
+        justify-content: flex-end !important;
+    }
+
+    /* Nav CON scroll: ítems centrados */
+    html body.scrolled header.wp-block-template-part
+    nav.wp-block-navigation .wp-block-navigation__container {
+        justify-content: center !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    html body.scrolled header.wp-block-template-part
+    nav.wp-block-navigation {
+        justify-content: center !important;
+    }
+
+    /* wp-site-blocks CON scroll */
+    html body.home.scrolled .wp-site-blocks {
+        padding-top: 48px !important;
+    }
+}
+
+/* ── TABLET (600px–1024px) ── */
+@media (min-width: 600px) and (max-width: 1024px) {
+    html body.home:not(.scrolled) .wp-site-blocks {
+        padding-top: 144px !important;
+    }
+    html body.home.scrolled .wp-site-blocks {
+        padding-top: 36px !important;
+    }
+}

@@ -1,0 +1,57 @@
+ID,Nombre,Tipo,Estado,Condicion_o_Ubicacion,Notas
+1106,menu submenus,JS,Activo,"Global, viewport <=1024px (wp_footer)",Acordeón submenús móvil. Posible duplicado con 1837 y 1908
+1264,Agrega clase estable al bloque de Nuestro Compromiso,CSS/JS,INACTIVO,-,Confirmado no en uso por el usuario
+1268,Forzar visibilidad de la imagen,JS,Activo,"Home, cover parallax, movil <=1024px",Parallax imagen hero movil
+1300,Permitir flujo de donacion en publico,PHP,Activo,Global (bypass WC Coming Soon),Critico - no tocar
+1338,01 base header,CSS,Activo,Global,"EDITADO 30-07-2026: se elimino bloque ""botones fondo blanco"" (pisado por 1915) y reglas de logo/texto/botones en scroll dentro de div:first-child (oculto por 1906, codigo muerto). Ver docs/diff-1338-1339.md"
+1339,02 navigation,CSS,Activo,Global,EDITADO 30-07-2026: se elimino background gradiente (pisado por 1904) y color texto hamburguesa base. Ver docs/diff-1338-1339.md
+1341,04 TRANSPARENCIA GLASSMORPHISM,CSS,Activo,Global,Glassmorphism cajas + visibilidad botones checkout
+1342,05 checkout,CSS,Activo,is_checkout(),Estilos checkout WooCommerce
+1347,06 quienes somos,CSS,Activo,page-id-12,Cover + caja roja Quienes Somos
+1396,07 paginas fondo,CSS,Activo,"page-id-14, page-id-8",Fondo Mision y Transparencia
+1429,Corregir URL volver a la donacion en checkout,PHP,Activo,is_checkout(),Filtro + gettext + campos ocultos
+1454,Corregir textos checkout para donacion via JS,JS,Activo,body.woocommerce-checkout,TreeWalker reemplazo textos
+1461,Forzar cookies same-site WooCommerce incognito,PHP,Activo,Global (sesion WC),
+1465,Permitir cookies en checkout para modo incognito,PHP,Activo,"is_checkout(), is_cart()",Headers CORS/COOP/COEP
+1486,09 footer,PHP/HTML,Activo,Global,Marcado HTML footer + script year/whatsapp
+1487,08 footer,CSS,Activo,Global,Estilos footer two-tiered
+1488,FIX texto fantasma footer,CSS,Activo,Global footer,
+1504,10 paginas legales,CSS,Activo,"page-id-3, 1499, 1495",Privacidad/T&C/Cookies
+1509,FIX footer movil,CSS,Activo,Global footer responsive,
+1510,FIX corazon rojo boton Dona aqui,CSS,Activo,Header botones,Revisar contra 1915/1916/2087
+1511,FIX target blank boton Visitanos,JS,Activo,Global,
+1535,FIX menu hamburguesa,CSS,Activo,"Global, <=1024px, has-modal-open",Revisar contra 1339/1904/1991/1992
+1539,03 covers cifras,CSS,Activo,Home,Posible duplicado con Modulo 3 (doc cover cifras)
+1559,Eliminar estilos inline items current,JS,Activo,Global menu movil,MutationObserver
+1595,Importacion tipografia y espacios,CSS,Activo,Global,Fuente Inter + espaciados generales
+1599,Redirigir a pagina de gracias despues de donar,PHP,Activo,order-received endpoint,
+1600,Scroll modo cascada,JS,Activo,Global,Animaciones scroll-reveal .animar
+1603,Cambiar texto Vaciar cookies por Eliminar contraste,CSS,Activo,Widget accesibilidad,Revisar contra 1630/1749
+1630,WP Accessibility Helper - Personalizacion,CSS,Activo,Widget accesibilidad,Revisar contra 1749 (posible duplicado parcial)
+1747,Correcciones boton hamburguesa imagen inicio tamano imagenes directorio,CSS,Activo,Global + page-id-12,
+1749,Boton de accesibilidad - WP Accessibility Helper,CSS,Activo,Widget accesibilidad,Revisar contra 1630
+1833,Adaptando textos imagen inicio y texto quienes somos,CSS,Activo,Home + page-id-12,FIX QUIENES SOMOS v3
+1836,FIX navegacion + galeria,CSS,Activo,Global + galeria,
+1837,Fuerza comportamiento boton hamburguesa tablet/movil,JS,Activo,Global <=1024px,Revisar contra 1106/1908 (misma funcion)
+1884,Cambios de sombras en inicio / color chevron,CSS,Activo,Home + global nav,
+1888,Header achica al hacer scroll,JS,Activo,Global,Agrega clase .scrolled
+1904,Override color nav barra principal,CSS,Activo,Global,Fragmento 09 - color guinda #8c2531. Revisar contra 1339 (gradiente original)
+1906,Fragmento 10 - Header compacto en scroll,CSS,Activo,Global responsive,Revisar contra 1338/1909 (superposicion header/scroll)
+1908,Fragmento 11 - Cierra hamburguesa al abrir accesibilidad,JS,Activo,"Global, <=1024px",
+1909,Fragmento 14 - Fix espacio blanco hero,CSS,Activo,Global responsive,Revisar contra 1338/1906
+1912,Fragmento 12 - Fix espacio hero carga inicial+scroll,JS,Activo,Global,Preload imagen hero + padding dinamico
+1915,Fragmento 16 CSS - Color botones header,CSS,Activo,Global header,Revisar contra 1510
+1916,Fragmento 16 JS - Botones header color+posicion,JS,Activo,Global header desktop,Revisar contra 1510
+1919,Cambio color titulo hero,CSS,Activo,Global cover,
+1923,Boton Dona Aqui colores invertidos,CSS,Activo,Home cover,
+1947,Espacio superior body Quienes somos/Transparencia/Dona aqui,CSS,Activo,"page-id-12, 625, 280 + checkout",
+1958,Precio dinamico donacion REGLA DE ORO,PHP,Activo,Producto 392 / wpc_nyp,CRITICO - no tocar
+1991,Fix critico submenus,CSS,Activo,Global nav desktop+movil,Revisar contra 1339/1535
+1992,Fix caja negra de foco + clics movil/tablet,CSS,Activo,"Global, <=1024px",Revisar contra 1535
+2041,Pagina Dona ahora color de fondo,CSS,Activo,page-id-280,
+2044,Boton Dona aqui en Colaboradores,CSS,Activo,Pagina Colaboradores,
+2045,Animaciones iconos Mision/Vision/Valores,CSS,Activo,page-id-14 (Mision),
+2046,Texto hero Cada donacion es un gesto,CSS,Activo,Home cover <=1024px,
+2082,Boton Visitar pagina Quienes somos,CSS,Activo,page-id-12,
+2087,Boton corazon en el nav,CSS+JS,Activo,Global nav,Inserta boton nuevo via JS
+1598,Caja negra menu movil,CSS,INACTIVO,-,Confirmado no en uso por el usuario

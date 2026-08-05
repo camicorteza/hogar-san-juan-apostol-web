@@ -1,0 +1,73 @@
+/**
+ * ID WPCode: 2044
+ * Nombre: Boton Dona aqui en Colaboradores
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Pagina Colaboradores
+ */
+
+/* ================================================
+   BOTÓN "DONA AQUÍ" — Página Colaboradores
+ 
+   ================================================ */
+
+/* Estado de reposo — máxima especificidad para vencer
+   el color de texto heredado del bloque Cover (video) */
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"],
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:link,
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:visited {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 50px !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"],
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"] * {
+    fill: #ffffff !important;
+}
+
+/* Estado hover/active/focus — se mantiene como ya
+   está funcionando, reforzado con la misma especificidad */
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:hover,
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:active,
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:focus {
+    background-color: #a22121 !important;
+    color: #ffffff !important;
+}
+
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:hover *,
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:active *,
+a.wp-block-button__link.has-background.has-text-align-center[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:focus * {
+    fill: #ffffff !important;
+}
+/* ================================================
+   BOTÓN CORAZÓN (solo ícono) — Sección Colaboradores
+   Reposo: sin fondo, borde blanco, ícono blanco
+   Hover/Active: fondo #a22121, ícono se mantiene blanco
+   Scope: contenedor único de este botón específico
+   ================================================ */
+
+.wp-container-core-buttons-is-layout-5aa6163f a.wp-block-button__link[href="https://hogarsanjuanapostol.cl/dona-ahora/"] {
+    background-color: transparent !important;
+    border-color: #ffffff !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.wp-container-core-buttons-is-layout-5aa6163f a.wp-block-button__link[href="https://hogarsanjuanapostol.cl/dona-ahora/"] img.emoji {
+    filter: brightness(0) invert(1) !important;
+}
+
+.wp-container-core-buttons-is-layout-5aa6163f a.wp-block-button__link[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:hover,
+.wp-container-core-buttons-is-layout-5aa6163f a.wp-block-button__link[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:active,
+.wp-container-core-buttons-is-layout-5aa6163f a.wp-block-button__link[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:focus {
+    background-color: #a22121 !important;
+    border-color: #ffffff !important;
+}
+
+.wp-container-core-buttons-is-layout-5aa6163f a.wp-block-button__link[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:hover img.emoji,
+.wp-container-core-buttons-is-layout-5aa6163f a.wp-block-button__link[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:active img.emoji,
+.wp-container-core-buttons-is-layout-5aa6163f a.wp-block-button__link[href="https://hogarsanjuanapostol.cl/dona-ahora/"]:focus img.emoji {
+    filter: brightness(0) invert(1) !important;
+}

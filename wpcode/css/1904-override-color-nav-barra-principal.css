@@ -1,0 +1,148 @@
+/**
+ * ID WPCode: 1904
+ * Nombre: Override color nav barra principal
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global
+ * Notas: Fragmento 09 - color guinda #8c2531. Revisar contra 1339 (gradiente original)
+ *
+ */
+
+/* ================================================
+   FRAGMENTO 09 — OVERRIDE COLOR NAV (BARRA PRINCIPAL)
+   ================================================ */
+
+/* ── Barra principal — tono sólido guinda/borgoña (todas las anchuras) */
+html body nav.wp-block-navigation,
+html body nav.wp-block-navigation[style],
+html body header.wp-block-template-part nav.wp-block-navigation {
+    background: #8c2531 !important;
+    background-image: none !important;
+    background-color: #8c2531 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* ── Items principales (escritorio y barra general): texto #fdfbef
+      Excluye explícitamente cualquier item dentro del submenú desktop */
+html body nav.wp-block-navigation .wp-block-navigation-item__content:not(.wp-block-navigation__submenu-container .wp-block-navigation-item__content),
+html body header.wp-block-template-part nav.wp-block-navigation .wp-block-navigation-item__content:not(.wp-block-navigation__submenu-container .wp-block-navigation-item__content) {
+    color: #fdfbef !important;
+    transition: all 0.3s ease !important;
+}
+
+/* ── Flecha chevron de los items principales (no la del submenú "›") */
+html body nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg,
+html body nav.wp-block-navigation .wp-block-navigation__submenu-icon svg {
+    fill: #fdfbef !important;
+}
+html body nav.wp-block-navigation .wp-block-navigation__responsive-container-open,
+html body nav.wp-block-navigation .wp-block-navigation-submenu__toggle {
+    color: #fdfbef !important;
+}
+
+/* ── Hover items principales escritorio: invertido (fondo #fdfbef, texto #8c2531)
+  */
+html body nav.wp-block-navigation > .wp-block-navigation__container .wp-block-navigation-item__content:hover,
+html body nav.wp-block-navigation > .wp-block-navigation__container .wp-block-navigation-item__content:focus {
+    background: #fdfbef !important;
+    color: #8c2531 !important;
+}
+
+/* ── FIX submenú desktop: restaurar su color de texto original */
+html body .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+    color: #555 !important;
+}
+html body .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
+html body .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus {
+    background: #a22121 !important;
+    color: #FFFFFF !important;
+}
+
+/* ── Header comprimido al hacer scroll (tablet/móvil) — mismo tono sólido */
+@media (max-width: 1080px) {
+    html body.scrolled nav.wp-container-core-navigation-is-layout-c4d0b4f1,
+    html body.scrolled nav.has-text-color.has-background.is-responsive.wp-block-navigation {
+        background: #8c2531 !important;
+        background-image: none !important;
+        background-color: #8c2531 !important;
+    }
+}
+
+/* ================================================
+   PANEL MÓVIL (hamburguesa) 
+   ================================================ */
+@media (max-width: 1024px) {
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    > .wp-block-navigation__container
+    > .wp-block-navigation-item
+    > .wp-block-navigation-item__content,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item__content:not(.wp-block-navigation__submenu-container .wp-block-navigation-item__content) {
+        color: #8c2531 !important;
+    }
+
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    > .wp-block-navigation__container
+    > .wp-block-navigation-item
+    > .wp-block-navigation-item__content:hover,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item__content:hover:not(.wp-block-navigation__submenu-container .wp-block-navigation-item__content),
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    a.wp-block-navigation-item__content:hover:not(.wp-block-navigation__submenu-container a.wp-block-navigation-item__content),
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    a.wp-block-navigation-item__content:active:not(.wp-block-navigation__submenu-container a.wp-block-navigation-item__content) {
+        background: #8c2531 !important;
+        background-color: #8c2531 !important;
+        color: #fdfbef !important;
+    }
+
+    /* Chevron del primer nivel en el panel móvil */
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-submenu__toggle,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation-submenu__toggle,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation__submenu-icon {
+        color: #8c2531 !important;
+    }
+
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-icon svg,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-submenu__toggle svg,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    button.wp-block-navigation__submenu-icon svg {
+        fill: #8c2531 !important;
+    }
+
+    /* El acordeón interno (submenú dentro del panel móvil) */
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container .wp-block-navigation-item__content,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container a.wp-block-navigation-item__content {
+        color: #666 !important;
+    }
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
+    html body nav.wp-block-navigation
+    .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__submenu-container a.wp-block-navigation-item__content:hover {
+        background: #a22121 !important;
+        color: #FFFFFF !important;
+    }
+}
