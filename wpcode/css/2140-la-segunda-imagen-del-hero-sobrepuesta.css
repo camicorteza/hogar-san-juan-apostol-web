@@ -1,0 +1,79 @@
+/**
+ * ID WPCode: 2140
+ * Nombre: La segunda imagen del hero sobrepuesta
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global (site_wide_header), home hero
+ * Notas: Capa ::after duplicada de la imagen del hero, para tapar silueta de la imagen original
+ */
+body.home .wp-block-cover:has(.wp-block-heading) .wp-block-cover__image-background::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    height: calc(100% + 50px);
+    width: 50%;
+    background-image: url('https://hogarsanjuanapostol.cl/wp-content/uploads/2026/03/inicioimagen-1020x1024.webp');
+    background-repeat: no-repeat;
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
+        linear-gradient(to right, black 0%, black 80%, transparent 100%);
+    -webkit-mask-composite: source-in, source-over;
+    mask-image:
+        linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
+        linear-gradient(to right, black 0%, black 80%, transparent 100%);
+    mask-composite: intersect;
+    z-index: 1;
+    pointer-events: none;
+}
+/* Escritorio*/
+@media (min-width: 1025px) {
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-cover__image-background::after {
+        width: 55% !important;
+        background-size: 170% !important;
+        background-position: calc(50% + 90px) calc(42% - 20px) !important;
+        transform: translateX(130px) !important;
+        -webkit-mask-image:
+            linear-gradient(to bottom, transparent 0%, black 10%, black 93%, transparent 100%),
+            linear-gradient(to right, transparent 0%, black 4%, black 97%, transparent 100%) !important;
+        mask-image:
+            linear-gradient(to bottom, transparent 0%, black 10%, black 93%, transparent 100%),
+            linear-gradient(to right, transparent 0%, black 4%, black 97%, transparent 100%) !important;
+    }
+}
+/* tablet grande (900px-1024px) */
+@media (min-width: 900px) and (max-width: 1024px) {
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-cover__image-background::after {
+        width: calc(58% + 50px) !important;
+        height: calc(100% + 140px) !important;
+        top: -140px !important;
+        background-size: 340% !important;
+        background-position: calc(56% + 190px) 50% !important;
+    }
+}
+/* tablet normal (782px-1024px)  */
+@media (min-width: 782px) and (max-width: 1024px) {
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-cover__image-background::after {
+        background-size: 260% !important;
+        background-position: calc(56% + 160px) 50% !important;
+        -webkit-mask-image:
+            linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
+            linear-gradient(to right, black 0%, black 90%, transparent 100%) !important;
+        mask-image:
+            linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
+            linear-gradient(to right, black 0%, black 90%, transparent 100%) !important;
+    }
+}
+/* móvil */
+@media (max-width: 781px) {
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-cover__image-background::after {
+        background-size: 345% !important;
+        background-position: calc(62% + 170px) 50% !important;
+        -webkit-mask-image:
+            linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
+            linear-gradient(to right, black 0%, black 92%, transparent 100%) !important;
+        mask-image:
+            linear-gradient(to bottom, transparent 0%, black 10%, black 92%, transparent 100%),
+            linear-gradient(to right, black 0%, black 92%, transparent 100%) !important;
+    }
+}

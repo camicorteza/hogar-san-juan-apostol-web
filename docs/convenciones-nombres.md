@@ -12,6 +12,11 @@ Formato de archivo: `{ID}-{nombre-slug}.{ext}`
   - `.php` → snippets PHP (incluso si generan HTML de salida)
   - `.css` → snippets CSS
   - `.js` → snippets JS
+  - `.html` → snippets de tipo "HTML" dentro de WPCode (carpeta `wpcode/html/`).
+    Ojo: esto NO es lo mismo que `custom-html-blocks/` — un snippet HTML vive en
+    el panel central de WPCode (con ID, ubicación, activo/inactivo, como
+    cualquier otro snippet), mientras que un bloque de `custom-html-blocks/`
+    vive suelto dentro de una página del editor Gutenberg, sin panel central.
   - Si un snippet mezcla CSS y JS en el mismo bloque, se separa en dos archivos
     con el mismo ID (uno `.css`, otro `.js`), indicando en el comentario superior
     que son "parte 1/2" y "parte 2/2" del mismo snippet original.

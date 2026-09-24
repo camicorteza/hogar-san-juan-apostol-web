@@ -1,0 +1,51 @@
+/**
+ * ID WPCode: 2121
+ * Nombre: fondo cifras institucionales
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global (site_wide_header)
+ * Notas: Fondo decorativo seccion Cifras institucionales
+ */
+#cifras-institucionales {
+    position: relative !important;
+    margin-top: 26px !important;
+    margin-bottom: 26px !important;
+    padding-bottom: 70px !important;
+    background: none !important;
+}
+
+#cifras-institucionales::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url('https://hogarsanjuanapostol.cl/wp-content/uploads/2026/09/fondo-cifrasinsti-scaled.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* degradado: transparente en los bordes, opaco en el centro */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        #000 120px,
+        #000 calc(100% - 120px),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        #000 120px,
+        #000 calc(100% - 120px),
+        transparent 100%
+    );
+}
+
+#cifras-institucionales .cifras-contenedor {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+.cifras-fondo-wrapper > .wp-block-columns {
+    margin-top: -58px !important;
+}

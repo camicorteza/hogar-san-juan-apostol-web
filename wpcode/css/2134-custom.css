@@ -1,0 +1,339 @@
+/**
+ * ID WPCode: 2134
+ * Nombre: Custom
+ * Tipo: CSS
+ * Estado: Activo
+ * Ubicacion/Condicion: Global (site_wide_header)
+ * Notas: Snippet principal: tipografias, hero, header, parrafo donacion. Corregido 23-09-2026: llave de cierre faltante en @media (min-width:1025px) que desactivaba reglas tablet/movil
+ */
+/* menu y parrafos*/
+body .wp-block-navigation-item__content,
+body p:not(header p) {
+    font-family: 'Lato', 'Open Sans', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: clamp(17px, 0.3vw + 16px, 19.5px) !important;
+}
+.cmplz-message, .cmplz-message p {
+    font-size: 13px !important;
+}
+/* header y títulos de sección */
+.wp-block-site-title,
+.wp-block-heading {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px !important;
+}
+#cifras-institucionales #titulo,
+.footer-col h3,
+#titulo {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
+}
+#nuestra-historia,
+#nuestro-compromiso h2.is-style-text-annotation {
+    font-size: 32px !important;
+}
+/* Nuestra Historia - más grande solo en escritorio */
+@media (min-width: 1025px) {
+    #nuestra-historia {
+        font-size: 42px !important;
+    }
+}
+/* titulo hero*/
+.wp-block-cover .wp-block-heading {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    color: #dbc39c !important;
+    font-size: clamp(36px, 4vw + 21px, 68px) !important;
+    letter-spacing: 0.15px !important;
+    line-height: 1.12 !important;
+    -webkit-text-stroke: 1px #ffffff !important;
+}
+@media (max-width: 781px) {
+    .wp-block-cover .wp-block-heading {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        line-height: 0.98 !important;
+    }
+}
+/* solo portada home  */
+body.home .wp-block-cover.has-parallax .wp-block-cover__image-background.has-parallax,
+body.home .wp-block-cover .wp-block-cover__image-background {
+    filter: none !important;
+}
+body.home .wp-block-cover.has-parallax .wp-block-cover__background.has-background-dim {
+    opacity: 0 !important;
+}
+
+/* Escritorio ancho: mitad derecha exacta */
+body.home .wp-block-cover:has(.wp-block-heading) .wp-block-cover__inner-container {
+    margin-left: 50% !important;
+    width: 50% !important;
+    max-width: 50% !important;
+    position: relative;
+}
+/* Tablet y móvil */
+@media (max-width: 1024px) {
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-cover__inner-container {
+        margin-left: 28% !important;
+        width: 72% !important;
+        max-width: 72% !important;
+    }
+}
+/* Contiene el pintado dentro del hero */
+body.home .wp-block-cover:has(.wp-block-heading) {
+    contain: paint;
+    overflow: hidden;
+    clip-path: inset(0);
+    isolation: isolate;
+}
+/* Tablet  */
+@media (min-width: 782px) and (max-width: 1024px) {
+    body.home .wp-block-cover:has(.wp-block-heading) {
+        transform: translateY(-70px) !important;
+    }
+}
+/* Figura circular */
+body.home .wp-block-cover:has(.wp-block-heading)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(162, 33, 33, 0.6) 30%, rgba(162, 33, 33, 0.6) 100%);
+    border: 2px solid #871b1b;
+    border-right: none;
+    border-radius: 50% 0 0 50% / 50% 0 0 50%;
+    z-index: 2;
+    pointer-events: none;
+}
+/* Tablet */
+@media (min-width: 782px) and (max-width: 1024px) {
+    body.home .wp-block-cover:has(.wp-block-heading)::before {
+        border-radius: 65% 0 0 65% / 50% 0 0 50% !important;
+    }
+}
+/* Móvil */
+@media (max-width: 781px) {
+    body.home .wp-block-cover:has(.wp-block-heading)::before {
+        border-radius: 85% 0 0 85% / 50% 0 0 50% !important;
+    }
+}
+/* Escritorio ancho — correr la imagen del hero a la izquierda y cubrir el espacio libre a
+   la derecha con un degradado */
+@media (min-width: 1025px) {
+    html body.home .wp-block-cover.has-parallax.aligncenter.has-accent-1-color.has-text-color.has-link-color:has(.wp-block-heading) .wp-block-cover__image-background.has-parallax {
+        transform: translateX(-80px) !important;
+        -webkit-mask-image: linear-gradient(to right, black 0%, black 65%, transparent 100%) !important;
+        mask-image: linear-gradient(to right, black 0%, black 65%, transparent 100%) !important;
+    }
+}
+/* Tablet — título hero, botón y párrafo de donación */
+@media (min-width: 782px) and (max-width: 1024px) {
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-heading {
+        transform: translateX(75px) !important;
+    }
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-buttons {
+        transform: translateX(30px) !important;
+    }
+}
+/* Móvil — título hero */
+@media (max-width: 781px) {
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-heading {
+        transform: translateX(65px) !important;
+    }
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-buttons {
+        transform: translateX(30px) !important;
+    }
+}
+/* Botón "Dona aquí" del hero — un poco más grande en escritorio/tablet, y levemente
+   más chico en móvil */
+@media (min-width: 782px) {
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-buttons .wp-block-button__link {
+        padding: 11px 26px !important;
+        font-size: 22px !important;
+    }
+}
+@media (max-width: 781px) {
+    body.home .wp-block-cover:has(.wp-block-heading) .wp-block-buttons .wp-block-button__link {
+        padding: 6px 18px !important;
+        font-size: 16px !important;
+    }
+}
+/* Botón "Dona aquí" — menos espacio debajo */
+body.home .wp-block-cover:has(.wp-block-heading) .wp-block-buttons {
+    margin-bottom: 8px !important;
+}
+/* Párrafo de la donación */
+html body.home .wp-block-cover__inner-container p.has-text-align-center:has(strong) {
+    text-align: left !important;
+    align-self: flex-start !important;
+    transform: none !important;
+}
+@media (min-width: 1025px) {
+    html body.home .wp-block-cover__inner-container p.has-text-align-center:has(strong) {
+        max-width: 325px !important;
+        margin-left: 258px !important;
+    }
+}
+@media (min-width: 782px) and (max-width: 1024px) {
+    html body.home .wp-block-cover__inner-container p.has-text-align-center:has(strong) {
+        max-width: 280px !important;
+        margin-left: 232px !important;
+    }
+}
+/* Móvil: el párrafo de donación */
+@media (max-width: 781px) {
+    html body.home .wp-block-cover__inner-container p.has-text-align-center:has(strong) {
+        max-width: 100px !important;
+        margin-left: 202px !important;
+        margin-top: -8px !important;
+        text-align: right !important;
+        align-self: flex-end !important;
+    }
+}
+/* HEADER — grid con "San Clemente" bajo el título (solo escritorio/tablet ancho) */
+@media (min-width: 783px) {
+    header div:has(> .wp-block-site-title) {
+        display: grid !important;
+        grid-template-columns: auto auto 1fr;
+        align-items: center !important;
+        column-gap: 14px !important;
+    }
+    header div:has(> .wp-block-site-title) > figure {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+    .wp-block-site-title {
+        grid-column: 2;
+        grid-row: 1;
+        margin-bottom: 0 !important;
+        position: static !important;
+    }
+    .wp-block-site-title + div {
+        grid-column: 2;
+        grid-row: 2;
+        position: static !important;
+        transform: none !important;
+        justify-content: center !important;
+    }
+    header div:has(> .wp-block-site-title) > .wp-block-buttons {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+    }
+}
+/* HEADER — móvil: logo más grande y textos del título levemente más chicos */
+@media (max-width: 781px) {
+    header .wp-block-image img {
+        width: 73px !important;
+        height: auto !important;
+    }
+    .wp-block-site-title {
+        font-size: 13px !important;
+    }
+    .wp-block-site-title + div p {
+        font-size: 12px !important;
+    }
+}
+/* BOTONES / CTA */
+.wp-block-button__link,
+.wp-element-button {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px !important;
+    text-transform: uppercase !important;
+}
+/* "NUESTRO COMPROMISO" — insignia centrada */
+#nuestro-compromiso h2.is-style-text-annotation {
+    align-self: center !important;
+}
+/* CITA SOBRE FONDO DE HOJAS */
+.wp-block-cover:has(video) .wp-block-paragraph {
+    font-family: 'Lato', 'Open Sans', sans-serif !important;
+    color: #ffffff !important;
+    line-height: 1.75 !important;
+}
+/* Cita Somos una institución  letra más grande en escritorio */
+@media (min-width: 1025px) {
+    .wp-block-cover:has(video) .wp-block-paragraph {
+        font-size: clamp(20px, 0.6vw + 18px, 23px) !important;
+    }
+}
+/* Cita "Somos una institución..." — en tablet, 10px más grande que el ajuste general */
+@media (min-width: 782px) and (max-width: 1024px) {
+    .wp-block-cover:has(video) .wp-block-paragraph {
+        font-size: clamp(30px, 0.6vw + 28px, 33px) !important;
+    }
+}
+/* Párrafos "Con el objetivo de..." y "Nuestro compromiso..." — letra más grande en
+   escritorio y tablet */
+@media (min-width: 782px) {
+    .wp-block-columns:has(h2[style*="color:#a22121"]) .wp-block-column p.wp-block-paragraph {
+        font-size: clamp(20px, 0.6vw + 18px, 23px) !important;
+    }
+}
+/* Texto de la donación */
+.wp-block-cover__inner-container p.has-text-align-center strong {
+    color: #dbc39c !important;
+    -webkit-text-fill-color: #dbc39c !important;
+    font-weight: 400 !important;
+    font-size: clamp(15px, 0.8vw + 11px, 21px) !important;
+    -webkit-text-stroke: 1px #ffffff !important;
+}
+/* cifras institucionales  */
+@media (min-width: 782px) and (max-width: 1024px) {
+    .cifras-tarjeta {
+        margin-top: 28px !important;
+    }
+    .cifras-icono-aro {
+        width: 58px !important;
+        height: 58px !important;
+        top: -29px !important;
+    }
+    .cifras-seccion .cifras-header {
+        padding: 38px 16px 24px !important;
+    }
+    .cifras-seccion .cifras-numero {
+        font-size: clamp(1.6rem, 2.6vw, 2.1rem) !important;
+        margin-top: 14px !important;
+    }
+    .cifras-cuerpo {
+        padding: 18px 16px 30px !important;
+        min-height: 165px !important;
+    }
+    .cifras-seccion .cifras-cuerpo h3 {
+        font-size: 1rem !important;
+    }
+    .cifras-seccion .cifras-cuerpo p {
+        font-size: 0.85rem !important;
+    }
+}
+/* tipografias en pag con bloques personalizados (Quiénes somos, Misión, Colaboradores, Transparencia) */
+[class*="rct-"][class*="titulo"] {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px !important;
+}
+[class*="rct-"][class*="parrafo"],
+[class*="rct-"][class*="intro"] {
+    font-family: 'Lato', 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+/* tipografia galeria */
+.galeria-wrap h2.galeria-titulo,
+.galeria-wrap .galeria-titulo {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
+}
+.momento-info h3 {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
+}
+.modal-titulo,
+.lightbox-header,
+.carrusel-caption,
+.lightbox-contador {
+    font-family: 'Lato', 'Open Sans', sans-serif !important;
+}

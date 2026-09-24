@@ -3,8 +3,8 @@ ID,Nombre,Tipo,Estado,Condicion_o_Ubicacion,Notas
 1264,Agrega clase estable al bloque de Nuestro Compromiso,CSS/JS,INACTIVO,-,Confirmado no en uso por el usuario
 1268,Forzar visibilidad de la imagen,JS,Activo,"Home, cover parallax, movil <=1024px",Parallax imagen hero movil
 1300,Permitir flujo de donacion en publico,PHP,Activo,Global (bypass WC Coming Soon),Critico - no tocar
-1338,01 base header,CSS,Activo,Global,"EDITADO 30-07-2026: se elimino bloque ""botones fondo blanco"" (pisado por 1915) y reglas de logo/texto/botones en scroll dentro de div:first-child (oculto por 1906, codigo muerto). Ver docs/diff-1338-1339.md"
-1339,02 navigation,CSS,Activo,Global,EDITADO 30-07-2026: se elimino background gradiente (pisado por 1904) y color texto hamburguesa base. Ver docs/diff-1338-1339.md
+1338,01 base header,CSS,Activo,Global,"EDITADO 30-07-2026: se elimino bloque ""botones fondo blanco"" (pisado por 1915) y reglas de logo/texto/botones en scroll dentro de div:first-child (oculto por 1906, codigo muerto). Ver docs/diff-1338-1339.md. PENDIENTE 23-09-2026: altura nav scroll (28-34px) y padding-top .wp-site-blocks (130px/100px) posiblemente pisados por 1906/1909 en >=600px - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
+1339,02 navigation,CSS,Activo,Global,"EDITADO 30-07-2026: se elimino background gradiente (pisado por 1904) y color texto hamburguesa base. Ver docs/diff-1338-1339.md. PENDIENTE 23-09-2026: color texto panel movil (#a22121) en conflicto con 1904 (#8c2531) - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
 1341,04 TRANSPARENCIA GLASSMORPHISM,CSS,Activo,Global,Glassmorphism cajas + visibilidad botones checkout
 1342,05 checkout,CSS,Activo,is_checkout(),Estilos checkout WooCommerce
 1347,06 quienes somos,CSS,Activo,page-id-12,Cover + caja roja Quienes Somos
@@ -20,7 +20,7 @@ ID,Nombre,Tipo,Estado,Condicion_o_Ubicacion,Notas
 1509,FIX footer movil,CSS,Activo,Global footer responsive,
 1510,FIX corazon rojo boton Dona aqui,CSS,Activo,Header botones,Revisar contra 1915/1916/2087
 1511,FIX target blank boton Visitanos,JS,Activo,Global,
-1535,FIX menu hamburguesa,CSS,Activo,"Global, <=1024px, has-modal-open",Revisar contra 1339/1904/1991/1992
+1535,FIX menu hamburguesa,CSS,Activo,"Global, <=1024px, has-modal-open","Revisar contra 1339/1904/1991/1992. PENDIENTE 23-09-2026: color texto panel movil (#a22121, coincide con 1339) en conflicto con 1904 (#8c2531) - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
 1539,03 covers cifras,CSS,Activo,Home,Posible duplicado con Modulo 3 (doc cover cifras)
 1559,Eliminar estilos inline items current,JS,Activo,Global menu movil,MutationObserver
 1595,Importacion tipografia y espacios,CSS,Activo,Global,Fuente Inter + espaciados generales
@@ -35,10 +35,10 @@ ID,Nombre,Tipo,Estado,Condicion_o_Ubicacion,Notas
 1837,Fuerza comportamiento boton hamburguesa tablet/movil,JS,Activo,Global <=1024px,Revisar contra 1106/1908 (misma funcion)
 1884,Cambios de sombras en inicio / color chevron,CSS,Activo,Home + global nav,
 1888,Header achica al hacer scroll,JS,Activo,Global,Agrega clase .scrolled
-1904,Override color nav barra principal,CSS,Activo,Global,Fragmento 09 - color guinda #8c2531. Revisar contra 1339 (gradiente original)
-1906,Fragmento 10 - Header compacto en scroll,CSS,Activo,Global responsive,Revisar contra 1338/1909 (superposicion header/scroll)
+1904,Override color nav barra principal,CSS,Activo,Global,"Fragmento 09 - color guinda #8c2531. Revisar contra 1339 (gradiente original). PENDIENTE 23-09-2026: color panel movil #8c2531 en conflicto con #a22121 de 1339/1535 - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
+1906,Fragmento 10 - Header compacto en scroll,CSS,Activo,Global responsive,"Revisar contra 1338/1909 (superposicion header/scroll). PENDIENTE 23-09-2026: altura nav scroll escritorio (42-48px) gana por especificidad sobre 1338 (28-34px) - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
 1908,Fragmento 11 - Cierra hamburguesa al abrir accesibilidad,JS,Activo,"Global, <=1024px",
-1909,Fragmento 14 - Fix espacio blanco hero,CSS,Activo,Global responsive,Revisar contra 1338/1906
+1909,Fragmento 14 - Fix espacio blanco hero,CSS,Activo,Global responsive,"Revisar contra 1338/1906. PENDIENTE 23-09-2026: padding-top .wp-site-blocks (144px/48px/36px) gana por especificidad sobre 1338 (130px/100px) en >=600px - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
 1912,Fragmento 12 - Fix espacio hero carga inicial+scroll,JS,Activo,Global,Preload imagen hero + padding dinamico
 1915,Fragmento 16 CSS - Color botones header,CSS,Activo,Global header,Revisar contra 1510
 1916,Fragmento 16 JS - Botones header color+posicion,JS,Activo,Global header desktop,Revisar contra 1510
@@ -46,12 +46,18 @@ ID,Nombre,Tipo,Estado,Condicion_o_Ubicacion,Notas
 1923,Boton Dona Aqui colores invertidos,CSS,Activo,Home cover,
 1947,Espacio superior body Quienes somos/Transparencia/Dona aqui,CSS,Activo,"page-id-12, 625, 280 + checkout",
 1958,Precio dinamico donacion REGLA DE ORO,PHP,Activo,Producto 392 / wpc_nyp,CRITICO - no tocar
-1991,Fix critico submenus,CSS,Activo,Global nav desktop+movil,Revisar contra 1339/1535
-1992,Fix caja negra de foco + clics movil/tablet,CSS,Activo,"Global, <=1024px",Revisar contra 1535
+1991,Fix critico submenus,CSS,Activo,Global nav desktop+movil,"Revisar contra 1339/1535. Revisado 23-09-2026: sin conflicto detectado, no tocar. Ver docs/diff-header-navegacion.md"
+1992,Fix caja negra de foco + clics movil/tablet,CSS,Activo,"Global, <=1024px","Revisar contra 1535. PENDIENTE 23-09-2026: bloque ""Reforzar interactivo panel movil"" (~60 lineas) duplicado EXACTO de 1339 (mismos valores, sin conflicto) - seguro fusionar, no requiere DevTools. Ver docs/diff-header-navegacion.md"
 2041,Pagina Dona ahora color de fondo,CSS,Activo,page-id-280,
 2044,Boton Dona aqui en Colaboradores,CSS,Activo,Pagina Colaboradores,
 2045,Animaciones iconos Mision/Vision/Valores,CSS,Activo,page-id-14 (Mision),
 2046,Texto hero Cada donacion es un gesto,CSS,Activo,Home cover <=1024px,
 2082,Boton Visitar pagina Quienes somos,CSS,Activo,page-id-12,
 2087,Boton corazon en el nav,CSS+JS,Activo,Global nav,Inserta boton nuevo via JS
+2106,Dispara el efecto tocar boton dona aqui hero,JS,Activo,"Global (site_wide_header), touch en boton Dona aqui del hero",Agrega/quita clase al tocar en movil. NUEVO - agregado al repo 23-09-2026
+2121,fondo cifras institucionales,CSS,Activo,Global (site_wide_header),Fondo decorativo seccion Cifras institucionales. NUEVO - agregado al repo 23-09-2026
+2133,Header,HTML,Activo,Global (site_wide_header),Preconnect + import Google Fonts (Cormorant Garamond, Inter). NUEVO - agregado al repo 23-09-2026
+2134,Custom,CSS,Activo,Global (site_wide_header),"Snippet principal: tipografias, hero, header, parrafo donacion. Corregido 23-09-2026: llave de cierre faltante en @media (min-width:1025px) que desactivaba reglas tablet/movil. NUEVO en el repo - revisar contra 1338/1339/1904/1919/1923/1947/2046 (posible solapamiento hero/header)"
+2140,La segunda imagen del hero sobrepuesta,CSS,Activo,"Global (site_wide_header), home hero",Capa ::after duplicada de la imagen del hero para tapar silueta de la imagen original. NUEVO - agregado al repo 23-09-2026
+2141,icono en la pestana,HTML,Activo,Global (site_wide_header),Favicon (link rel=icon) + tab title. NUEVO - agregado al repo 23-09-2026
 1598,Caja negra menu movil,CSS,INACTIVO,-,Confirmado no en uso por el usuario

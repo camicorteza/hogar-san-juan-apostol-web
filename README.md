@@ -15,12 +15,14 @@ revertir errores y limpiar código no utilizado con seguridad.
 ├── wpcode/
 │   ├── php/          → Snippets PHP activos
 │   ├── css/           → Snippets CSS activos        
-│   └──  js/   → Snippets JS activos
+│   ├──  js/   → Snippets JS activos
+│   └── html/         → Snippets de tipo HTML de WPCode (no confundir con custom-html-blocks/)
 ├── custom-html-blocks/  → Bloques de HTML personalizado del editor (por página)
 └── docs/
-    ├── inventario-maestro.csv     → Tabla completa de los 56 snippets con estado
-    ├── diff-1338-1339.md          → Registro de la limpieza de código muerto (jul 2026)
-    └── convenciones-nombres.md    → Cómo se nombra cada archivo
+    ├── inventario-maestro.csv       → Tabla completa de los 62 snippets con estado
+    ├── diff-1338-1339.md            → Registro de la limpieza de código muerto (jul 2026)
+    ├── diff-header-navegacion.md    → Candidatos a limpieza del grupo header/nav (set 2026, pendiente confirmar con DevTools)
+    └── convenciones-nombres.md      → Cómo se nombra cada archivo
 ```
 
 ## Convención de nombres
@@ -37,9 +39,11 @@ El **ID** es el mismo que aparece en la URL del snippet dentro de WPCode
 Los snippets con partes CSS y JS mezcladas se dividen en dos archivos con el
 mismo ID (ej. `2087-boton-corazon-en-el-nav.css` y `.js`).
 
-## Estado de la limpieza (última actualización: 30-07-2026)
+## Estado de la limpieza (última actualización: 23-09-2026)
 
-- **56 snippets** inventariados en total.
+- **62 snippets** inventariados en total (60 activos exportados desde WPCode + 2
+  inactivos archivados como referencia). 6 snippets nuevos agregados el 23-09-2026
+  (2106, 2121, 2133, 2134, 2140, 2141) — no estaban en el repo hasta ahora.
 - **1338 y 1339 editados**: se eliminó código muerto confirmado con Chrome DevTools
   (reglas CSS pisadas por otros snippets más recientes). Detalle completo en
   `docs/diff-1338-1339.md`.
@@ -47,6 +51,10 @@ mismo ID (ej. `2087-boton-corazon-en-el-nav.css` y `.js`).
   (1630/1749/1906), botón "Visitar" Quiénes Somos (2082), botones header (1510/1915/1916).
 - Pendiente de verificación puntual: 2 líneas de posición del contenedor de
   accesibilidad en 1630 vs 1749 (ver notas en el CSV).
+- **Grupo Header y navegación auditado (23-09-2026)**: 1338/1339/1535/1904/1906/1909/1991/1992.
+  4 hallazgos con hipótesis de especificidad ya calculada, pendientes de confirmar
+  con DevTools antes de tocar código. Detalle completo en
+  `docs/diff-header-navegacion.md`.
 
 ## Cómo se verificó qué estaba en uso
 
