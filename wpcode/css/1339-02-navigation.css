@@ -7,11 +7,10 @@
  * Notas: Nav menu completo, colores originales, hamburguesa, submenus. Revisar contra 1904
  
  */
- /* ================================================
-   MÓDULO 2 — MENÚ DE NAVEGACIÓN
-   ================================================ */
 
-/* ── Barra principal — degradado continuo */
+/* Módulo 2 - menú de navegación */
+
+/* Barra principal — degradado continuo */
 html body nav.wp-block-navigation,
 html body nav.wp-block-navigation[style] {
     background-color: transparent !important;
@@ -21,7 +20,7 @@ html body nav.wp-block-navigation[style] {
     position: relative !important;
 }
 
-/* ── Fondo transparente en contenedores internos */
+/* Fondo transparente en contenedores internos */
 nav.wp-block-navigation .wp-block-navigation__container,
 nav.wp-block-navigation .wp-block-navigation__container > *,
 nav.wp-block-navigation ul.wp-block-navigation__container,
@@ -40,7 +39,7 @@ nav.wp-block-navigation .wp-block-navigation-item__content {
     pointer-events: auto !important;
 }
 
-/* ── Ítems escritorio */
+/* Ítems escritorio */
 nav.wp-block-navigation .wp-block-navigation-item__content {
     color: #a22121 !important;
     padding: 10px 14px !important;
@@ -59,7 +58,7 @@ nav.wp-block-navigation .wp-block-navigation-item__content:focus {
     text-decoration: none !important;
 }
 
-/* ── Submenús escritorio — fondo blanco */
+/* Submenús escritorio — fondo blanco */
 .wp-block-navigation__submenu-container,
 nav.wp-block-navigation .wp-block-navigation__submenu-container {
     background: #FFFFFF !important;
@@ -101,7 +100,7 @@ nav.wp-block-navigation .wp-block-navigation-item.has-child::after {
     white-space: nowrap !important;
 }
 
-/* ── Prefijo "›" solo en escritorio */
+/* Prefijo "›" solo en escritorio */
 @media (min-width: 1025px) {
     .wp-block-navigation__submenu-container .wp-block-navigation-item__content::before {
         content: "›";
@@ -119,7 +118,7 @@ nav.wp-block-navigation .wp-block-navigation-item.has-child::after {
     color: #FFFFFF !important;
 }
 
-/* ── Botón hamburguesa — base */
+/* Botón hamburguesa — base */
 nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
     background: transparent !important;
     border: none !important;
@@ -144,7 +143,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
     pointer-events: none !important;
 }
 
-/* ── Tablet y Móvil (≤ 1024px) */
+/* Tablet y Móvil (≤ 1024px) */
 @media (max-width: 1024px) {
 
     nav.wp-block-navigation { position: relative !important; }
@@ -160,13 +159,13 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
         display: none !important;
     }
 
-    /* Limpiar fondos cuando menú está abierto */
+    /* Limpia fondos cuando menú está abierto */
     nav.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open *:not(button) {
         background-color: transparent !important;
         background-image: none !important;
     }
 
-    /* ── Panel lateral deslizante */
+    /* Panel lateral deslizante */
     @keyframes slideInFromRight {
         from { transform: translateX(100%); opacity: 0; }
         to   { transform: translateX(0); opacity: 1; }
@@ -203,7 +202,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
     .wp-block-navigation__responsive-dialog { position: static !important; }
     body.has-modal-open { overflow: auto !important; }
 
-    /* ── Botón cerrar panel */
+    /* Botón cerrar panel */
     html body nav.wp-block-navigation
     .wp-block-navigation__responsive-container.is-menu-open
     button.wp-block-navigation__responsive-container-close {
@@ -252,7 +251,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
         display: none !important;
     }
 
-    /* ── Lista de ítems del panel */
+    /* Lista de ítems del panel */
     nav.wp-block-navigation
     .wp-block-navigation__responsive-container.is-menu-open
     .wp-block-navigation__container {
@@ -280,7 +279,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
         --wp--preset--color--accent-6: transparent !important;
     }
 
-    /* ── Estilos de enlace en panel móvil */
+    /* Estilos de enlace en panel móvil */
     nav.wp-block-navigation
     .wp-block-navigation__responsive-container.is-menu-open
     .wp-block-navigation-item__content,
@@ -339,7 +338,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
         padding-right: 48px !important;
     }
 
-    /* ── Botón chevron */
+    /* Botón chevron */
     nav.wp-block-navigation
     .wp-block-navigation__responsive-container.is-menu-open
     .wp-block-navigation-submenu__toggle,
@@ -382,7 +381,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
         background: rgba(162, 33, 33, 0.12) !important;
     }
 
-    /* ── SVG chevron */
+    /*  SVG chevron */
     nav.wp-block-navigation
     .wp-block-navigation__responsive-container.is-menu-open
     .wp-block-navigation__submenu-icon svg,
@@ -407,7 +406,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
         display: block !important;
     }
 
-    /* ── Rotación chevron abierto */
+    /* Rotación chevron abierto */
     nav.wp-block-navigation
     .wp-block-navigation__responsive-container.is-menu-open
     .wp-block-navigation-item.has-child.is-open > .wp-block-navigation__submenu-icon,
@@ -417,7 +416,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
         transform: rotate(180deg) !important;
     }
 
-    /* ── Submenús acordeón cerrado */
+    /* Submenús acordeón cerrado */
     nav.wp-block-navigation
     .wp-block-navigation__responsive-container.is-menu-open
     .wp-block-navigation__submenu-container {
@@ -447,7 +446,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
             margin 0.25s ease !important;
     }
 
-    /* ── Submenú abierto */
+    /* Submenú abierto */
     nav.wp-block-navigation
     .wp-block-navigation__responsive-container.is-menu-open
     .wp-block-navigation-item.has-child.is-open > .wp-block-navigation__submenu-container,
@@ -461,7 +460,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
         margin: 4px 0 6px 14px !important;
     }
 
-    /* ── Ítems submenú acordeón */
+    /* Ítems submenú acordeón */
     nav.wp-block-navigation
     .wp-block-navigation__responsive-container.is-menu-open
     .wp-block-navigation__submenu-container .wp-block-navigation-item__content,
@@ -496,7 +495,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
     }
 }
 
-/* ── Hamburguesa más grande en móvil */
+/* Hamburguesa más grande en móvil */
 @media (max-width: 768px) {
     nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
         min-width: 58px !important;
@@ -509,7 +508,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
     }
 }
 
-/* ── Ocultar hamburguesa en escritorio */
+/* Ocultar hamburguesa en escritorio */
 @media (min-width: 1025px) {
     nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
         display: none !important;
@@ -534,7 +533,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
     }
 }
 
-/* ── Tablet (600px–1080px) ── */
+/*  Tablet (600px–1080px) */
 @media (min-width: 600px) and (max-width: 1080px) {
     html body nav.wp-block-navigation {
         padding-top: 0 !important;
@@ -564,7 +563,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
     }
 }
 
-/* ── Móvil (< 599px) ── */
+/* Móvil (< 599px)*/
 @media (max-width: 599px) {
     html body nav.wp-block-navigation {
         min-height: 30px !important;
@@ -581,7 +580,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
     }
 }
 
-/* ── Nav específico scroll tablet y móvil ── */
+/* Nav específico scroll tablet y móvil */
 @media (max-width: 1080px) {
     body.scrolled nav.wp-container-core-navigation-is-layout-c4d0b4f1,
     body.scrolled nav.has-text-color.has-background.is-responsive.wp-block-navigation {
@@ -604,7 +603,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
     }
 }
 
-/* ── Hamburguesa scroll tablet y móvil ── */
+/* Hamburguesa scroll tablet y móvil */
 @media (max-width: 1080px) {
     body.scrolled nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
         min-width: 28px !important;
@@ -616,7 +615,7 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
         height: 18px !important;
     }
 }
-/* ── Permitir que el panel del menú se abra al hacer scroll ── */
+/* Permite que el panel del menú se abra al hacer scroll */
 @media (max-width: 1080px) {
     body.scrolled header.wp-block-template-part > div:nth-child(2) {
         overflow: visible !important;
@@ -625,9 +624,8 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg {
     body.scrolled nav.has-text-color.has-background.is-responsive.wp-block-navigation {
         overflow: visible !important;
     }
-    /* Solo ocultar cuando el menú NO está abierto */
+    /* Solo ocultar cuando el menú no está abierto */
     body.scrolled nav.wp-block-navigation:not(:has(.is-menu-open)) {
         overflow: hidden !important;
     }
 }
-

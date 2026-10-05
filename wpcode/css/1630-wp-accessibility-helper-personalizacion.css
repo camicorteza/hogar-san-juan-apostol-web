@@ -8,9 +8,7 @@
  
  */
 
-/* ========================================
-   PANEL CERRADO - forzar por aria-hidden
-   ======================================== */
+/* panel cerrado */
 #access_container {
   display: none !important;
 }
@@ -18,9 +16,8 @@
   display: block !important;
 }
 
-/* ========================================
-   ÍCONO FLOTANTE - escritorio y tablet
-   ======================================== */
+/* icono flotante escritorio/ tablet
+  */
 div#wp_access_helper_container {
   position: fixed !important;
   top: 10px !important;
@@ -36,10 +33,7 @@ div#wp_access_helper_container {
   overflow: visible !important;
 }
 
-/* ========================================
-   ÍCONO FLOTANTE - solo móvil (≤ 768px)
-   Va abajo a la derecha, encima del WhatsApp
-   ======================================== */
+/* icono flotante móvil (≤ 768px) */
 @media (max-width: 768px) {
   div#wp_access_helper_container {
     top: 0px !important;
@@ -59,9 +53,9 @@ div#wp_access_helper_container {
   }
 }
 
-/* ========================================
-   BOTONES del panel: blanco / #a22121
-   ======================================== */
+/* botones del panel 
+   blanco / #a22121
+ */
 #access_container button:not(.convar),
 #access_container .wah_btn {
   background-color: #FFFFFF !important;
@@ -76,9 +70,7 @@ div#wp_access_helper_container {
   color: #FFFFFF !important;
 }
 
-/* ========================================
-   BOTÓN "Contraste" - renombrado
-   ======================================== */
+/* botón "contraste" - renombrado */
 button#contrast_trigger {
   font-size: 0 !important;
   color: transparent !important;
@@ -93,9 +85,8 @@ button#contrast_trigger:hover::after {
   color: #FFFFFF !important;
 }
 
-/* ========================================
-   BOTÓN CERRAR
-   ======================================== */
+/* Botón cerar 
+   */
 button.close_container.wahout,
 .wah-skip.close-wah-sidebar {
   background-color: #FFFFFF !important;
@@ -109,9 +100,8 @@ button.close_container.wahout:hover,
   color: #FFFFFF !important;
 }
 
-/* ========================================
-   CÍRCULOS DE CONTRASTE - colores reales
-   ======================================== */
+/* Circulos de contraste 
+   */
 #access_container button.convar {
   border: 2px solid #ccc !important;
   overflow: hidden !important;
@@ -132,9 +122,9 @@ button.close_container.wahout:hover,
 #access_container button.convar.yellow { background-color: #FFD800 !important; }
 #access_container button.convar.navi   { background-color: #B200FF !important; }
 
-/* ========================================
-   TEXTO "Vaciar cookies" → "Eliminar cambios"
-   ======================================== */
+/* 
+   texto "Vaciar cookies" cambia por  "Eliminar cambios"
+   */
 .wah_clear_cookies button {
   font-size: 0 !important;
   color: transparent !important;
@@ -149,9 +139,8 @@ button.close_container.wahout:hover,
   color: #FFFFFF !important;
 }
 
-/* ========================================
-   TEXT-SHADOW en párrafo hero "Cada donación"
-   ======================================== */
+/* text shadow en p hero "Cada donación"
+*/
 .wp-block-cover__inner-container
 p.has-text-align-center.has-base-color.has-text-color.has-link-color.wp-elements-01c75c8e812945e64701ef1d98794388 {
   text-shadow: 2px 2px 4px #333333 !important;
@@ -160,9 +149,8 @@ p.has-text-align-center.has-base-color.has-text-color.has-link-color.wp-elements
   text-shadow: 2px 2px 4px #333333 !important;
 }
 
-/* ========================================
-   QUITAR text-shadow en header/nav
-   ======================================== */
+/* quita text shadow en header-nav 
+ */
 header a,
 header button,
 header strong,
@@ -173,17 +161,14 @@ nav strong,
   text-shadow: none !important;
 }
 
-/* ========================================
-   HOGAR SAN JUAN APÓSTOL en negrita
-   ======================================== */
+/* 
+   HOGAR SAN JUAN APÓSTOL en negrita */
 .wp-block-site-title,
 .wp-block-site-title a {
   font-weight: bold !important;
 }
 
-/* ========================================
-   PANEL WAH - ancho cuando está abierto
-   ======================================== */
+/* panel wah ancho abierto  */
 #access_container[aria-hidden="false"],
 #access_container[aria-hidden="false"] .access_container_inner,
 #access_container[aria-hidden="false"] div.access_container_inner {
@@ -191,9 +176,8 @@ nav strong,
   width: 180px !important;
 }
 
-/* ========================================
-   CÍRCULOS DE CONTRASTE - 2 por fila
-   ======================================== */
+/* circulos contraste - 2 por fila
+   */
 div.color_selector {
   display: none !important;
 }
@@ -210,9 +194,7 @@ div.color_selector button.convar {
   border-radius: 50% !important;
 }
 
-/* ========================================
-   CRÉDITOS WAH - discretos pero visibles
-   ======================================== */
+/* creditos wah  */
 div.wah-free-credits {
   font-size: 6px !important;
   opacity: 0.3 !important;
@@ -228,7 +210,7 @@ div#wp_access_helper_container div[style*="text-align:center"] {
   max-width: 42px !important;
   line-height: 1 !important;
 }
-/* Créditos WAH en móvil: bajar a la parte inferior */
+/* Créditos WAH en móvil*/
 @media (max-width: 768px) {
     div#wp_access_helper_container div.wah-free-credits {
         position: fixed !important;
@@ -241,7 +223,7 @@ div#wp_access_helper_container div[style*="text-align:center"] {
         z-index: 999999 !important;
     }
 }
-/* Ocultar títulos de módulo ("Redimensionar imagen", "Contraste", etc.) */
+/* oculta títulos de módulo ("Redimensionar imagen", "Contraste", etc.) */
 div.a_module_title {
     display: none !important;
 }

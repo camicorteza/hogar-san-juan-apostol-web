@@ -6,31 +6,18 @@
  * Ubicacion/Condicion: Home cover <=1024px
  */
 
-/* ================================================
-   TEXTO HERO — "Cada donación es un gesto."
-   ================================================ */
-
-@media (max-width: 1024px) {
-    .wp-elements-21fde6511f25a9e5194751185d1a89cf
-    .wp-block-cover__inner-container
-    p.has-text-align-center strong {
-        color: #a22121 !important;
-
-        /* Anula cualquier efecto de borde previo que
-           esté generando el doble contorno */
-        -webkit-text-stroke: 0 !important;
-        text-stroke: 0 !important;
-        -webkit-text-fill-color: #a22121 !important;
-        filter: none !important;
-        -webkit-filter: none !important;
-
-        /* Un solo text-shadow, sin combinarse con nada más */
-        text-shadow:
-            -1px -1px 0 rgba(255, 255, 255, 0.4),
-             1px -1px 0 rgba(255, 255, 255, 0.4),
-            -1px  1px 0 rgba(255, 255, 255, 0.4),
-             1px  1px 0 rgba(255, 255, 255, 0.4) !important;
-
-        letter-spacing: 2px !important;
-    }
+/* Texto hero — "Cada donación es un gesto..."*/
+.wp-elements-21fde6511f25a9e5194751185d1a89cf
+.wp-block-cover__inner-container
+p.has-text-align-center strong {
+    color: #a22121 !important;
+    -webkit-text-stroke: 0 !important;
+    -webkit-text-fill-color: #a22121 !important;
+    filter: none !important;
+    text-shadow:
+        -1px -1px 0 rgba(255, 255, 255, 0.6),
+         1px -1px 0 rgba(255, 255, 255, 0.6),
+        -1px  1px 0 rgba(255, 255, 255, 0.6),
+         1px  1px 0 rgba(255, 255, 255, 0.6) !important;
+    letter-spacing: normal !important;
 }

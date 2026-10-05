@@ -1,3 +1,4 @@
+<?php
 /**
  * ID WPCode: 1300
  * Nombre: Permitir flujo de donacion en publico
@@ -5,17 +6,13 @@
  * Estado: Activo
  * Ubicacion/Condicion: Global (bypass WC Coming Soon)
  * Notas: Critico - no tocar
- *
  */
 
-/**
- * BYPASS COMING SOON WC 9.0+ — Flujo de donación público
- * Usa los hooks correctos del nuevo sistema de Site Visibility
- */
+/* BYPASS COMING SOON WC 9.0+ — Flujo de donación público
+  Usa los hooks correctos del nuevo sistema de Site Visibility */
 
-/* ═══════════════════════════════════════════
-   Detectar ruta de donación
-   ═══════════════════════════════════════════ */
+/* Detectar ruta de donación */
+
 if ( ! function_exists( 'hja_is_donation_route' ) ) {
     function hja_is_donation_route() {
         $url = $_SERVER['REQUEST_URI'] ?? '';
@@ -47,11 +44,7 @@ if ( ! function_exists( 'hja_is_donation_route' ) ) {
     }
 }
 
-/* ═══════════════════════════════════════════
-   HOOK PRINCIPAL WC 9.0+
-   El sistema nuevo usa este filtro para decidir
-   si la página debe reemplazarse con Coming Soon
-   ═══════════════════════════════════════════ */
+/* Hook principal WC 9.0 */
 add_filter( 'woocommerce_coming_soon_exclude', function( $exclude ) {
     if ( hja_is_donation_route() ) {
         return true;
@@ -59,9 +52,7 @@ add_filter( 'woocommerce_coming_soon_exclude', function( $exclude ) {
     return $exclude;
 }, 1, 1 );
 
-/* ═══════════════════════════════════════════
-   HOOK WC 9.0+ alternativo — page controller
-   ═══════════════════════════════════════════ */
+/* Hook wc  9.0+ alternativo — page controller */
 add_filter( 'woocommerce_coming_soon_get_template', function( $template ) {
     if ( hja_is_donation_route() ) {
         return null; // No template = no bloqueo
@@ -69,14 +60,12 @@ add_filter( 'woocommerce_coming_soon_get_template', function( $template ) {
     return $template;
 }, 1, 1 );
 
-/* ═══════════════════════════════════════════
-   HOOK WC 9.0+ — Intercepción en wp hook
-   (antes de que el coming soon renderice)
-   ═══════════════════════════════════════════ */
+/* Hook wc 9.0+ — Intercepción en wp hook
+   (antes de que el coming soon renderice) */
 add_action( 'wp', function() {
     if ( ! hja_is_donation_route() ) return;
     
-    // Remover TODAS las acciones del sistema coming soon
+    // Remueve todas las acciones del sistema coming soon
     remove_all_filters( 'woocommerce_coming_soon_exclude' );
     remove_all_actions( 'woocommerce_coming_soon_page' );
     
@@ -88,9 +77,7 @@ add_action( 'wp', function() {
     add_filter( 'pre_option_woocommerce_store_pages_only', '__return_empty_string' );
 }, 1 );
 
-/* ═══════════════════════════════════════════
-   NUCLEAR: Desactivar site visibility para esta petición
-   ═══════════════════════════════════════════ */
+/* Nuclear: Desactivar site visibility para esta petición */
 add_action( 'plugins_loaded', function() {
     if ( ! hja_is_donation_route() ) return;
     
@@ -104,9 +91,7 @@ add_action( 'plugins_loaded', function() {
     add_filter( 'option_wc_store_coming_soon', '__return_false', 999 );
 }, 1 );
 
-/* ═══════════════════════════════════════════
-   Producto 392 siempre visible
-   ═══════════════════════════════════════════ */
+/* Producto 392 siempre visible */
 add_filter( 'woocommerce_product_is_visible', function( $visible, $product_id ) {
     if ( (int) $product_id === 392 ) return true;
     return $visible;

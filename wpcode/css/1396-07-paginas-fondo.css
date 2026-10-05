@@ -8,11 +8,9 @@
  *
  */
 
- /* ================================================
-   MÓDULO 7 — FONDOS DE PÁGINAS
-   ================================================ */
+/* modulo 7 fondos de pag */
 
-/* ── Páginas Misión (14) y Transparencia (8) — fondo compartido */
+/* Páginas Misión (14) y Transparencia (8) — fondo compartido */
 html:has(body.page-id-14),
 html:has(body.page-id-8),
 body.page-id-14,
@@ -39,7 +37,7 @@ body.page-id-8 main > .wp-block-group.alignfull {
     background-color: #FAF9F8 !important;
 }
 
-/* ── Bloques alignfull a ancho completo en página 8 */
+/*  Bloques alignfull a ancho completo en página 8 */
 body.page-id-8 .wp-block-group.alignfull.is-style-section-3,
 body.page-id-8 aside.wp-block-group.alignfull.is-style-section-3,
 body.page-id-8 .wp-block-cover.alignfull.is-light,
@@ -53,7 +51,7 @@ body.page-id-8 .entry-content > aside.alignfull {
     box-sizing: border-box !important;
 }
 
-/* ── Responsive: Tablet y Móvil (≤ 1024px) — mismas reglas, un solo bloque */
+/* Responsive: Tablet y Móvil (≤ 1024px) — mismas reglas, un solo bloque */
 @media (max-width: 1024px) {
     body.page-id-8 .wp-block-group.alignfull.is-style-section-3,
     body.page-id-8 aside.wp-block-group.alignfull.is-style-section-3,

@@ -8,11 +8,9 @@
  *
  */
 
-/* ================================================
-   FRAGMENTO 14 — HEADER ALTURA + NAV + HERO 
-   ================================================ */
+/* fragmento 14 - header altura +nav +hero  */
 
-/* ── ESCRITORIO (>1024px) ── */
+/*  Escritorio(>1024px) */
 @media (min-width: 1025px) {
 
     /* Franja crema: más altura con aire proporcional */
@@ -36,8 +34,7 @@
         padding-bottom: 10px !important;
     }
 
-    /* wp-site-blocks: ajustado al nuevo alto total del header
-       franja ~80px + barra nav ~64px = ~144px */
+    /* wp-site-blocks: ajustado al nuevo alto total del header*/
     html body.home:not(.scrolled) .wp-site-blocks {
         padding-top: 144px !important;
     }
@@ -49,7 +46,7 @@
         flex-shrink: 0 !important;
     }
 
-    /* Nav SIN scroll: ítems a la derecha con padding del borde */
+    /* Nav sin scroll: ítems a la derecha con padding del borde */
     html body:not(.scrolled) header.wp-block-template-part
     nav.wp-block-navigation .wp-block-navigation__container {
         justify-content: flex-end !important;
@@ -62,7 +59,7 @@
         justify-content: flex-end !important;
     }
 
-    /* Nav CON scroll: ítems centrados */
+    /* Nav con scroll: ítems centrados */
     html body.scrolled header.wp-block-template-part
     nav.wp-block-navigation .wp-block-navigation__container {
         justify-content: center !important;
@@ -75,13 +72,13 @@
         justify-content: center !important;
     }
 
-    /* wp-site-blocks CON scroll */
+    /* wp-site-blocks con scroll */
     html body.home.scrolled .wp-site-blocks {
         padding-top: 48px !important;
     }
 }
 
-/* ── TABLET (600px–1024px) ── */
+/* Tablet (600px–1024px)*/
 @media (min-width: 600px) and (max-width: 1024px) {
     html body.home:not(.scrolled) .wp-site-blocks {
         padding-top: 144px !important;

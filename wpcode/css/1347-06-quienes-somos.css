@@ -8,13 +8,11 @@
  *
  */
 
-/* ================================================
-   MÓDULO 6 — QUIÉNES SOMOS 
-   ================================================ */
+/* modulo 6 quienes somos */
  
 body.page-id-12 .wp-site-blocks { padding-top: 130px !important; }
  
-/* ── Eliminar espaciado superior heredado del contenido */
+/* Eliminar espaciado superior heredado del contenido */
 body.page-id-12 main.wp-block-group.has-global-padding,
 body.page-id-12 main > .wp-block-group:first-child,
 body.page-id-12 main > .wp-block-group.alignfull:first-child,
@@ -24,8 +22,7 @@ body.page-id-12 .wp-block-post-content > *:first-child {
     padding-top: 0 !important;
 }
  
-/* ── Cover a ancho completo
-      [OPTIMIZADO] Fusionados is-light y has-parallax en un bloque */
+/*  Cover a ancho completo Fusionados is-light y has-parallax en un bloque */
 body.page-id-12 .wp-block-cover.alignfull.is-light,
 body.page-id-12 .wp-block-cover.alignfull.has-parallax {
     width: 100vw !important;
@@ -35,7 +32,7 @@ body.page-id-12 .wp-block-cover.alignfull.has-parallax {
     margin-top: 0 !important;
 }
  
-/* ── Cover claro: textos en negro con sombra blanca */
+/*  Cover claro: textos en negro con sombra blanca */
 body.page-id-12 .wp-block-cover.alignfull.is-light .wp-block-cover__inner-container *,
 body.page-id-12 .wp-block-cover.alignfull.is-light p,
 body.page-id-12 .wp-block-cover.alignfull.is-light h1,
@@ -46,7 +43,7 @@ body.page-id-12 .wp-block-cover.alignfull.is-light h4 {
     text-shadow: 2px 2px 4px #FFFFFF !important;
 }
  
-/* ── Cover parallax: altura mínima */
+/*  Cover parallax: altura mínima */
 body.page-id-12 .wp-block-cover.alignfull.has-parallax {
     position: relative !important;
     min-height: 728px !important;
@@ -55,7 +52,7 @@ body.page-id-12 .wp-block-cover.alignfull.has-parallax {
     margin-bottom: 0 !important;
 }
  
-/* ── Cover parallax: textos en blanco */
+/*  Cover parallax: textos en blanco */
 body.page-id-12 .wp-block-cover.alignfull.has-parallax .wp-block-cover__inner-container p,
 body.page-id-12 .wp-block-cover.alignfull.has-parallax .wp-block-cover__inner-container h1,
 body.page-id-12 .wp-block-cover.alignfull.has-parallax .wp-block-cover__inner-container h2,
@@ -68,7 +65,7 @@ body.page-id-12 .wp-block-cover.alignfull.has-parallax .wp-block-cover__inner-co
         0px 2px 8px rgba(0, 0, 0, 0.4) !important;
 }
  
-/* ── Degradado oscuro en la parte inferior del cover parallax */
+/*  Degradado oscuro en la parte inferior del cover parallax */
 body.page-id-12 .wp-block-cover.alignfull.has-parallax::after {
     content: "" !important;
     position: absolute !important;
@@ -91,14 +88,14 @@ body.page-id-12 .wp-block-cover.alignfull.has-parallax .wp-block-cover__inner-co
     padding-bottom: revert !important;
 }
  
-/* ── Neutralizar filtros del módulo 3 para esta página */
+/* Neutralizar filtros del módulo 3 para esta página */
 body.page-id-12 .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-background.has-parallax {
     -webkit-mask-image: none !important;
     mask-image: none !important;
     filter: none !important;
 }
  
-/* ── Revertir estilos del home que afectan a la primera h3 del cover */
+/*  Revertir estilos del home que afectan a la primera h3 del cover */
 body.page-id-12 .wp-block-cover.alignfull.has-parallax
 > .wp-block-cover__inner-container > h3:first-of-type {
     position: static !important;
@@ -117,7 +114,7 @@ body.page-id-12 .wp-block-cover.alignfull.has-parallax
     display: block !important;
 }
  
-/* ── Revertir orden flex de elementos del cover heredado del home */
+/*  Revertir orden flex de elementos del cover heredado del home */
 body.page-id-12 .wp-block-cover.alignfull.has-parallax
 > .wp-block-cover__inner-container > h3:nth-of-type(2),
 body.page-id-12 .wp-block-cover.alignfull.has-parallax
@@ -130,7 +127,7 @@ body.page-id-12 .wp-block-cover.alignfull.has-parallax
     flex: revert !important;
 }
  
-/* ── Wrapper de la caja roja (misión/propósito) */
+/* Wrapper de la caja roja (misión/propósito) */
 #quienes-caja-roja-wrapper {
     position: relative !important;
     width: 100% !important;
@@ -141,7 +138,7 @@ body.page-id-12 .wp-block-cover.alignfull.has-parallax
     place-items: center !important;
 }
  
-/* ── Fondo negro a ancho completo */
+/*  Fondo negro a ancho completo */
 #quienes-caja-roja-wrapper::before {
     content: "" !important;
     position: absolute !important;
@@ -153,7 +150,7 @@ body.page-id-12 .wp-block-cover.alignfull.has-parallax
     z-index: 0 !important;
 }
  
-/* ── Caja roja responsiva */
+/* Caja roja responsiva */
 #quienes-caja-roja-wrapper p {
     position: relative !important;
     z-index: 1 !important;
@@ -170,7 +167,7 @@ body.page-id-12 .wp-block-cover.alignfull.has-parallax
     box-sizing: border-box !important;
 }
  
-/* ── Eliminar espaciado inferior del post content */
+/* Eliminar espaciado inferior del post content */
 body.page-id-12 main.wp-block-group.has-global-padding,
 body.page-id-12 main > .wp-block-group:last-child,
 body.page-id-12 main > .wp-block-group.alignfull:last-child,
@@ -180,7 +177,7 @@ body.page-id-12 .wp-block-post-content {
     margin-bottom: 0 !important;
 }
  
-/* ── Degradado blanco inferior en cover claro */
+/*  Degradado blanco inferior en cover claro */
 body.page-id-12 .wp-block-cover.alignfull.is-light::after {
     content: "" !important;
     position: absolute !important;
@@ -200,8 +197,7 @@ body.page-id-12 .wp-block-cover.alignfull.is-light .wp-block-cover__inner-contai
     z-index: 3 !important;
 }
  
-/* ── Responsive Quiénes Somos — tablet (≤ 1024px)
-      [OPTIMIZADO] Fusionados is-light y has-parallax en un bloque */
+/*  Responsive Quiénes Somos — tablet (≤ 1024px) */
 @media (max-width: 1024px) {
     body.page-id-12 .wp-block-cover.alignfull.is-light,
     body.page-id-12 .wp-block-cover.alignfull.has-parallax {
@@ -212,7 +208,7 @@ body.page-id-12 .wp-block-cover.alignfull.is-light .wp-block-cover__inner-contai
     body.page-id-12 .wp-block-cover.alignfull.has-parallax { min-height: 600px !important; }
 }
  
-/* ── Responsive Quiénes Somos — móvil (≤ 768px) */
+/*  Responsive Quiénes Somos — móvil (≤ 768px) */
 @media (max-width: 768px) {
     body.page-id-12 .wp-block-cover.alignfull.is-light,
     body.page-id-12 .wp-block-cover.alignfull.has-parallax {

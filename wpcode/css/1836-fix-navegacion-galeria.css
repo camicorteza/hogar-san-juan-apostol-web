@@ -7,16 +7,15 @@
  *
  */
 
-/* ================================================
-   FIX NAV + GALERÍA 
-   ================================================ */
+/* nav + galería
+ */
 
-/* ── 1. Submenú escritorio — delay más largo para poder bajar */
+/* Submenú escritorio */
 nav.wp-block-navigation .wp-block-navigation-item.has-child {
     position: relative !important;
 }
 
-/* Área invisible que mantiene hover activo mientras bajas */
+/* Área invisible que mantiene hover activo mientra baja */
 nav.wp-block-navigation .wp-block-navigation-item.has-child::after {
     content: "" !important;
     position: absolute !important;
@@ -35,7 +34,7 @@ nav.wp-block-navigation .wp-block-navigation__submenu-container {
     padding-top: 8px !important;
 }
 
-/* ── 2. Botón hamburguesa tablet — fix pointer-events */
+/* Botón hamburguesa tablet pointer-events */
 @media (max-width: 1024px) {
     nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
         display: flex !important;
@@ -62,14 +61,14 @@ nav.wp-block-navigation .wp-block-navigation__submenu-container {
         fill: #a22121 !important;
     }
 
-    /* Asegurar que nada tape el botón */
+    /* Asegura que nada tape el botón */
     nav.wp-block-navigation > .wp-block-navigation__container {
         display: none !important;
         pointer-events: none !important;
     }
 }
 
-/* ── 3. Hamburguesa móvil — más grande */
+/* Hamburguesa móvil — más grande */
 @media (max-width: 768px) {
     nav.wp-block-navigation .wp-block-navigation__responsive-container-open {
         min-width: 52px !important;
@@ -81,7 +80,7 @@ nav.wp-block-navigation .wp-block-navigation__submenu-container {
     }
 }
 
-/* ── 4. Carrusel galería — ancho completo simétrico en móvil */
+/*carrusel galería ancho completo simétrico en móvil */
 @media (max-width: 768px) {
     .galeria-wrap {
         padding-left: 0 !important;
@@ -103,7 +102,7 @@ nav.wp-block-navigation .wp-block-navigation__submenu-container {
     }
 }
 
-/* ── 5. Modal galería — imágenes centradas y visibles */
+/* modal galería img centradas */
 .modal-album {
     align-items: center !important;
     justify-content: flex-start !important;
@@ -145,7 +144,7 @@ nav.wp-block-navigation .wp-block-navigation__submenu-container {
     width: 100% !important;
     max-width: 900px !important;
 }
-/* ── Carrusel — ancho completo simétrico todos los breakpoints */
+/* carrusel — ancho completo simétrico todos los breakpoints */
 .carrusel-wrap {
     width: calc(100% + 48px) !important;
     margin-left: -24px !important;
@@ -162,7 +161,7 @@ nav.wp-block-navigation .wp-block-navigation__submenu-container {
     }
 }
 
-/* ── Modal — scroll al top al abrir, imágenes visibles de inmediato */
+/* modal scroll al top al abrir */
 .modal-album.abierto {
     justify-content: flex-start !important;
     align-items: center !important;

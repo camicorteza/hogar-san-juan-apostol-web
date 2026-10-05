@@ -7,11 +7,10 @@
  * Notas: Glassmorphism cajas + visibilidad botones checkout
  *
  */
-/* ================================================
-   MÓDULO 4 — TRANSPARENCIA, GLASSMORPHISM
-   ================================================ */
 
-/* ── Animaciones globales */
+/* Módulo 4 -Transparencia , glassmorphism */
+
+/* Animaciones globales */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(50px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -19,7 +18,7 @@
 .animar { opacity: 0; }
 .animar.visible { animation: fadeInUp 0.7s ease forwards; }
 
-/* ── Glassmorphism — cajas Transparencia */
+/* Glassmorphism — cajas Transparencia */
 .wp-block-column.has-border-color.has-base-background-color,
 [style*="border-width:1px"] {
     background: linear-gradient(135deg,
@@ -44,7 +43,7 @@
     color: #FFFFFF !important;
 }
 
-/* ── Botones Checkout WooCommerce — visibilidad */
+/* Botones Checkout WooCommerce — visibilidad */
 .wc-block-checkout .wc-block-components-checkout-place-order-button,
 .wc-block-checkout button.wc-block-components-button,
 .wc-block-checkout .wp-element-button,

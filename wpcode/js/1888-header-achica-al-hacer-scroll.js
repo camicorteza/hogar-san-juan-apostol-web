@@ -7,6 +7,7 @@
  * Notas: Agrega clase .scrolled
  *
  */
+
 (function() {
     var header = document.querySelector('header.wp-block-template-part');
     if (!header) return;
@@ -21,4 +22,3 @@
     };
     window.addEventListener('scroll', onScroll, { passive: true });
 })();
-

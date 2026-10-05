@@ -44,6 +44,23 @@ mismo ID (ej. `2087-boton-corazon-en-el-nav.css` y `.js`).
 - **62 snippets** inventariados en total (60 activos exportados desde WPCode + 2
   inactivos archivados como referencia). 6 snippets nuevos agregados el 23-09-2026
   (2106, 2121, 2133, 2134, 2140, 2141) — no estaban en el repo hasta ahora.
+- **Resincronizado completo (24-09-2026)**: se detectó que 53 de los 60 snippets
+  activos tenían el repo desactualizado frente a lo que está hoy en WPCode — en 28
+  casos solo cambiaban los comentarios (limpiados a mano en WPCode para que no
+  parecieran generados con ayuda de IA), pero en **15 casos había código realmente
+  distinto** (reglas agregadas, quitadas o con valores distintos, editadas
+  directo en WPCode sin volver a copiar al repo). Todos los archivos de
+  `wpcode/css/`, `wpcode/js/` y `wpcode/php/` quedaron igualados 1:1 contra un
+  export fresco de WPCode (Tools → Import/Export). Algunos cambios reales
+  notables: 1923 (botón Dona Aquí) ahora usa texto blanco con contorno en vez de
+  texto sólido, y agregó soporte para la clase `.btn-hover-invertido` que dispara
+  el snippet nuevo 2106 al tocar en móvil; 1947 sumó una regla nueva de
+  `transform: translateZ(0)` en el cover de Quiénes Somos; 2046 dejó de estar
+  limitado a `@media (max-width:1024px)` y ahora aplica también en escritorio;
+  1539 tenía bloques de sombra de texto duplicados que ya no existen en la
+  versión activa. Recomendación: a partir de ahora, después de cada cambio en
+  WPCode, exportar de nuevo (Tools → Import/Export) en vez de copiar snippet por
+  snippet, para que esto no se vuelva a desincronizar.
 - **1338 y 1339 editados**: se eliminó código muerto confirmado con Chrome DevTools
   (reglas CSS pisadas por otros snippets más recientes). Detalle completo en
   `docs/diff-1338-1339.md`.
@@ -74,3 +91,20 @@ snippet, código muerto).
 4. Actualizar `docs/inventario-maestro.csv` si cambia el estado (activo/inactivo)
    de algún snippet.
 
+
+## Formato de los archivos
+
+Los archivos de `wpcode/` están pensados para leerse bien en el editor y en GitHub,
+por eso difieren un poco de cómo se guardan dentro de WPCode:
+
+- **`.css` y `.js`**: solo contienen CSS/JS válido, sin etiquetas `<style>` ni `<script>`.
+  Si en WPCode el snippet está guardado dentro de `<script>…</script>`, la cabecera del
+  archivo lo indica en una línea `Nota:`.
+- **`.php`**: la primera línea es `<?php` solo para que el editor y GitHub coloreen el
+  código. **No se pega en WPCode** (WPCode ya sabe que es PHP).
+- **Snippets con CSS + JS** (ej. `2087`): se separan en dos archivos con el mismo ID y la
+  cabecera indica "Parte 1/2" y "Parte 2/2".
+- **`1106-menu-submenus.php`**: vive en `wpcode/php/` porque es PHP (`add_action('wp_footer', …)`)
+  que imprime un `<script>`.
+- La cabecera `/** … */` de cada archivo es solo documentación de este repo (ID, tipo,
+  estado, condición); no hace falta copiarla a WPCode.

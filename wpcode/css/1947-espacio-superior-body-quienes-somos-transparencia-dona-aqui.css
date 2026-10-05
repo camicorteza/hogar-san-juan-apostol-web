@@ -6,35 +6,28 @@
  * Ubicacion/Condicion: page-id-12, 625, 280 + checkout
  */
 
+/* Quiénes Somos: ajuste en escritorio y móvil */
 
-/* ══════════════════════════════════════════════════════
-   Ajuste de espacio superior del body para que el contenido
-   no choque con el menú de navegación fijo.
-
-   IDs confirmados directamente del <body> de cada página:
-   - Quiénes Somos          -> page-id-12
-   - Transparencia Corporativa -> page-id-625
-   - Dona Aquí (Dona ahora) -> page-id-280
-   ══════════════════════════════════════════════════════ */
-
-/* Quiénes Somos: ajuste en TODOS los tamaños (escritorio y móvil) */
 body.page-id-12 {
-  margin-top: 42px !important;
+    margin-top: 35px !important;
 }
 
-/* Transparencia Corporativa y Dona Aquí: ajuste SOLO en móvil */
+/* Transparencia Corporativa y Dona Aquí: ajuste en móvil */
 @media (max-width: 768px) {
-  body.page-id-625,
-  body.page-id-280 {
-    margin-top: 25px !important;
-  }
+    body.page-id-625,
+    body.page-id-280 {
+        margin-top: 25px !important;
+    }
 }
-	/* ================================================
-   AJUSTE: Espacio extra bajo el nav en checkout
-   Solo aplica en modo escritorio (min-width: 769px)
-   ================================================ */
+
+/* Espacio extra bajo el nav en checkout (solo escritorio, min-width: 769px) */
 @media (min-width: 769px) {
     body.woocommerce-checkout .wp-site-blocks {
         margin-top: 50px !important;
     }
+}
+
+body.page-id-12 .wp-block-cover.is-light {
+    transform: translateZ(0);
+    will-change: transform;
 }

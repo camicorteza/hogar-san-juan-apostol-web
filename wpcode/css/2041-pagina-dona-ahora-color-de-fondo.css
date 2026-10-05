@@ -6,9 +6,7 @@
  * Ubicacion/Condicion: page-id-280
  */
 
-/* ================================================
-   FONDO DEGRADADO RADIAL — Página "Dona ahora"
-   ================================================ */
+/* Fondo degradado radial — Pág."Dona ahora" */
 
 html body.page-id-280 {
     position: relative !important;
@@ -32,9 +30,7 @@ html body.page-id-280::before {
     ) !important;
 }
 
-/* Hacemos transparentes los contenedores que antes
-   pintaban un color sólido encima, para que se vea
-   la capa de fondo fija de más atrás */
+/* Hace transparentes los contenedores */
 html body.page-id-280 .wp-site-blocks,
 html body.page-id-280 main.wp-block-group,
 html body.page-id-280 .entry-content,

@@ -7,9 +7,7 @@
  *
  */
 
-/* ================================================
-   FIX HEADER — Icono corazón mismo tamaño que casa
-   ================================================ */
+/* fix header — Icono corazón mismo tamaño que casa */
 header.wp-block-template-part
 > div:first-child
 .wp-block-buttons
@@ -20,7 +18,7 @@ header.wp-block-template-part
     background-size: 16px 16px !important;
 }
 
-/* ── Estructura base ambos botones ───────────── */
+/* Estructura base ambos botones */
 header.wp-block-template-part
 > div:first-child
 .wp-block-buttons
@@ -34,7 +32,7 @@ header.wp-block-template-part
                 border-color 0.2s ease !important;
 }
 
-/* ── Icono ::before base ──────────────────────── */
+/* Icono ::before base */
 header.wp-block-template-part
 > div:first-child
 .wp-block-buttons
@@ -50,7 +48,7 @@ header.wp-block-template-part
     transition: filter 0.2s ease !important;
 }
 
-/* ── Botón Dona aquí — icono corazón 14x14 ───── */
+/* Botón Dona aquí — icono corazón 14x14 */
 header.wp-block-template-part
 > div:first-child
 .wp-block-buttons
@@ -61,7 +59,7 @@ header.wp-block-template-part
     height: 14px !important;
 }
 
-/* ── Botón Visitanos — icono casa 14x14 ──────── */
+/* Botón Visitanos — icono casa 14x14 */
 header.wp-block-template-part
 > div:first-child
 .wp-block-buttons
@@ -72,7 +70,7 @@ header.wp-block-template-part
     height: 14px !important;
 }
 
-/* ── Hover ambos botones — fondo #a22121 ─────── */
+/* Hover ambos botones — fondo #a22121  */
 header.wp-block-template-part
 > div:first-child
 .wp-block-buttons
@@ -91,7 +89,7 @@ header.wp-block-template-part
     text-shadow: none !important;
 }
 
-/* ── Hover iconos — blancos ───────────────────── */
+/* Hover iconos — blancos */
 header.wp-block-template-part
 > div:first-child
 .wp-block-buttons

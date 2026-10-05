@@ -6,9 +6,7 @@
  * Ubicacion/Condicion: Global header desktop
  */
 
-/**
- * FRAGMENTO 16 JS — Botones header: hover + posición 
- */
+/*Fragmento 16- Botones header: hover + posición */
 (function () {
     'use strict';
 
@@ -18,8 +16,7 @@
         );
 
         buttons.forEach(function (a) {
-            /* Limpiar inline style de background que WordPress pone,
-               para que el CSS externo tome control */
+            
             var style = a.getAttribute('style') || '';
             style = style.replace(/background-color\s*:[^;]+;?/gi, '');
             style = style.replace(/\bcolor\s*:[^;]+;?/gi, '');
@@ -35,7 +32,7 @@
             });
         });
 
-        /* ── Posición derecha solo escritorio sin scroll ── */
+        /*  Posición derecha solo escritorio sin scroll  */
         if (window.innerWidth > 1024 && !document.body.classList.contains('scrolled')) {
             var headerFirst = document.querySelector(
                 'header.wp-block-template-part > div:first-child'

@@ -7,7 +7,7 @@
  *
  */
 
-/* ── Chevron submenú escritorio — color crema */
+/* chevron submenú escritorio color crema */
 @media (min-width: 1025px) {
     nav.wp-block-navigation .wp-block-navigation__submenu-icon svg,
     nav.wp-block-navigation .wp-block-navigation__submenu-icon svg * {
@@ -16,7 +16,7 @@
     }
 }
 
-/* ── Botón Dona Aquí — borde degradado tenue */
+/* Botón Dona Aquí — borde degradado tenue */
 body.home .wp-block-cover.alignfull.has-parallax .wp-block-button__link {
     border-radius: 50px !important;
     border: 1.5px solid transparent !important;
@@ -30,7 +30,7 @@ body.home .wp-block-cover.alignfull.has-parallax .wp-block-button__link {
 html body .wp-block-button__link img.emoji[src*="1f90d"] {
     filter: drop-shadow(-3px -3px 4px rgba(196,196,196,0.35)) !important;
 }
-/* ── Nav tablet — reducir altura barra */
+/* nav tablet  reducir altura barra */
 @media (min-width: 769px) and (max-width: 1080px) {
     html body nav.wp-block-navigation {
         min-height: 44px !important;
@@ -44,7 +44,7 @@ html body .wp-block-button__link img.emoji[src*="1f90d"] {
     }
 }
 
-/* ── Texto Nuestro Compromiso — más grande en tablet */
+/* texto nuestro compromiso más grande en tablet */
 @media (min-width: 769px) and (max-width: 1080px) {
     .wp-block-cover.alignfull.is-light .wp-block-cover__inner-container p {
         font-size: 1.05rem !important;
@@ -52,7 +52,7 @@ html body .wp-block-button__link img.emoji[src*="1f90d"] {
     }
 }
 
-/* ── Números cifras — más pequeños en todos los breakpoints */
+/* números cifras más pequeños en todos los breakpoints */
 .wp-block-column .wp-block-cover.is-light .wp-block-cover__inner-container *,
 .wp-block-column .wp-block-cover[style*="border-radius: 100px"] .wp-block-cover__inner-container *,
 .wp-block-column .wp-block-cover[style*="border-radius:100px"] .wp-block-cover__inner-container * {

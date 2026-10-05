@@ -4,8 +4,8 @@
  * Tipo: CSS+JS
  * Estado: Activo
  * Ubicacion/Condicion: Global nav
- * Notas: Inserta boton nuevo via JS
- *
+ * Notas: Inserta boton nuevo via JS. Parte 2/2 (JS). Parte 1/2 (CSS): wpcode/css/2087-boton-corazon-en-el-nav.css
+ * Nota: en WPCode es un solo snippet (<style> + <script>); se separa en dos archivos con el mismo ID.
  */
 
 (function() {

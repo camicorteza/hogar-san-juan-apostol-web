@@ -8,12 +8,9 @@
  * 
  */
 
-/* ================================================
-   MÓDULO 5 — CHECKOUT WOOCOMMERCE / DONACIONES
-   ================================================ */
+/* Módulo 5 - Checkout woocommerce/ donaciones */
  
-/* ── Fondo páginas checkout
-      [OPTIMIZADO] Agrupados todos los selectores del cuerpo */
+/* Fondo páginas checkout */
 body.woocommerce-checkout,
 body.woocommerce-checkout .wp-site-blocks,
 body.woocommerce-checkout main,
@@ -22,7 +19,7 @@ body.woocommerce-checkout .entry-content {
     background-color: #FEF7ED !important;
 }
  
-/* ── Contenedor bloque checkout (bloque Gutenberg) */
+/* Contenedor bloque checkout (bloque Gutenberg) */
 .wc-block-checkout,
 .wp-block-woocommerce-checkout {
     background-color: #FEF7ED !important;
@@ -55,7 +52,7 @@ body.woocommerce-checkout .entry-content {
     border: 1px solid rgba(162, 33, 33, 0.12) !important;
 }
  
-/* ── Títulos de sección del checkout */
+/* Títulos de sección del checkout */
 .wc-block-checkout .wc-block-components-title,
 .wc-block-checkout h2,
 .wc-block-checkout .wc-block-components-checkout-step__title {
@@ -69,7 +66,7 @@ body.woocommerce-checkout .entry-content {
     margin-bottom: 16px !important;
 }
  
-/* ── Labels del checkout */
+/* Labels del checkout */
 .wc-block-checkout .wc-block-components-label,
 .wc-block-checkout label {
     color: #a22121 !important;
@@ -77,7 +74,7 @@ body.woocommerce-checkout .entry-content {
     font-size: 0.85rem !important;
 }
  
-/* ── Inputs del checkout (bloque Gutenberg) */
+/* Inputs del checkout (bloque Gutenberg) */
 .wc-block-checkout .wc-block-components-text-input input,
 .wc-block-checkout .wc-block-components-select select,
 .wc-block-checkout input[type="text"],
@@ -98,7 +95,7 @@ body.woocommerce-checkout .entry-content {
     outline: none !important;
 }
  
-/* ── Botón confirmar donación (bloque Gutenberg) */
+/* Botón confirmar donación (bloque Gutenberg) */
 .wc-block-components-checkout-place-order-button,
 button.wc-block-components-checkout-place-order-button {
     background: #a22121 !important;
@@ -117,7 +114,7 @@ button.wc-block-components-checkout-place-order-button {
     background: #7d1919 !important;
 }
  
-/* ── Totales del resumen */
+/* Totales del resumen */
 .wc-block-components-totals-footer-item .wc-block-components-totals-item__label,
 .wc-block-components-totals-footer-item .wc-block-components-totals-item__value {
     color: #a22121 !important;
@@ -125,7 +122,7 @@ button.wc-block-components-checkout-place-order-button {
     font-size: 1.05rem !important;
 }
  
-/* ── Opciones de pago */
+/*  Opciones de pago */
 .wc-block-components-payment-method-label__label {
     color: #333 !important;
     font-weight: 500 !important;
@@ -134,8 +131,8 @@ button.wc-block-components-checkout-place-order-button {
     accent-color: #a22121 !important;
 }
  
-/* ── Ocultar campos innecesarios del checkout (bloque Gutenberg)
-      [OPTIMIZADO] Todos los campos a ocultar en un único bloque */
+/* Ocultar campos innecesarios del checkout (bloque Gutenberg)
+      Todos los campos a ocultar en un único bloque */
 .wp-block-woocommerce-checkout-shipping-address-block,
 .wp-block-woocommerce-checkout-shipping-method-block,
 .wp-block-woocommerce-checkout-pickup-options-block,
@@ -159,7 +156,7 @@ fieldset#billing-fields legend,
     display: none !important;
 }
  
-/* ── Textos adicionales del checkout Gutenberg */
+/* Textos adicionales del checkout Gutenberg */
 .wc-block-checkout__terms p {
     font-size: 0.82rem !important;
     color: #777 !important;
@@ -170,8 +167,7 @@ fieldset#billing-fields legend,
     opacity: 0.75 !important;
 }
  
-/* ── Ocultar campos innecesarios del checkout clásico
-      [OPTIMIZADO] Consolidados en un único bloque */
+/* Oculta campos innecesarios del checkout clásico */
 .woocommerce-checkout #billing_company_field,
 .woocommerce-checkout #billing_address_1_field,
 .woocommerce-checkout #billing_address_2_field,
@@ -187,7 +183,7 @@ fieldset#billing-fields legend,
     display: none !important;
 }
  
-/* ── Reset floats del checkout clásico */
+/* Reset floats del checkout clásico */
 .woocommerce-checkout .col2-set,
 .woocommerce-checkout .col2-set .col-1,
 .woocommerce-checkout .col2-set .col-2,
@@ -198,7 +194,7 @@ fieldset#billing-fields legend,
     margin: 0 !important;
 }
  
-/* ── Layout principal en dos columnas */
+/* Layout principal en dos columnas */
 .don-checkout-wrapper {
     display: grid !important;
     grid-template-columns: 1fr 300px !important;
@@ -218,7 +214,7 @@ fieldset#billing-fields legend,
     top: 20px !important;
 }
  
-/* ── Caja datos de contacto */
+/* Caja datos de contacto */
 .woocommerce-checkout .woocommerce-billing-fields {
     background: #ffffff !important;
     border: 1px solid rgba(162, 33, 33, 0.15) !important;
@@ -239,7 +235,7 @@ fieldset#billing-fields legend,
     border-bottom: 1px solid rgba(162, 33, 33, 0.1) !important;
 }
  
-/* ── Grid de campos en dos columnas */
+/*  Grid de campos en dos columnas */
 .woocommerce-checkout .woocommerce-billing-fields .form-row-first,
 .woocommerce-checkout .woocommerce-billing-fields .form-row-last {
     width: calc(50% - 8px) !important;
@@ -269,7 +265,7 @@ fieldset#billing-fields legend,
     letter-spacing: 0.3px !important;
 }
  
-/* ── Inputs del checkout clásico */
+/* Inputs del checkout clásico */
 .woocommerce-checkout .woocommerce-billing-fields input[type="text"],
 .woocommerce-checkout .woocommerce-billing-fields input[type="email"],
 .woocommerce-checkout .woocommerce-billing-fields input[type="tel"] {
@@ -293,7 +289,7 @@ fieldset#billing-fields legend,
     box-shadow: 0 0 0 3px rgba(162, 33, 33, 0.08) !important;
 }
  
-/* ── Caja de opciones de pago */
+/* Caja de opciones de pago */
 .woocommerce-checkout #payment {
     background: #ffffff !important;
     border: 1px solid rgba(162, 33, 33, 0.15) !important;
@@ -317,7 +313,7 @@ fieldset#billing-fields legend,
     border-bottom: 1px solid rgba(162, 33, 33, 0.1) !important;
 }
  
-/* ── Lista de métodos de pago */
+/*  Lista de métodos de pago */
 .woocommerce-checkout #payment ul.payment_methods {
     border: none !important;
     padding: 0 !important;
@@ -365,7 +361,7 @@ fieldset#billing-fields legend,
     display: inline-block !important;
 }
  
-/* ── Logos de métodos de pago — responsivos */
+/* Logos de métodos de pago — responsivos */
 .woocommerce-checkout #payment ul.payment_methods li img {
     max-height: 22px !important;
     max-width: 70px !important;
@@ -375,7 +371,7 @@ fieldset#billing-fields legend,
     margin-left: auto !important;
 }
  
-/* ── Descripción del método de pago (toggle) */
+/* Descripción del método de pago (toggle) */
 .woocommerce-checkout #payment .payment_box {
     display: none !important;
     font-size: 11px !important;
@@ -397,13 +393,13 @@ fieldset#billing-fields legend,
 }
 .woocommerce-checkout #payment .payment_box::before { display: none !important; }
  
-/* ── Mostrar descripción del método seleccionado */
+/* Mostrar descripción del método seleccionado */
 .woocommerce-checkout #payment ul.payment_methods li.wc_payment_method.active .payment_box,
 .woocommerce-checkout #payment ul.payment_methods li.wc_payment_method input[type="radio"]:checked ~ .payment_box {
     display: block !important;
 }
  
-/* ── Política de privacidad */
+/* Política de privacidad */
 .woocommerce-checkout .woocommerce-privacy-policy-text {
     display: block !important;
     font-size: 11px !important;
@@ -416,7 +412,7 @@ fieldset#billing-fields legend,
     box-sizing: border-box !important;
 }
  
-/* ── Pie de la caja de pago (botón + volver) */
+/* Pie de la caja de pago (botón + volver) */
 .woocommerce-checkout #payment .place-order {
     display: flex !important;
     flex-direction: row !important;
@@ -463,7 +459,7 @@ fieldset#billing-fields legend,
 }
 .woocommerce-checkout .volver-donacion:hover { opacity: 1 !important; }
  
-/* ── Caja resumen lateral ("Tu Donación") */
+/*  Caja resumen lateral ("Tu Donación") */
 .woocommerce-checkout #order_review {
     background: #ffffff !important;
     border: 1px solid rgba(162, 33, 33, 0.12) !important;
@@ -503,8 +499,7 @@ fieldset#billing-fields legend,
     color: #333 !important;
 }
  
-/* ── Miniatura del producto en el resumen
-      [OPTIMIZADO] Imagen de fondo en CSS: max-width y height:auto se aplican vía object-fit */
+/* Miniatura del producto en el resumen */
 .woocommerce-checkout table.woocommerce-checkout-review-order-table .cart_item td.product-name::before {
     content: "" !important;
     display: block !important;
@@ -535,7 +530,7 @@ fieldset#billing-fields legend,
     color: #a22121 !important;
 }
  
-/* ── Responsive checkout — tablet/móvil */
+/* Responsive checkout — tablet/móvil */
 @media (max-width: 768px) {
     .wc-block-checkout,
     .wp-block-woocommerce-checkout {

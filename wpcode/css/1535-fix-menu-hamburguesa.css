@@ -7,9 +7,7 @@
  *
  */
 
-/* ================================================
-   FIX DEFINITIVO — Menu hamburguesa
- ================================================ */
+/* fix definitivo — Menu hamburguesa */
 
 @media (max-width: 1024px) {
 
@@ -37,7 +35,7 @@
         background-color: rgba(253, 249, 233, 0.98) !important;
     }
 
-    /* TODOS los items en reposo — sin fondo */
+    /* todos los items en reposo — sin fondo */
     html.has-modal-open
     .wp-block-navigation__responsive-container.is-menu-open
     .wp-block-navigation-item__content,

@@ -4,12 +4,14 @@
  * Tipo: JS
  * Estado: Activo
  * Ubicacion/Condicion: Global
-
+ * Nota: en WPCode este snippet está guardado dentro de <script>…</script>; aquí se muestra sin las etiquetas.
  */
+
+/* fix target="_blank" — Botón Visitanos header + botón Visitar Quienes Somos */
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    /* ── Botón "Visitanos" en el header ────────── */
+    /* Botón "Visitanos" en el header  */
     var headerLinks = document.querySelectorAll(
         'header.wp-block-template-part .wp-block-button__link'
     );
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    /* ── Botón "Visitar" en página Quiénes Somos ─ */
+    /* Botón "Visitar" en página Quiénes Somos  */
     var allButtons = document.querySelectorAll(
         '.wp-block-button__link, .wp-element-button'
     );

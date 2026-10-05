@@ -6,6 +6,7 @@
  * Ubicacion/Condicion: Global (site_wide_header)
  * Notas: Snippet principal: tipografias, hero, header, parrafo donacion. Corregido 23-09-2026: llave de cierre faltante en @media (min-width:1025px) que desactivaba reglas tablet/movil
  */
+
 /* menu y parrafos*/
 body .wp-block-navigation-item__content,
 body p:not(header p) {
@@ -148,8 +149,7 @@ body.home .wp-block-cover:has(.wp-block-heading)::before {
         transform: translateX(30px) !important;
     }
 }
-/* Botón "Dona aquí" del hero — un poco más grande en escritorio/tablet, y levemente
-   más chico en móvil */
+/* Botón "Dona aquí" del hero  */
 @media (min-width: 782px) {
     body.home .wp-block-cover:has(.wp-block-heading) .wp-block-buttons .wp-block-button__link {
         padding: 11px 26px !important;

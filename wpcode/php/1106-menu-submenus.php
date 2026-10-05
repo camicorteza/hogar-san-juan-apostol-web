@@ -1,13 +1,14 @@
+<?php
 /**
  * ID WPCode: 1106
  * Nombre: menu submenus
- * Tipo: JS
+ * Tipo: PHP (inyecta JS en wp_footer)
  * Estado: Activo
  * Ubicacion/Condicion: Global, viewport <=1024px (wp_footer)
  */
 
-add_action('wp_footer', function() { 
-
+add_action('wp_footer', function() { ?>
+<script>
 (function() {
     function initAccordion() {
         if (window.innerWidth > 1024) return;
@@ -22,14 +23,14 @@ add_action('wp_footer', function() {
             if (item.dataset.acordeonListo) return;
             item.dataset.acordeonListo = 'true';
 
-            // El botón chevron/toggle (NO el enlace)
+            // El botón chevron/toggle (No el enlace)
             var toggle = item.querySelector(
                 ':scope > .wp-block-navigation-submenu__toggle, ' +
                 ':scope > button.wp-block-navigation__submenu-icon, ' +
                 ':scope > .wp-block-navigation__submenu-icon'
             );
 
-            // El enlace principal (debe navegar libremente)
+            // El enlace principal 
             var link = item.querySelector(
                 ':scope > a.wp-block-navigation-item__content'
             );
@@ -67,7 +68,7 @@ add_action('wp_footer', function() {
                         ':scope > .wp-block-navigation__submenu-container'
                     );
                     if (sub) toggleSubmenu(e);
-                    // Si no hay sub, navega normalmente (no hace nada aquí)
+                   
                 });
             }
         });
@@ -89,7 +90,7 @@ add_action('wp_footer', function() {
             '.wp-block-navigation__responsive-container-close'
         );
         if (closeBtn) {
-            // Limpiar flags para permitir re-binding al reabrir
+            
             document.querySelectorAll(
                 '.wp-block-navigation-item.has-child[data-acordeon-listo]'
             ).forEach(function(el) {
@@ -107,5 +108,5 @@ add_action('wp_footer', function() {
         if (window.innerWidth <= 1024) initAccordion();
     });
 })();
-
- });
+</script>
+<?php });

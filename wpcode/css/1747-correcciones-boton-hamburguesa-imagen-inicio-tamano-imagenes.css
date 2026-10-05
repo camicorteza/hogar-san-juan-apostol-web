@@ -7,16 +7,9 @@
  *
  */
 
-/* ════════════════════════════════════════════════════════════
-   CORRECCIONES PUNTUALES 
-   1. Hamburguesa móvil alineada a la derecha con margen limpio
-   2. Hero image: persona no se recorta por arriba
-   3. Cifras + Nuestro Compromiso en tablet: texto legible
-   4. Directorio Quiénes Somos: rostros completos y centrados
-   5. Menú desplegable móvil: texto de las opciones más grande
-   ════════════════════════════════════════════════════════════ */
+/* correciones */
  
- /* 1. HAMBURGUESA MÓVIL */
+ /* Hamburguesa móvil */
 @media (max-width: 599px) {
     html body header.wp-block-template-part nav.wp-block-navigation,
     html body header.wp-block-template-part nav.wp-block-navigation.is-content-justification-center {
@@ -50,9 +43,7 @@
     }
 }
 
-/* ────────────────────────────────────────────────────────────
-   5. MENÚ DESPLEGABLE MÓVIL 
-   ──────────────────────────────────────────────────────────── */
+/* menú despegable móvil  */
 @media (max-width: 599px) {
     html body .wp-block-navigation__responsive-container-content
     ul.wp-block-navigation__container,
@@ -91,25 +82,19 @@
         padding-bottom: 10px !important;
     }
 
-    /* Cualquier <li> de navegación dentro del modal del menú, sin importar
-       qué ancestro lleve la clase de "pegado al hacer scroll" — refuerzo
-       final por especificidad de atributo, que gana sobre el style inline
-       de Gutenberg en cualquier estado del header. */
+    /* Cualquier <li> de navegación dentro del modal del menú */
     html body [class*="wp-block-navigation__responsive-container"]
     li[class*="wp-block-navigation-item"] > a {
         font-size: 19px !important;
     }
 
-    /* Refuerzo máximo: cualquier elemento (incluyendo spans internos del
-       link, como el texto del label) dentro de un <li> de navegación del
-       menú móvil */
+    /* Refuerzo máximo */
     html body li.wp-block-navigation-item a,
     html body li.wp-block-navigation-item a * {
         font-size: 19px !important;
     }
 
-    /* Submenús (si los hay) un poco más chicos que el nivel principal,
-       pero igualmente más grandes que el clamp original */
+    /* Submenús */
     html body .wp-block-navigation__responsive-container-content
     .wp-block-navigation__submenu-container
     li.wp-block-navigation-item > a {
@@ -117,9 +102,7 @@
     }
 }
 
- /* ────────────────────────────────────────────────────────────
-   2. HERO IMAGE — persona no se recorta por arriba
-   ──────────────────────────────────────────────────────────── */
+ /* hero image */
 html body.home .wp-block-cover.wp-elements-18357312f62ce35fafc1ee1be389e34b
 .wp-block-cover__image-background,
 html body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-of-type
@@ -143,14 +126,13 @@ html body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-
     }
 }
  
-/* 
  
-/* ────────────────────────────────────────────────────────────
-   3. CIFRAS INSTITUCIONALES + NUESTRO COMPROMISO — tablet.
-   ──────────────────────────────────────────────────────────── */
+/* 
+   CIFRAS INSTITUCIONALES + NUESTRO COMPROMISO — tablet.
+*/
 @media (min-width: 600px) and (max-width: 1024px) {
  
-    /* ── Cifras: de 4 columnas a 2x2 en tablet */
+    /* Cifras de 4 columnas a 2x2 en tablet */
     body.home #cifras-institucionales .wp-block-columns,
     body.home .wp-block-columns:has(> .wp-block-column .wp-block-cover[style*="border-radius"]) {
         flex-wrap: wrap !important;
@@ -166,8 +148,7 @@ html body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-
         text-align: center !important;
     }
  
-    /* Fallback sin :has() — aplica a cualquier columna dentro
-       del bloque de cifras por posición */
+    /* Fallback sin :has() */
     .wp-block-column .wp-block-cover.is-light ~ h3,
     .wp-block-column .wp-block-cover[style*="border-radius: 100px"] ~ h3 {
         font-size: clamp(0.85rem, 2vw, 1rem) !important;
@@ -182,17 +163,7 @@ html body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-
         padding: 0 8px !important;
     }
  
-    /* Círculos de cifras: un poco más pequeños en tablet */
-    .wp-block-column .wp-block-cover.is-light,
-    .wp-block-column .wp-block-cover[style*="border-radius: 100px"],
-    .wp-block-column .wp-block-cover[style*="border-radius:100px"] {
-        width: 100px !important;
-        height: 100px !important;
-        min-height: 100px !important;
-        max-height: 100px !important;
-    }
- 
-    /* ── Nuestro Compromiso: columnas con ancho mínimo útil */
+    /* Nuestro Compromiso: columnas con ancho mínimo útil */
     .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"] .wp-block-column,
     .wp-block-group[style*="fondonuestrocompromiso.jpg"] .wp-block-column {
         min-width: 0 !important;
@@ -212,13 +183,8 @@ html body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-
         line-height: 1.3 !important;
     }
 }
- /* ────────────────────────────────────────────────────────────
-   4. DIRECTORIO QUIÉNES SOMOS — rostros completos
-   ────────────────────────────────────────────────────────────
-   el figure tiene posición relativa + padding-bottom
-   (truco de ratio padding), el img es absolute y llena todo.
-   Así el aspect-ratio del img inline queda irrelevante.
-   ──────────────────────────────────────────────────────────── */
+ /* directorio quiénes somos rostros completos 
+ */
  
 /* Figure: contenedor con altura controlada por padding-bottom */
 html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image,
@@ -227,16 +193,14 @@ html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.is
     position: relative !important;
     display: block !important;
     width: 100% !important;
-    height: 0 !important;                /* técnica padding-bottom ratio */
-    padding-bottom: 125% !important;    /* 4:5 — retrato: muestra cara completa */
+    height: 0 !important;               
+    padding-bottom: 125% !important;   
     overflow: hidden !important;
     margin-bottom: 12px !important;
     border-radius: 8px !important;
 }
  
-/* Img: ocupa todo el figure. En móvil/tablet el figure usa la técnica
-   padding-bottom (height:0 + position:relative), así que el img necesita
-   position:absolute para llenarlo. */
+/* Img */
 html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image img,
 html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.size-full img,
 html body.page-id-12 .wp-block-columns .wp-block-column figure.wp-block-image.is-style-default img {

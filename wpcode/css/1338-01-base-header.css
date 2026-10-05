@@ -6,26 +6,24 @@
  * Ubicacion/Condicion: Global
  * Notas: Header fijo + estructura base + botones header
  */
-/* ================================================
-   MÓDULO 1 — BASE, HEADER, BOTONES HEADER
-   ================================================ */
+
+/* Módulo 1 -Base , header, botones header */
  
-/* ── Reset base */
+/* Reset base */
 html, body {
     margin: 0;
     padding: 0;
     overflow-x: clip;
 }
  
-/* ── Imágenes responsivas globales (buena práctica base) */
+/* Imágenes responsivas globales  */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
  
-/* ── Ocultar elementos WooCommerce no deseados + títulos por defecto
-      [OPTIMIZADO] Consolidados en un único bloque display:none */
+/* Oculta elementos WooCommerce no deseados + títulos por defecto */
 .wc-block-mini-cart,
 .wc-block-mini-cart__button,
 .wc-block-mini-cart__badge,
@@ -42,7 +40,7 @@ h1.wp-block-post-title,
     display: none !important;
 }
  
-/* ── Títulos: colapso total de espacio */
+/* Títulos: colapso total de espacio */
 .entry-title,
 .page-title,
 h1.wp-block-post-title {
@@ -50,7 +48,7 @@ h1.wp-block-post-title {
     margin: 0 !important;
     padding: 0 !important;
 } 
-/* ── Espaciado general del sitio */
+/* Espaciado general del sitio */
 .wp-site-blocks {
     padding-top: 130px !important;
     padding-bottom: 0 !important;
@@ -62,13 +60,13 @@ h1.wp-block-post-title {
 body.home .wp-site-blocks {
     padding-top: 130px !important;
 }
-/* ── Cover hero home — empuja debajo del header fijo */
+/* Cover hero home — empuja debajo del header fijo */
 body.home .wp-block-cover.wp-elements-18357312f62ce35fafc1ee1be389e34b,
 body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-of-type {
     margin-top: 0 !important;
     min-height: calc(100vh - 130px) !important;
 }
-/* ── Header fixed glassmorphism */
+/* Header fixed glassmorphism */
 header.wp-block-template-part {
     position: fixed !important;
     top: 0 !important;
@@ -136,7 +134,7 @@ html body.admin-bar header.wp-block-template-part {
     top: 32px !important;
 }
  
-/* ── Botones del header */
+/* Botones del header */
 header.wp-block-template-part > div:first-child .wp-block-buttons {
     display: flex !important;
     flex-direction: row !important;
@@ -185,8 +183,7 @@ header.wp-block-template-part > div:first-child .wp-block-button__link:hover {
     color: white !important;
 }
  
-/* ── Iconos dentro de botones del header
-      [OPTIMIZADO] Consolidados img y svg en un bloque */
+/* Iconos dentro de botones del header Consolidados img y svg en un bloque */
 header.wp-block-template-part > div:first-child .wp-block-button__link img,
 header.wp-block-template-part > div:first-child .wp-block-button__link svg {
     width: 16px !important;
@@ -198,11 +195,11 @@ header.wp-block-template-part > div:first-child .wp-block-button__link svg {
     object-fit: contain !important;
 }
  
-/* ── Editor de bloques */
+/*  Editor de bloques */
 .editor-styles-wrapper .is-root-container { padding-top: 0 !important; }
 .editor-styles-wrapper .wp-block-post-content { margin-top: 0 !important; }
  
-/* ── Responsive: Tablet (600px–1024px) */
+/* Responsive: Tablet (600px–1024px) */
 @media (min-width: 600px) and (max-width: 1024px) {
     header.wp-block-template-part nav.wp-block-navigation,
     header.wp-block-template-part > div:nth-child(2) nav.wp-block-navigation {
@@ -227,7 +224,7 @@ header.wp-block-template-part > div:first-child .wp-block-button__link svg {
     }
 }
  
-/* ── Responsive: Móvil (< 600px) */
+/* Responsive: Móvil (< 600px) */
 @media (max-width: 599px) {
     header.wp-block-template-part > div:first-child {
         overflow: hidden !important;
@@ -245,7 +242,7 @@ header.wp-block-template-part > div:first-child .wp-block-button__link svg {
     }
 }
  
-/* ── Responsive: Admin bar móvil + padding general (< 782px) */
+/* Responsive: Admin bar móvil + padding general (< 782px) */
 @media (max-width: 782px) {
     html body.admin-bar header.wp-block-template-part {
         top: 46px !important;
@@ -275,4 +272,3 @@ body.home .wp-site-blocks > .wp-block-cover.has-parallax.aligncenter:first-of-ty
         overflow: visible !important;
     }
 }
-

@@ -6,6 +6,7 @@
  * Ubicacion/Condicion: Global (site_wide_header), efecto touch en boton Dona aqui del hero
  * Notas: Agrega/quita clase al tocar en movil
  */
+
 (function() {
     function init() {
         var btn = document.querySelector('body.home .wp-block-cover.aligncenter.has-parallax .wp-block-button__link');

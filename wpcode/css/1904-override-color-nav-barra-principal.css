@@ -8,11 +8,9 @@
  *
  */
 
-/* ================================================
-   FRAGMENTO 09 — OVERRIDE COLOR NAV (BARRA PRINCIPAL)
-   ================================================ */
+/* fragmento 09 - color nav (barra principal)*/
 
-/* ── Barra principal — tono sólido guinda/borgoña (todas las anchuras) */
+/*  Barra principal. tono sólido guinda/borgoña */
 html body nav.wp-block-navigation,
 html body nav.wp-block-navigation[style],
 html body header.wp-block-template-part nav.wp-block-navigation {
@@ -22,15 +20,14 @@ html body header.wp-block-template-part nav.wp-block-navigation {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* ── Items principales (escritorio y barra general): texto #fdfbef
-      Excluye explícitamente cualquier item dentro del submenú desktop */
+/* Items principales (escritorio y barra general)*/
 html body nav.wp-block-navigation .wp-block-navigation-item__content:not(.wp-block-navigation__submenu-container .wp-block-navigation-item__content),
 html body header.wp-block-template-part nav.wp-block-navigation .wp-block-navigation-item__content:not(.wp-block-navigation__submenu-container .wp-block-navigation-item__content) {
     color: #fdfbef !important;
     transition: all 0.3s ease !important;
 }
 
-/* ── Flecha chevron de los items principales (no la del submenú "›") */
+/* Flecha chevron de los items principales */
 html body nav.wp-block-navigation .wp-block-navigation__responsive-container-open svg,
 html body nav.wp-block-navigation .wp-block-navigation__submenu-icon svg {
     fill: #fdfbef !important;
@@ -40,15 +37,14 @@ html body nav.wp-block-navigation .wp-block-navigation-submenu__toggle {
     color: #fdfbef !important;
 }
 
-/* ── Hover items principales escritorio: invertido (fondo #fdfbef, texto #8c2531)
-  */
+/* ─ Hover items principales escritorio: invertido */
 html body nav.wp-block-navigation > .wp-block-navigation__container .wp-block-navigation-item__content:hover,
 html body nav.wp-block-navigation > .wp-block-navigation__container .wp-block-navigation-item__content:focus {
     background: #fdfbef !important;
     color: #8c2531 !important;
 }
 
-/* ── FIX submenú desktop: restaurar su color de texto original */
+/*fix submenú desktop: restaurar su color de texto original */
 html body .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
     color: #555 !important;
 }
@@ -58,7 +54,7 @@ html body .wp-block-navigation__submenu-container .wp-block-navigation-item__con
     color: #FFFFFF !important;
 }
 
-/* ── Header comprimido al hacer scroll (tablet/móvil) — mismo tono sólido */
+/*  Header comprimido al hacer scroll (tablet/móvil) — mismo tono sólido */
 @media (max-width: 1080px) {
     html body.scrolled nav.wp-container-core-navigation-is-layout-c4d0b4f1,
     html body.scrolled nav.has-text-color.has-background.is-responsive.wp-block-navigation {
@@ -68,9 +64,7 @@ html body .wp-block-navigation__submenu-container .wp-block-navigation-item__con
     }
 }
 
-/* ================================================
-   PANEL MÓVIL (hamburguesa) 
-   ================================================ */
+/* Panel móvil (hamburguesa) */
 @media (max-width: 1024px) {
     html body nav.wp-block-navigation
     .wp-block-navigation__responsive-container.is-menu-open

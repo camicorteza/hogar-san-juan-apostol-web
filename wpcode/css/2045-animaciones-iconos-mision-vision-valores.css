@@ -6,16 +6,9 @@
  * Ubicacion/Condicion: page-id-14 (Mision)
  */
 
-/* ================================================
-   ANIMACIONES ÍCONOS — Misión / Visión / Valores
-   Hover en la caja completa activa:
-   - Caja aumenta levemente de tamaño
-   - Fondo de la caja en dorado
-   - Ícono con su animación específica
-   ================================================ */
+/* Animaciones Iconos- Misión / Visión / Valores */
 
-/* Transición base en las 3 columnas para que el
-   cambio de color y de tamaño sean suaves */
+/* Transición base en las 3 columnas  */
 .wp-block-column.has-border-color.has-accent-6-border-color {
     transition: background-color 0.35s ease, transform 0.35s ease !important;
     will-change: transform;
@@ -27,7 +20,7 @@
     transform: scale(1.03) !important;
 }
 
-/* Preparamos los íconos con transición suave */
+/* Preparar íconos con transición suave */
 .wp-block-column.has-border-color.has-accent-6-border-color img[src*="mision-"],
 .wp-block-column.has-border-color.has-accent-6-border-color img[src*="vision"],
 .wp-block-column.has-border-color.has-accent-6-border-color img[src*="valores-2"] {
@@ -35,26 +28,25 @@
     will-change: transform;
 }
 
-/* ── Ícono Misión: se desplaza levemente
-   arriba a la derecha y vuelve a su lugar ── */
+/* Ícono Misión se desplaza levemente
+   arriba a la derecha y vuelve a su lugar */
 .wp-block-column.has-border-color.has-accent-6-border-color:hover img[src*="mision-"] {
     transform: translate(6px, -6px) !important;
 }
 
-/* ── Ícono Visión: aumenta de tamaño
-   y vuelve a su tamaño original ── */
+/* Ícono Visión aumenta de tamaño
+   y vuelve a su tamaño original */
 .wp-block-column.has-border-color.has-accent-6-border-color:hover img[src*="vision"] {
     transform: scale(1.15) !important;
 }
 
-/* ── Ícono Valores: aumenta de tamaño
-   y vuelve a su tamaño original ── */
+/* Ícono Valores: aumenta de tamaño
+   y vuelve a su tamaño original */
 .wp-block-column.has-border-color.has-accent-6-border-color:hover img[src*="valores-2"] {
     transform: scale(1.15) !important;
 }
 
-/* Soporte táctil — en móvil/tablet ":active" simula
-   el "hover" mientras se mantiene presionado el dedo */
+/* Soporte táctil — en móvil/tablet */
 .wp-block-column.has-border-color.has-accent-6-border-color:active {
     background-color: #c9a96e !important;
     transform: scale(1.03) !important;

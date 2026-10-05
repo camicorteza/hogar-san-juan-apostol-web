@@ -5,10 +5,8 @@
  * Estado: Activo
  * Ubicacion/Condicion: Global, <=1024px
  */
-/**
- * FRAGMENTO 11 — Coordinación menú hamburguesa ↔ panel de accesibilidad 
 
- */
+/* Fragmento 11- Coordinación menú hamburguesa / panel de accesibilidad */
 (function () {
     'use strict';
 
@@ -18,7 +16,7 @@
         return window.innerWidth <= MAX_WIDTH;
     }
 
-    /* ── 1. Cierra el menú hamburguesa ── */
+    /* Cierra el menú hamburguesa */
     function closeHamburgerMenu() {
         if (!isMobileTablet()) return;
         var menuOpen = document.querySelector(
@@ -31,23 +29,23 @@
         if (closeBtn) closeBtn.click();
     }
 
-    /* ── 2. Cierra el panel de accesibilidad ── */
+    /* Cierra el panel de accesibilidad */
     function closeAccessibilityPanel() {
         if (!isMobileTablet()) return;
         var container = document.getElementById('wp_access_helper_container');
         if (!container || !container.classList.contains('active')) return;
 
-        /* Intento 1: botón de cierre interno del panel */
+        /*  botón de cierre interno del panel */
         var closeBtn = container.querySelector('button.close_container.wahout');
         if (closeBtn) { closeBtn.click(); return; }
 
-        /* Intento 2: el botón toggle principal (misma función que abrir/cerrar) */
+        /* el botón toggle principal (misma función que abrir/cerrar) */
         var toggleBtn = container.querySelector('button.wahout.aicon_link');
         if (toggleBtn) toggleBtn.click();
     }
 
     function init() {
-        /* ── Observer 1: panel accesibilidad → cierra hamburguesa ── */
+        /* panel accesibilidad - cierra hamburguesa*/
         var accessContainer = document.getElementById('wp_access_helper_container');
         if (accessContainer) {
             var accessObserver = new MutationObserver(function (mutations) {
@@ -62,8 +60,7 @@
             accessObserver.observe(accessContainer, { attributes: true });
         }
 
-        /* ── Observer 2: menú hamburguesa → cierra panel accesibilidad ──
-           El nav puede haber varios; observamos todos los responsive-container. */
+        /* menú hamburguesa - cierra panel accesibilidad */
         var navContainers = document.querySelectorAll(
             '.wp-block-navigation__responsive-container'
         );

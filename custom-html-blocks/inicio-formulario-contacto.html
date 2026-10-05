@@ -7,7 +7,7 @@
 -->
 
 <style>
-/* ── Variables ── */
+/*  Variables */
 :root {
     --rojo: #a22121;
     --rojo-dark: #7d1919;
@@ -20,14 +20,14 @@
     --sombra: 0 4px 24px rgba(162,33,33,0.10);
 }
  
-/* ── Reset local ── */
+/* Reset local */
 .contacto-wrap * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
  
-/* ── Wrapper externo ancho completo ── */
+/* Wrapper externo ancho completo */
 .contacto-outer {
     position: relative;
     width: 100vw;
@@ -58,7 +58,7 @@
     z-index: 1;
 }
  
-/* ── Contenedor general — contenido centrado ── */
+/* Contenedor general — contenido centrado  */
 .contacto-wrap {
     font-family: 'Georgia', 'Times New Roman', serif;
     color: var(--texto);
@@ -69,7 +69,7 @@
     background-color: transparent;
 }
  
-/* ── Encabezado sección ── */
+/*  Encabezado sección  */
 .contacto-encabezado {
     text-align: center;
     margin-bottom: 48px;
@@ -98,7 +98,7 @@
  
 }
  
-/* ── Franja superior roja con tarjetas ── */
+/* Franja superior roja con tarjetas */
 .contacto-franja {
     background: var(--rojo);
     border-radius: var(--radio) var(--radio) 0 0;
@@ -116,14 +116,14 @@
     font-size: 0.82rem;
 }
  
-/* ── Grid de tarjetas ── */
+/*  Grid de tarjetas */
 .contacto-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 }
  
-/* ── Tarjeta individual ── */
+/* Tarjeta individual  */
 .contacto-card {
     background: white;
     border-radius: 12px;
@@ -191,7 +191,7 @@
 }
 .contacto-card a:hover { text-decoration: underline; }
  
-/* ── Cuerpo inferior — formulario + info ── */
+/*  Cuerpo inferior — formulario + info */
 .contacto-cuerpo {
     background-image: linear-gradient(rgba(20, 10, 0, 0.2), rgba(60, 30, 0, 0.7));
     border-radius: 0 0 var(--radio) var(--radio);
@@ -206,7 +206,7 @@
     z-index: 1;
 }
  
-/* ── Lado izquierdo — formulario ── */
+/*  Lado izquierdo — formulario  */
 .contacto-form-col {
     padding: 44px 40px;
     border-right: 1px solid var(--borde);
@@ -225,7 +225,7 @@
     line-height: 1.5;
 }
  
-/* ── Formulario ── */
+/*  Formulario */
 .form-fila {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -298,7 +298,7 @@
     stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
 }
  
-/* ── Lado derecho — información ── */
+/* Lado derecho — información */
 .contacto-info-col {
     padding: 44px 40px;
     background: var(--crema);
@@ -383,7 +383,7 @@
     display: inline-block;
 }
  
-/* ── RESPONSIVE TABLET ── */
+/* responsive tablet */
 @media (max-width: 900px) {
     .contacto-cards { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .contacto-cuerpo { grid-template-columns: 1fr; }
@@ -391,7 +391,7 @@
     .contacto-info-col { padding: 32px 28px; }
 }
  
-/* ── RESPONSIVE MÓVIL ── */
+/* responsive móvil */
 @media (max-width: 560px) {
     .contacto-outer {
         width: 100% !important;
@@ -410,7 +410,7 @@
     .contacto-form-col, .contacto-info-col { padding: 24px 20px; }
 }
  
-/* ── Aviso éxito formulario ── */
+/*  Aviso éxito formulario  */
 .form-aviso {
     display: none;
     align-items: center;
@@ -453,7 +453,7 @@ letter-spacing: 2px;">Ponte en contacto</h2>
   -1px  1px 0 rgba(162, 33, 33, 0.4),
    1px  1px 0 rgba(162, 33, 33, 0.4);
 letter-spacing: 2px;
-} ">Estamos aquí para responder tus preguntas y recibir tu apoyo con mucho cariño.</p>
+ ">Estamos aquí para responder tus preguntas y recibir tu apoyo con mucho cariño.</p>
         
     </div>
  

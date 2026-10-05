@@ -6,6 +6,7 @@
  * Ubicacion/Condicion: Global (site_wide_header), home hero
  * Notas: Capa ::after duplicada de la imagen del hero, para tapar silueta de la imagen original
  */
+
 body.home .wp-block-cover:has(.wp-block-heading) .wp-block-cover__image-background::after {
     content: "";
     position: absolute;

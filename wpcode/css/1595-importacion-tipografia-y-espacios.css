@@ -8,10 +8,7 @@
  *
  */
 
-/* ================================================
-   CSS 
-   Incluye tipografía Inter + espaciado + fixes
-   ================================================ */
+/* css incluye tipografía , espaciado y fixes */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
 
@@ -24,9 +21,7 @@ p, body {
     font-weight: 300 !important;
 }
 
-/* ════════════════════════════════════════════════
-   0. RESET SELECTIVO
-   ════════════════════════════════════════════════ */
+/* reset selectivo */
 body.home .wp-site-blocks > .wp-block-group.alignfull,
 body.home .wp-site-blocks > .wp-block-cover.alignfull {
     margin-top:     unset !important;
@@ -44,9 +39,7 @@ body:not(.home):not(.woocommerce-checkout) .wp-site-blocks
     padding-bottom: unset !important;
 }
 
-/* ════════════════════════════════════════════════
-   1. HOME — COVER HERO
-   ════════════════════════════════════════════════ */
+/* home - cover hero  */
 body.home .wp-site-blocks
 > .wp-block-cover.aligncenter.has-parallax {
     margin-top:    0 !important;
@@ -87,9 +80,7 @@ body.home .wp-block-cover.aligncenter.has-parallax
     margin-bottom: 0 !important;
 }
 
-/* ════════════════════════════════════════════════
-   2. HOME — NUESTRA HISTORIA
-   ════════════════════════════════════════════════ */
+/* home - nuestra historia */
 body.home .wp-site-blocks > .wp-block-group.is-style-section-1-5 {
     margin-top:    0 !important;
     margin-bottom: 0 !important;
@@ -99,9 +90,7 @@ body.home .wp-site-blocks > .wp-block-group.is-style-section-1-5 h2 {
     width:      100%   !important;
 }
 
-/* ════════════════════════════════════════════════
-   3. HOME — SECCIONES INTERMEDIAS
-   ════════════════════════════════════════════════ */
+/* home - secciones intermedias */
 body.home .wp-site-blocks > .wp-block-cover.alignfull.is-light {
     margin-top:    60px !important;
     margin-bottom: 0    !important;
@@ -112,15 +101,12 @@ body.home .wp-site-blocks
     margin-bottom: 0    !important;
 }
 
-/* CIFRAS — dar margin-top al bloque SIGUIENTE (contacto).
-   El bloque de contacto NO tiene inline style que lo bloquee. */
+/* CIFRAS — dar margin-top al bloque SIGUIENTE (contacto) */
 body.home .wp-site-blocks > .wp-block-group.has-accent-5-background-color {
     margin-top: 120px !important;
 }
 
-/* CONTACTO — margen superior para separarse de cifras
-   El contacto es el penúltimo hijo (nth-last-child(2))
-   después del footer. Le damos margin-top. */
+/* CONTACTO  */
 body.home .wp-site-blocks > *:nth-last-child(2) {
     margin-top:     100px !important;
     margin-bottom:  0px    !important;
@@ -138,9 +124,7 @@ body.home .wp-site-blocks > .wp-block-group.is-style-default:last-of-type {
     padding-bottom: 0 !important;
 }
 
-/* ════════════════════════════════════════════════
-   5. PÁGINAS INTERIORES
-   ════════════════════════════════════════════════ */
+/* paginas interiores */
 body:not(.home):not(.woocommerce-checkout) .wp-site-blocks > *:nth-child(2) {
     margin-top:  0 !important;
     padding-top: 0 !important;
@@ -156,25 +140,19 @@ body:not(.home):not(.woocommerce-checkout) .wp-site-blocks > *:nth-last-child(2)
     padding-bottom: 0    !important;
 }
 
-/* ════════════════════════════════════════════════
-   6. WOOCOMMERCE
-   ════════════════════════════════════════════════ */
+/* woocommerce */
 body.woocommerce-checkout main[data-page="checkout"] {
     padding-top: 0 !important;
     margin-top:  0 !important;
 }
 
-/* ════════════════════════════════════════════════
-   7. ESPACIADO INTERNO
-   ════════════════════════════════════════════════ */
+/* espaciado interno  */
 .wp-block-group.alignfull .wp-block-columns { gap: 48px !important; }
 .wp-block-group.alignfull h2,
 .wp-block-group.alignfull h3 { margin-bottom: 20px !important; }
 .wp-block-group.alignfull p  { line-height: 1.8 !important; }
 
-/* ════════════════════════════════════════════════
-   8. IMÁGENES DIRECTORIO — quienes somos
-   ════════════════════════════════════════════════ */
+/* imágenes directorio — quienes somos */
 body.page-id-12
 .wp-block-columns.alignwide
 .wp-block-column
@@ -197,9 +175,7 @@ figure.wp-block-image.size-full img {
     aspect-ratio:    unset      !important;
 }
 
-/* ════════════════════════════════════════════════
-   9. RESPONSIVE
-   ════════════════════════════════════════════════ */
+/* responsive */
 @media (max-width: 1024px) {
     body.home .wp-site-blocks > .wp-block-cover.alignfull.is-light,
     body.home .wp-site-blocks
@@ -266,10 +242,6 @@ figure.wp-block-image.size-full img {
         padding-top: 60px !important;
     }
 }
-/* ================================================
-   FIX — Espacio interno dentro del bloque cifras
-
-   ================================================ */
 
 /* Espacio debajo de las columnas de círculos */
 .has-accent-5-background-color
@@ -278,7 +250,7 @@ figure.wp-block-image.size-full img {
     padding-bottom: 0 !important;
 }
 
-/* Alternativa: padding-top al segundo wp-block-columns */
+
 .has-accent-5-background-color
 .wp-block-columns.alignfull {
     padding-top: 0 !important;

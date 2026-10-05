@@ -1,3 +1,4 @@
+<?php
 /**
  * ID WPCode: 1429
  * Nombre: Corregir URL volver a la donacion en checkout
@@ -5,8 +6,8 @@
  * Estado: Activo
  * Ubicacion/Condicion: is_checkout()
  * Notas: Filtro + gettext + campos ocultos
- 
  */
+
 // Corregir URL "Volver a la donación" en checkout
 add_filter('woocommerce_checkout_return_to_cart_redirect', function() {
     return home_url('/index.php/dona-ahora/');

@@ -1,3 +1,4 @@
+<?php
 /**
  * ID WPCode: 1465
  * Nombre: Permitir cookies en checkout para modo incognito

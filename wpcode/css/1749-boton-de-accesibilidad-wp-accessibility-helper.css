@@ -6,11 +6,10 @@
  * Ubicacion/Condicion: Widget accesibilidad
  */
 
-/* ================================================
-   BOTÓN DE ACCESIBILIDAD — WP Accessibility Helper
-   ================================================ */
+/* botón accesibilidad WP Accessibility Helper
+  */
 
-/* ── Contenedor ── */
+/*  Contenedor */
 div#wp_access_helper_container {
     position: fixed !important;
     top: 12px !important;
@@ -20,7 +19,7 @@ div#wp_access_helper_container {
     z-index: 999999 !important;
 }
 
-/* ── Botón principal ── */
+/* Botón principal */
 div#wp_access_helper_container button.wahout.aicon_link {
     width: 30px !important;
     height: 30px !important;
@@ -37,7 +36,7 @@ div#wp_access_helper_container button.wahout.aicon_link {
     box-shadow: 0 1px 4px rgba(162, 33, 33, 0.12) !important;
 }
 
-/* ── Ícono dentro del botón ── */
+/* ─ Ícono dentro del botón */
 div#wp_access_helper_container button.wahout.aicon_link img.aicon_image {
     width: 20px !important;
     height: 20px !important;
@@ -48,7 +47,7 @@ div#wp_access_helper_container button.wahout.aicon_link img.aicon_image {
     transition: filter 0.15s ease !important;
 }
 
-/* ── Hover / foco: fondo rojo, ícono blanco ── */
+/* Hover / foco: fondo rojo, ícono blanco */
 div#wp_access_helper_container button.wahout.aicon_link:hover,
 div#wp_access_helper_container button.wahout.aicon_link:focus {
     background-color: #a22121 !important;
@@ -62,7 +61,7 @@ div#wp_access_helper_container button.wahout.aicon_link:focus img.aicon_image {
     transition: filter 0.15s ease 0.05s !important;
 }
 
-/* ── Tablet (600px – 1024px) ── */
+/* Tablet (600px – 1024px) */
 @media (min-width: 600px) and (max-width: 1024px) {
     div#wp_access_helper_container {
         top: 20px !important;
@@ -83,7 +82,7 @@ div#wp_access_helper_container button.wahout.aicon_link:focus img.aicon_image {
     }
 }
 
-/* ── Móvil (< 600px) ── */
+/*  Móvil (< 600px)  */
 @media (max-width: 599px) {
     div#wp_access_helper_container {
         top: 11px !important;

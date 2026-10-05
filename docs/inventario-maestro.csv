@@ -1,10 +1,10 @@
 ID,Nombre,Tipo,Estado,Condicion_o_Ubicacion,Notas
-1106,menu submenus,JS,Activo,"Global, viewport <=1024px (wp_footer)",Acordeón submenús móvil. Posible duplicado con 1837 y 1908
+1106,menu submenus,PHP (JS en wp_footer),Activo,"Global, viewport <=1024px (wp_footer)",Acordeón submenús móvil. Posible duplicado con 1837 y 1908
 1264,Agrega clase estable al bloque de Nuestro Compromiso,CSS/JS,INACTIVO,-,Confirmado no en uso por el usuario
 1268,Forzar visibilidad de la imagen,JS,Activo,"Home, cover parallax, movil <=1024px",Parallax imagen hero movil
 1300,Permitir flujo de donacion en publico,PHP,Activo,Global (bypass WC Coming Soon),Critico - no tocar
 1338,01 base header,CSS,Activo,Global,"EDITADO 30-07-2026: se elimino bloque ""botones fondo blanco"" (pisado por 1915) y reglas de logo/texto/botones en scroll dentro de div:first-child (oculto por 1906, codigo muerto). Ver docs/diff-1338-1339.md. PENDIENTE 23-09-2026: altura nav scroll (28-34px) y padding-top .wp-site-blocks (130px/100px) posiblemente pisados por 1906/1909 en >=600px - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
-1339,02 navigation,CSS,Activo,Global,"EDITADO 30-07-2026: se elimino background gradiente (pisado por 1904) y color texto hamburguesa base. Ver docs/diff-1338-1339.md. PENDIENTE 23-09-2026: color texto panel movil (#a22121) en conflicto con 1904 (#8c2531) - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
+1339,02 navigation,CSS,Activo,Global,EDITADO 30-07-2026: se elimino background gradiente (pisado por 1904) y color texto hamburguesa base. Ver docs/diff-1338-1339.md. PENDIENTE 23-09-2026: color texto panel movil (#a22121) en conflicto con 1904 (#8c2531) - confirmar con DevTools. Ver docs/diff-header-navegacion.md
 1341,04 TRANSPARENCIA GLASSMORPHISM,CSS,Activo,Global,Glassmorphism cajas + visibilidad botones checkout
 1342,05 checkout,CSS,Activo,is_checkout(),Estilos checkout WooCommerce
 1347,06 quienes somos,CSS,Activo,page-id-12,Cover + caja roja Quienes Somos
@@ -35,10 +35,10 @@ ID,Nombre,Tipo,Estado,Condicion_o_Ubicacion,Notas
 1837,Fuerza comportamiento boton hamburguesa tablet/movil,JS,Activo,Global <=1024px,Revisar contra 1106/1908 (misma funcion)
 1884,Cambios de sombras en inicio / color chevron,CSS,Activo,Home + global nav,
 1888,Header achica al hacer scroll,JS,Activo,Global,Agrega clase .scrolled
-1904,Override color nav barra principal,CSS,Activo,Global,"Fragmento 09 - color guinda #8c2531. Revisar contra 1339 (gradiente original). PENDIENTE 23-09-2026: color panel movil #8c2531 en conflicto con #a22121 de 1339/1535 - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
-1906,Fragmento 10 - Header compacto en scroll,CSS,Activo,Global responsive,"Revisar contra 1338/1909 (superposicion header/scroll). PENDIENTE 23-09-2026: altura nav scroll escritorio (42-48px) gana por especificidad sobre 1338 (28-34px) - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
+1904,Override color nav barra principal,CSS,Activo,Global,Fragmento 09 - color guinda #8c2531. Revisar contra 1339 (gradiente original). PENDIENTE 23-09-2026: color panel movil #8c2531 en conflicto con #a22121 de 1339/1535 - confirmar con DevTools. Ver docs/diff-header-navegacion.md
+1906,Fragmento 10 - Header compacto en scroll,CSS,Activo,Global responsive,Revisar contra 1338/1909 (superposicion header/scroll). PENDIENTE 23-09-2026: altura nav scroll escritorio (42-48px) gana por especificidad sobre 1338 (28-34px) - confirmar con DevTools. Ver docs/diff-header-navegacion.md
 1908,Fragmento 11 - Cierra hamburguesa al abrir accesibilidad,JS,Activo,"Global, <=1024px",
-1909,Fragmento 14 - Fix espacio blanco hero,CSS,Activo,Global responsive,"Revisar contra 1338/1906. PENDIENTE 23-09-2026: padding-top .wp-site-blocks (144px/48px/36px) gana por especificidad sobre 1338 (130px/100px) en >=600px - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
+1909,Fragmento 14 - Fix espacio blanco hero,CSS,Activo,Global responsive,Revisar contra 1338/1906. PENDIENTE 23-09-2026: padding-top .wp-site-blocks (144px/48px/36px) gana por especificidad sobre 1338 (130px/100px) en >=600px - confirmar con DevTools. Ver docs/diff-header-navegacion.md
 1912,Fragmento 12 - Fix espacio hero carga inicial+scroll,JS,Activo,Global,Preload imagen hero + padding dinamico
 1915,Fragmento 16 CSS - Color botones header,CSS,Activo,Global header,Revisar contra 1510
 1916,Fragmento 16 JS - Botones header color+posicion,JS,Activo,Global header desktop,Revisar contra 1510

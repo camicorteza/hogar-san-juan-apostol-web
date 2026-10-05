@@ -6,21 +6,26 @@
  * Ubicacion/Condicion: Home cover
  */
 
-/* ══════════════════════════════════════════════════
-   AJUSTE: Botón "Dona Aquí" — colores invertidos
-   ══════════════════════════════════════════════════ */
-
+/* 
+   Ajuste: Botón "Dona Aquí" — colores invertidos
+ */
 body.home .wp-block-cover.aligncenter.has-parallax .wp-block-button__link:hover,
-body.home .wp-block-cover.aligncenter.has-parallax .wp-block-button__link:active {
+body.home .wp-block-cover.aligncenter.has-parallax .wp-block-button__link:active,
+body.home .wp-block-cover.aligncenter.has-parallax .wp-block-button__link.btn-hover-invertido {
     background-color: #ffffff !important;
-    color: #8c2532 !important;
-	text-shadow: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow:
+        -1px -1px 0 #a22121,
+         1px -1px 0 #a22121,
+        -1px  1px 0 #a22121,
+         1px  1px 0 #a22121 !important;
 }
-
-/* El corazón es una imagen (emoji renderizado como <img>), no texto,
-   así que el color no le afecta directamente. Se usa un filtro para
-   teñirlo del mismo tono #8c2532 solo en hover/active. */
 body.home .wp-block-cover.aligncenter.has-parallax .wp-block-button__link:hover img.emoji,
-body.home .wp-block-cover.aligncenter.has-parallax .wp-block-button__link:active img.emoji {
-    filter: brightness(0) saturate(100%) invert(17%) sepia(52%) saturate(2878%) hue-rotate(325deg) brightness(92%) contrast(92%) !important;
+body.home .wp-block-cover.aligncenter.has-parallax .wp-block-button__link:active img.emoji,
+body.home .wp-block-cover.aligncenter.has-parallax .wp-block-button__link.btn-hover-invertido img.emoji {
+    filter:
+        brightness(0) invert(1)
+        drop-shadow(1px 0 0 #a22121) drop-shadow(-1px 0 0 #a22121)
+        drop-shadow(0 1px 0 #a22121) drop-shadow(0 -1px 0 #a22121) !important;
 }

@@ -8,11 +8,9 @@
  *
  */
 
-/* ================================================
-   FIX QUIÉNES SOMOS 
-   ================================================ */
+/* fix quiénes somos  */
 
-/* ── 1. Párrafo "Somos una institución" — escritorio */
+/* P "Somos una institución" escritorio */
 @media (min-width: 769px) {
     .wp-block-cover.alignfull.is-light .wp-block-cover__inner-container p,
     .wp-block-cover.alignfull.is-light .wp-block-cover__inner-container .wp-block-paragraph {
@@ -24,7 +22,7 @@
     }
 }
 
-/* ── 2. Párrafo "Somos una institución" — móvil */
+/* Párrafo "Somos una institución" móvil */
 @media (max-width: 768px) {
     .wp-block-cover.alignfull.is-light .wp-block-cover__inner-container p,
     .wp-block-cover.alignfull.is-light .wp-block-cover__inner-container .wp-block-paragraph {
@@ -35,7 +33,7 @@
     }
 }
 
-/* ── 3. Imagen wp-image-1822 — escritorio más grande */
+/* Imagen wp-image-1822 — escritorio más grande */
 @media (min-width: 769px) {
     .wp-image-1822,
     figure.wp-block-image img.wp-image-1822 {
@@ -45,8 +43,8 @@
     }
 }
 
-/* ── 4. Antiguo Hogar / Actual Hogar — siempre en la misma fila */
-/* En TODOS los breakpoints, mantener en fila */
+/* Antiguo Hogar / Actual Hogar — siempre en la misma fila */
+
 .wp-block-columns.is-not-stacked-on-mobile.has-medium-font-size {
     flex-direction: row !important;
     flex-wrap: nowrap !important;
@@ -70,7 +68,7 @@
     margin: 0 !important;
 }
 
-/* ── 5. Móvil general — otras columnas apiladas */
+/*  Móvil general — otras columnas apiladas */
 @media (max-width: 768px) {
     .wp-block-columns.is-not-stacked-on-mobile:not(.has-medium-font-size) {
         flex-direction: column !important;
@@ -89,26 +87,7 @@
     }
 }
 
-/* ── 6. Cifras tablet — números finos */
-/* Atacar con font-size clamp override */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-    /* Columnas en fila */
-    .wp-block-columns.alignwide {
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-    }
-    .wp-block-columns.alignwide > .wp-block-column {
-        flex: 1 1 0 !important;
-        min-width: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-
-    /* Número: el tema usa clamp en font-size inline,
-       sobreescribir con font-size fijo y weight fino */
+   
     .wp-block-columns.alignwide .wp-block-cover.is-light,
     .wp-block-columns.alignwide .wp-block-cover[style*="border-radius"] {
         width: 100px !important;
@@ -121,45 +100,10 @@
         align-items: center !important;
         justify-content: center !important;
     }
+ 
 
-    /* El p con el strong del número */
-    .wp-block-columns.alignwide .wp-block-cover__inner-container > p {
-        font-size: 32px !important;
-        font-weight: 200 !important;
-        letter-spacing: -1px !important;
-        line-height: 1 !important;
-        margin: 0 !important;
-    }
 
-    .wp-block-columns.alignwide .wp-block-cover__inner-container > p > strong,
-    .wp-block-columns.alignwide .wp-block-cover__inner-container strong {
-        font-weight: 200 !important;
-        font-size: inherit !important;
-        letter-spacing: inherit !important;
-    }
-
-    /* h3 título cifra */
-    .wp-block-columns.alignwide > .wp-block-column > h3 {
-        font-size: clamp(0.75rem, 1.2vw, 0.90rem) !important;
-        line-height: 1.2 !important;
-        margin-top: 8px !important;
-        margin-bottom: 3px !important;
-        width: 100% !important;
-    }
-
-    /* p descriptivo cifra */
-    .wp-block-columns.alignwide > .wp-block-column > p {
-        font-size: clamp(0.60rem, 0.95vw, 0.75rem) !important;
-        line-height: 1.3 !important;
-        word-break: break-word !important;
-        overflow-wrap: break-word !important;
-        hyphens: auto !important;
-        padding: 0 3px !important;
-        margin: 0 !important;
-        max-width: 100% !important;
-    }
-}
-/* ── Tablet: texto p bajo HOGAR SAN JUAN APÓSTOL más grande */
+/* tablet: texto p bajo HOGAR SAN JUAN APÓSTOL más grande */
 @media (min-width: 769px) and (max-width: 1024px) {
 
     /* p pequeño bajo el h2 del título */
@@ -173,7 +117,7 @@
         font-size: inherit !important;
     }
 }
-/* ── Texto p bajo HOGAR SAN JUAN APÓSTOL — tablet */
+/* Texto p bajo HOGAR SAN JUAN APÓSTOL — tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
     .wp-block-column.is-vertically-aligned-center.has-global-padding p {
         font-size: 1rem !important;

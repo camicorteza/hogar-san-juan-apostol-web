@@ -6,9 +6,8 @@
   sanitaria). Va después del bloque "Nuestro Compromiso" en el home.
 -->
 
-<!-- ════════════════════════════════════════════
-     CIFRAS INSTITUCIONALES — Tarjetas doradas/guinda
-     ════════════════════════════════════════════ -->
+<!-- cifras institucionales — Tarjetas doradas/guinda
+     -->
 
 <div class="cifras-seccion" id="cifras-institucionales">
 <h1 id="titulo">Cifras Institucionales </h1>
@@ -117,7 +116,7 @@
   text-align: center;
 }
 
-/* ── Envoltorio: extiende el fondo a todo el ancho de la pantalla ── */
+/*  Envoltorio: extiende el fondo a todo el ancho de la pantalla  */
 .cifras-seccion {
   background-color: #ffffff;
   width: 100vw;
@@ -129,7 +128,7 @@
   margin-top: -110px; /* absorbe el padding-bottom:110px del bloque anterior */
 }
 
-/* ── Contenedor principal (grid responsivo) ── */
+/* Contenedor principal (grid responsivo) */
 .cifras-contenedor {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -140,7 +139,7 @@
   font-family: inherit;
 }
 
-/* ── Tarjeta base ── */
+/*  Tarjeta base  */
 .cifras-tarjeta {
   position: relative;
   background-color: #F2ECEC;
@@ -154,14 +153,14 @@
   transition: box-shadow 0.35s ease;
 }
 
-/* ── Hover: brillo dorado POR FUERA de la tarjeta ── */
+/*  Hover: brillo dorado por fuera de la tarjeta */
 .cifras-tarjeta:hover {
   box-shadow:
     0 0 0 3px rgba(232, 194, 80, 0.55),
     0 10px 28px rgba(152, 106, 0, 0.45);
 }
 
-/* ── Header guinda (rectangular, sólido) ── */
+/*  Header guinda (rectangular, sólido) */
 .cifras-seccion .cifras-header {
   position: relative;
   z-index: 3;
@@ -175,8 +174,7 @@
   gap: 6px;
 }
 /* Fondo guinda real: un SVG que dibuja el rectángulo + la curva de
-   sonrisa como UNA sola forma continua, garantizando que el guinda
-   nunca sobrepase el dorado (ambos vienen del mismo trazo). */
+   sonrisa */
 .cifras-header-fondo {
   position: absolute;
   inset: 0;
@@ -196,7 +194,7 @@
   stroke-width: 5;
 }
 
-/* ── Aro circular con degradado dorado — completo, sin recorte ── */
+/*  Aro circular con degradado dorado  */
 .cifras-icono-aro {
   position: absolute;
   top: -34px;
@@ -227,7 +225,7 @@
   box-sizing: border-box;
 }
 
-/* ── Número grande dentro del header ── */
+/* Numero grande dentro del header  */
 .cifras-seccion .cifras-numero {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 800;
@@ -235,7 +233,7 @@
   margin-top: 18px;
 }
 
-/* ── Cuerpo claro de la tarjeta ── */
+/* Cuerpo claro de la tarjeta  */
 .cifras-cuerpo {
   position: relative;
   z-index: 3;
@@ -270,8 +268,8 @@
   font-weight: 400 !important;
 }
 
-/* ── Triángulos: lados EXTERIORES rectos, solo la diagonal
-   central es curva y se hunde hacia el centro (cóncava) ── */
+/* Triángulos: lados exteriores rectos, solo la diagonal
+   central es curva y se hunde hacia el centro (cóncava) */
 .cifras-onda {
   position: absolute;
   bottom: 0;
@@ -294,9 +292,7 @@
     scroll-margin-top: 100px; /* ajusta según la altura real de tu menú fijo */
 }
 
-/* ══════════════════════════════════════
-   TABLET (≤ 1024px): 2 columnas
-   ══════════════════════════════════════ */
+/* tablet (≤ 1024px): 2 columnas */
 @media (max-width: 1024px) {
   .cifras-contenedor {
     grid-template-columns: repeat(2, 1fr);
@@ -305,10 +301,8 @@
   }
 }
 
-/* ══════════════════════════════════════
-   MÓVIL (≤ 600px): 1 columna, tarjetas más
-   angostas y más altas
-   ══════════════════════════════════════ */
+/* móvil (≤ 600px): 1 columna, tarjetas más
+   angostas y más altas */
 @media (max-width: 600px) {
   .cifras-contenedor {
     grid-template-columns: 1fr;

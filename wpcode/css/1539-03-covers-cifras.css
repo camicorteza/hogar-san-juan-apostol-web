@@ -6,14 +6,12 @@
  * Ubicacion/Condicion: Home
  *
  */
-
-/* ================================================
-   MÓDULO 3 — COVER, CIFRAS, NUESTRO COMPROMISO
-   ================================================ */
+    
+/* módulo 3 - cover , cifras y nuestro compromiso.
+   */
  
-/* ── Optimización de rendimiento del parallax en home
-      z-index:1 para que el header (99999) quede siempre encima.
-      La imagen ocupa toda la pantalla (efecto hero full-bleed). */
+/* rendimiento del parallax en home */
+
 body.home .wp-block-cover.alignfull.has-parallax {
     will-change: auto !important;
     transform: translateZ(0) !important;
@@ -40,7 +38,7 @@ body.home .wp-block-cover.alignfull.has-parallax {
     z-index: 0 !important;
 }
 
-/* ── Cover portada — filtro sepia + máscara inferior */
+/*  Cover portada — filtro sepia + máscara inferior */
 .wp-block-cover.has-parallax .wp-block-cover__image-background.has-parallax {
      filter: sepia(0.05) saturate(1.15) brightness(1.04) contrast(1.05) !important;
     -webkit-mask-image: linear-gradient(to bottom,
@@ -75,9 +73,8 @@ body.home .wp-block-cover.alignfull.has-parallax + * {
     background: transparent !important;
 }
  
-/* ── Cover home — layout flex del inner container
-      El cover ya arranca debajo del header por margin-top.
-      padding-top pequeño para margen visual interno. */
+/* Cover home — layout flex del inner container
+      */
 body.home .wp-block-cover.alignfull.has-parallax > .wp-block-cover__inner-container {
     display: flex !important;
     flex-direction: column !important;
@@ -120,12 +117,6 @@ body.home .wp-block-cover.alignfull.has-parallax
     order: 4 !important;
 }
  
-/* ── Textos del cover — colores y sombras */
-.wp-block-cover.has-parallax .wp-block-cover__inner-container p.has-text-align-center:first-of-type {
-    color: #a22121 !important;
-    text-shadow: -1px 1px 0px #ffffff !important;
-}
-
 .wp-block-cover.has-parallax .wp-block-cover__inner-container h1,
 .wp-block-cover.has-parallax .wp-block-cover__inner-container h2,
 .wp-block-cover.has-parallax .wp-block-cover__inner-container h3:not(:first-of-type) {
@@ -139,15 +130,12 @@ body.home .wp-block-cover.alignfull.has-parallax
 body.home .wp-block-cover.alignfull.has-parallax
 > .wp-block-cover__inner-container > p:last-of-type,
 .wp-block-cover.has-parallax .wp-block-cover__inner-container .wp-block-paragraph:last-of-type {
-    color: #ffffff !important;
     -webkit-text-stroke: 0 !important;
     paint-order: normal !important;
-    text-shadow:
-        1px -1px 0px rgb(240,225,195),
-        2px -2px 0px rgb(240,225,195),!important;
+    
 }
  
-/* ── Botón "Dona Aquí" en el cover */
+/* Botón "Dona Aquí" en el cover */
 .wp-block-cover.has-parallax .wp-block-button .wp-block-button__link,
 .wp-block-cover.has-parallax .wp-block-buttons .wp-block-button__link,
 body.home .wp-block-cover.alignfull.has-parallax .wp-block-button__link {
@@ -161,7 +149,7 @@ body.home .wp-block-cover.alignfull.has-parallax .wp-block-button__link {
     color: #ffffff !important;
 }
  
-/* ── Sombras específicas por block ID */
+/* Sombras específicas por block ID */
 #block-ed9e0477-c0b7-4989-8ca6-91f0ebf89ce6 {
     text-shadow: 0px 2px 8px #555D50, 0px 0px 20px rgba(85, 93, 80, 0.8) !important;
 }
@@ -169,13 +157,13 @@ body.home .wp-block-cover.alignfull.has-parallax .wp-block-button__link {
     text-shadow: 0px 2px 6px #000000, 0px 0px 15px rgba(0, 0, 0, 0.7) !important;
 }
  
-/* ── Fix overflow del inner container del cover */
+/*  Fix overflow del inner container del cover */
 .wp-block-cover__inner-container.has-global-padding,
 .wp-container-core-cover-is-layout-002d10ab {
     overflow: visible !important;
 }
  
-/* ── Imagen de fondo del cover: siempre visible y responsiva */
+/*  Imagen de fondo del cover: siempre visible y responsiva */
 html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-background.size-large {
     display: block !important;
     visibility: visible !important;
@@ -188,7 +176,7 @@ html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-bac
     max-width: 100% !important;
 }
  
-/* ── Primer h3 anotación del cover home */
+/*  Primer h3 anotación del cover home */
 #wp-elements-29b83d27cbb8e8996c07af61089643a5,
 .wp-elements-29b83d27cbb8e8996c07af61089643a5,
 body.home .wp-block-cover__inner-container h3.is-style-text-annotation--4:first-of-type,
@@ -196,7 +184,7 @@ body.home .wp-block-cover__inner-container h3.wp-elements-29b83d27cbb8e8996c07af
     margin-top: 3rem !important;
 }
  
-/* ── Sección "Nuestro Compromiso" */
+/*  Sección "Nuestro Compromiso" */
 .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"],
 .wp-block-group[style*="fondonuestrocompromiso.jpg"] {
     position: relative !important;
@@ -267,7 +255,7 @@ body.home .wp-block-cover__inner-container h3.wp-elements-29b83d27cbb8e8996c07af
 	 color: #a12221 !important;
 }
 
-/* ── Fix cover home escritorio */
+/* Fix cover home escritorio */
 .wp-block-cover__inner-container.has-global-padding,
 .wp-container-core-cover-is-layout-002d10ab {
     overflow: visible !important;
@@ -296,7 +284,7 @@ body.home .wp-block-cover__inner-container h3.wp-elements-29b83d27cbb8e8996c07af
     margin-top: 3rem !important;
 }
 
-/* ── Responsive: Nuestro Compromiso (≤ 1024px) */
+/* Responsive: Nuestro Compromiso (≤ 1024px) */
 @media (max-width: 1024px) {
     .wp-block-group.is-style-section-1[style*="fondonuestrocompromiso"],
     .wp-block-group[style*="fondonuestrocompromiso.jpg"] {
@@ -332,7 +320,7 @@ body.home .wp-block-cover__inner-container h3.wp-elements-29b83d27cbb8e8996c07af
         margin-top: -8vw !important;
     }
 }
-/* ── Responsive: Móvil — cover y Nuestro Compromiso (≤ 768px) */
+/*  Responsive: Móvil — cover y Nuestro Compromiso (≤ 768px) */
 @media (max-width: 768px) {
     .wp-block-cover.has-parallax {
         height: auto !important;
@@ -429,7 +417,7 @@ html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-bac
         font-size: 15px !important;
     }
 }
-/* 1. Línea de texto del párrafo — line-height más compacto en tablet y móvil */
+/* Línea de texto del párrafo — line-height más compacto en tablet y móvil */
 @media (max-width: 1024px) {
     .wp-block-cover__inner-container p {
         line-height: 1.3 !important;
@@ -451,7 +439,7 @@ html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-bac
 }
 
 
-/* 3. Degradado superior de la caja contacto — aplicado sobre el fondo */
+/*  Degradado superior de la caja contacto — aplicado sobre el fondo */
 .contacto-outer {
     background-image:
         linear-gradient(
@@ -464,7 +452,7 @@ html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-bac
     background-position: center !important;
     background-blend-mode: normal !important;
 }
-/* 1. Números de cifras institucionales — restaurar tamaño */
+/* Números de cifras institucionales — restaurar tamaño */
 .wp-block-column .wp-block-cover.is-light .wp-block-cover__inner-container *,
 .wp-block-column .wp-block-cover[style*="border-radius: 100px"] .wp-block-cover__inner-container *,
 .wp-block-column .wp-block-cover[style*="border-radius:100px"] .wp-block-cover__inner-container * {
@@ -472,7 +460,7 @@ html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-bac
     line-height: 1 !important;
 }
  
-/* 2. Párrafo "Cada donación" — más estrecho en tablet y móvil */
+/* Párrafo "Cada donación" — más estrecho en tablet y móvil */
 @media (max-width: 1024px) {
     .wp-block-cover__inner-container p {
         max-width: 65% !important;
@@ -497,20 +485,13 @@ html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-bac
     }
  
 }
-@media (max-width: 768px) {
-    .wp-block-cover.has-parallax .wp-block-cover__inner-container p.has-text-align-center:first-of-type {
-        text-shadow: 
-            -1px 0px 0px #ffffff,
-            0px 1px 0px #ffffff !important;
-    }
-}
  
-/* 3. Espacio entre Cifras Institucionales y Ponte en Contacto */
+/*  Espacio entre Cifras Institucionales y Ponte en Contacto */
 .contacto-outer {
     margin-top: 90px !important;
 }
  
-/* 4. Degradado ENCIMA de la caja contacto — simulado con sombra exterior */
+/*  Degradado encima de la caja contacto — simulado con sombra exterior */
 .contacto-outer::before {
     content: "" !important;
     display: block !important;
@@ -527,30 +508,8 @@ html body.home .wp-block-cover.alignfull.has-parallax .wp-block-cover__image-bac
     z-index: 0 !important;
     pointer-events: none !important;
 }
- /* Sombra sólida direccional — luz desde abajo-izquierda */
-.wp-elements-ae41df2df13259f59ab55d300dd20f84,
-p.wp-elements-ae41df2df13259f59ab55d300dd20f84 {
-    text-shadow:
-    1px -1px 0px rgb(240,225,195),
-    2px -2px 0px rgb(240,225,195) !important;
-}
- 
-@media (max-width: 1024px) {
-    .wp-elements-ae41df2df13259f59ab55d300dd20f84,
-    p.wp-elements-ae41df2df13259f59ab55d300dd20f84 {
-        text-shadow:
-    1px -1px 0px rgb(240,225,195),
-    2px -2px 0px rgb(240,225,195) !important;
-    }
-}
-@media (max-width: 768px) {
-    .wp-block-cover.has-parallax .wp-block-cover__inner-container p.has-text-align-center:first-of-type {
-        text-shadow: 
-            -1px 0px 0px #ffffff,
-            0px 1px 0px #ffffff !important;
-    }
-}
-/* ── Textos p en tablet — agrandar levemente ── */
+
+/* Textos p en tablet — agrandar levemente */
 @media (min-width: 600px) and (max-width: 1024px) {
 
     /* P debajo de HOGAR SAN JUAN APÓSTOL SAN CLEMENTE */

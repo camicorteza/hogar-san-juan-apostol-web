@@ -1,3 +1,4 @@
+<?php
 /**
  * ID WPCode: 1599
  * Nombre: Redirigir a pagina de gracias despues de donar

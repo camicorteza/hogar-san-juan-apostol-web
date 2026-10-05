@@ -1,11 +1,12 @@
+<?php
 /**
  * ID WPCode: 1461
  * Nombre: Forzar cookies same-site WooCommerce incognito
  * Tipo: PHP
  * Estado: Activo
  * Ubicacion/Condicion: Global (sesion WC)
-
  */
+
 // Forzar cookies same-site para WooCommerce en modo incógnito
 add_filter('woocommerce_session_expiration', function() {
     return 60 * 60 * 24; // 24 horas

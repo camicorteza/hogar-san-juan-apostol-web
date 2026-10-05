@@ -7,11 +7,9 @@
  *
  */
 
- /* ================================================
-   FOOTER — Layout móvil y barra inferior
-   ================================================ */
+/* footer — Layout móvil y barra inferior */
 
-/* ── Barra negra — centrado global (mobile-first) */
+/* barra negra -centrado global (mobile-first) */
 .footer-bottom {
     padding: 1rem 1.5rem !important;
 }
@@ -31,7 +29,7 @@
     width: 100% !important;
 }
 
-/* ── Escritorio: barra en fila */
+/* escritorio: barra en fila */
 @media (min-width: 769px) {
     .footer-bottom-inner {
         flex-direction: row !important;
@@ -49,13 +47,16 @@
     }
 }
 
-/* ── Footer grid móvil (≤ 768px) */
-@media (max-width: 768px) {
+/* footer grid móvil (≤ 768px) */
+@media (max-width: 1024px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
-        gap: 1.5rem !important;
+        gap: 2rem 1.5rem !important;
         align-items: start !important;
+    }
+	 .footer-top {
+        padding: 2.5rem 2.5rem 2rem !important;
     }
     .footer-brand {
         grid-column: 1 !important;
@@ -69,7 +70,7 @@
     .footer-col:nth-child(4) { grid-column: 1 !important; grid-row: 2 !important; }
 }
 
-/* ── Footer grid móvil estrecho (≤ 480px) */
+/* footer grid móvil estrecho (≤ 480px) */
 @media (max-width: 480px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr !important;

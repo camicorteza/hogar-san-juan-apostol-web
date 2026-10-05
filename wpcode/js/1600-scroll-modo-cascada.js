@@ -5,6 +5,7 @@
  * Estado: Activo
  * Ubicacion/Condicion: Global
  * Notas: Animaciones scroll-reveal .animar
+ * Nota: en WPCode este snippet está guardado dentro de <script>…</script>; aquí se muestra sin las etiquetas.
  */
 
 document.addEventListener('DOMContentLoaded', function () {

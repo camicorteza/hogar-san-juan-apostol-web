@@ -8,7 +8,7 @@
 -->
 
 <style>
-/* ===== GALERÍA GENERAL ===== */
+/* galería general */
 .galeria-wrap {
     max-width: 1200px;
     margin: 0 auto;
@@ -31,7 +31,7 @@
     margin: 0 0 28px;
 }
 
-/* ===== CARRUSEL ===== */
+/* carrusel */
 .carrusel-wrap {
     position: relative;
     overflow: hidden;
@@ -100,7 +100,7 @@
     font-weight: 500;
 }
 
-/* ===== COLLAGE ===== */
+/* collage */
 .collage-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -146,7 +146,7 @@
     text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 
-/* ===== ÁLBUMES ===== */
+/* álbumes */
 .momentos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -202,7 +202,7 @@
 .momento-titulo-icono { width: 1.15em; height: 1.15em; object-fit: contain; flex-shrink: 0; }
 .momento-info p { color: #888; font-size: 0.84em; margin: 0; }
 
-/* ===== MODAL ÁLBUM ===== */
+/* modal álbum */
 .modal-album {
     display: none;
     position: fixed;
@@ -276,7 +276,7 @@ body.modal-abierto {
     width: 100% !important;
 }
 
-/* ===== LIGHTBOX ===== */
+/* lightbox  */
 .lightbox-overlay {
     display: none;
     position: fixed;
@@ -325,7 +325,7 @@ body.modal-abierto {
 }
 .lightbox-contador { color: rgba(255,255,255,0.6); font-size: 0.9em; margin-top: 12px; }
 
-/* ===== RESPONSIVE ===== */
+/* responsive */
 @media (max-width: 700px) {
     .collage-grid {
         grid-template-columns: 1fr 1fr;
@@ -393,7 +393,7 @@ body.modal-abierto {
     <div class="modal-grid" id="modal-grid"></div>
 </div>
 
-<!-- LIGHTBOX — debe estar FUERA del modal -->
+<!-- LIGHTBOX  -->
 <div class="lightbox-overlay" id="lightbox">
     <button class="lightbox-cerrar" onclick="cerrarLightbox()">✕</button>
     <div class="lightbox-header" id="lightbox-titulo"></div>
@@ -413,7 +413,7 @@ var _fotoActual    = 0;
 var _carruselInterval = null;
 function hjaAnd(a, b) { return a ? b : a; } // evita que WordPress corrompa "&&" (wpautop/wptexturize)
 
-/* ===== ICONOS POR CATEGORÍA (Recopilación de Momentos) ===== */
+/* iconos por categoria (Recopilación de Momentos)  */
 var ICONOS_ALBUM = [
     { match: 'actividades y talleres',       url: 'https://hogarsanjuanapostol.cl/wp-content/uploads/2026/07/pintura.webp' },
     { match: 'celebraciones y cumpleanos',    url: 'https://hogarsanjuanapostol.cl/wp-content/uploads/2026/07/cumpleanos.webp' },

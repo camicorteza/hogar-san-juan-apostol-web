@@ -5,7 +5,7 @@
  * Estado: Activo
  * Ubicacion/Condicion: Global menu movil
  * Notas: MutationObserver
-
+ * Nota: en WPCode este snippet está guardado dentro de <script>…</script>; aquí se muestra sin las etiquetas.
  */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             '.wp-block-navigation__responsive-container.is-menu-open'
         );
         if (menuOpen) {
-            // Limpiar fondo del ul principal
+            // Limpia fondo del ul principal
             menuOpen.querySelectorAll('ul, li, a, span').forEach(function (el) {
                 el.style.removeProperty('background');
                 el.style.removeProperty('background-color');

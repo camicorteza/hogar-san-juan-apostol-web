@@ -8,10 +8,7 @@
 
  */
 
-/**
- * FRAGMENTO 12 — Fix espacio hero: carga inicial + scroll 
-
- */
+/* Fragmento 12 -Fix espacio hero: carga inicial + scroll */
 (function () {
     'use strict';
 

@@ -5,7 +5,7 @@
  * Estado: Activo
  * Ubicacion/Condicion: body.woocommerce-checkout
  * Notas: TreeWalker reemplazo textos
-
+ * Nota: en WPCode este snippet está guardado dentro de <script>…</script>; aquí se muestra sin las etiquetas.
  */
 
 (function() {

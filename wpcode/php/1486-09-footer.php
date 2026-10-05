@@ -8,9 +8,7 @@
 
  */
 
-<!-- ================================================
-     FOOTER — Hogar San Juan Apóstol | Two-Tiered | WCAG 2.1 AA
-     ================================================ -->
+<!--  FOOTER — Hogar San Juan Apóstol | Two-Tiered | WCAG 2.1 AA -->
 <footer class="wp-block-template-part footer-hsja" role="contentinfo" aria-label="Pie de página Hogar San Juan Apóstol">
   <div class="footer-top">
     <div class="footer-grid">
