@@ -13,17 +13,17 @@ revertir errores y limpiar código no utilizado con seguridad.
 
 ```
 ├── wpcode/
-│   ├── php/          → Snippets PHP activos
-│   ├── css/           → Snippets CSS activos        
-│   ├──  js/   → Snippets JS activos
-│   ├── html/         → Snippets de tipo HTML de WPCode (no confundir con custom-html-blocks/)
-│   └── inactivos/    → Snippets desactivados en WPCode, archivados como referencia
+│   ├── php/             → Snippets PHP activos
+│   ├── css/             → Snippets CSS activos
+│   ├── js/              → Snippets JS activos
+│   ├── html/            → Snippets de tipo HTML de WPCode (no confundir con custom-html-blocks/)
+│   └── inactivos/       → Snippets desactivados en WPCode, archivados como referencia
 ├── custom-html-blocks/  → Bloques de HTML personalizado del editor (por página)
 └── docs/
-    ├── inventario-maestro.csv       → Tabla completa de los 62 snippets con estado
-    ├── diff-1338-1339.md            → Registro de la limpieza de código muerto (jul 2026)
-    ├── diff-header-navegacion.md    → Candidatos a limpieza del grupo header/nav (set 2026, pendiente confirmar con DevTools)
-    └── convenciones-nombres.md      → Cómo se nombra cada archivo
+    ├── inventario-maestro.csv     → Tabla completa de los 62 snippets con estado
+    ├── diff-1338-1339.md          → Registro de la limpieza de código muerto (jul 2026)
+    ├── diff-header-navegacion.md  → Candidatos a limpieza del grupo header/nav (set 2026, pendiente confirmar con DevTools)
+    └── convenciones-nombres.md    → Cómo se nombra cada archivo
 ```
 
 ## Convención de nombres
