@@ -1,7 +1,7 @@
 ID,Nombre,Tipo,Estado,Condicion_o_Ubicacion,Notas
 1106,menu submenus,PHP (JS en wp_footer),Activo,"Global, viewport <=1024px (wp_footer)",Acordeón submenús móvil. Posible duplicado con 1837 y 1908
 1264,Agrega clase estable al bloque de Nuestro Compromiso,CSS/JS,INACTIVO,-,Confirmado no en uso por el usuario
-1268,Forzar visibilidad de la imagen,JS,Activo,"Home, cover parallax, movil <=1024px",Parallax imagen hero movil
+1268,Forzar visibilidad de la imagen,JS,INACTIVO,"Home, cover parallax, movil <=1024px",Parallax imagen hero movil
 1300,Permitir flujo de donacion en publico,PHP,Activo,Global (bypass WC Coming Soon),Critico - no tocar
 1338,01 base header,CSS,Activo,Global,"EDITADO 30-07-2026: se elimino bloque ""botones fondo blanco"" (pisado por 1915) y reglas de logo/texto/botones en scroll dentro de div:first-child (oculto por 1906, codigo muerto). Ver docs/diff-1338-1339.md. PENDIENTE 23-09-2026: altura nav scroll (28-34px) y padding-top .wp-site-blocks (130px/100px) posiblemente pisados por 1906/1909 en >=600px - confirmar con DevTools. Ver docs/diff-header-navegacion.md"
 1339,02 navigation,CSS,Activo,Global,EDITADO 30-07-2026: se elimino background gradiente (pisado por 1904) y color texto hamburguesa base. Ver docs/diff-1338-1339.md. PENDIENTE 23-09-2026: color texto panel movil (#a22121) en conflicto con 1904 (#8c2531) - confirmar con DevTools. Ver docs/diff-header-navegacion.md

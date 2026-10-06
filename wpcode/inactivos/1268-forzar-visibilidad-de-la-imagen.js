@@ -2,7 +2,7 @@
  * ID WPCode: 1268
  * Nombre: Forzar visibilidad de la imagen
  * Tipo: JS
- * Estado: Activo
+ * Estado: Inactivo
  * Ubicacion/Condicion: Home, cover parallax, movil <=1024px
  * Notas: Parallax imagen hero movil
  */
